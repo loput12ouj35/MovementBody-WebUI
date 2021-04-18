@@ -20,7 +20,7 @@ export default createMuiTheme({
     error: { main: '#EC4C47' },
   },
 
-  typography: { fontFamily: 'Noto Sans KR, sans-serif' },
+  typography: { fontFamily: 'Nanum Barun Gothic, sans-serif' },
 
   overrides: {
     MuiBottomNavigation: {
