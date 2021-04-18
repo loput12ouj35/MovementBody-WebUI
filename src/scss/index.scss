@@ -1,5 +1,5 @@
 @import-normalize;
-// @import './font/font';
+@import './font/font';
 
 // 간단한 css 전역 설정
 // normalize는 넣었고, reset은 필요 없어보임. 일부 항목만 아래에서 reset
@@ -13,7 +13,7 @@ body {
 
 body {
   margin: 0;
-  // font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
