@@ -20,10 +20,18 @@ export default createMuiTheme({
     error: { main: '#EC4C47' },
   },
 
-  // typography: { fontFamily: 'Noto Sans KR, sans-serif' },
+  typography: { fontFamily: 'Noto Sans KR, sans-serif' },
 
   overrides: {
-    // 탭
+    MuiBottomNavigation: {
+      root: {
+        borderTop: '1px solid #e5e5e3',
+        borderRadius: '1em 1em 0 0',
+        flex: 'none',
+        overflow: 'hidden',
+      },
+    },
+    MuiBottomNavigationAction: { root: { ...HOVER_EFFECT, minWidth: null } },
     MuiTabs: {
       flexContainer: {
         fontSize: 14,
