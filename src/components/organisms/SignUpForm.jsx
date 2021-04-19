@@ -1,4 +1,3 @@
-import { Button } from '@material-ui/core';
 import {
   AirlineSeatReclineNormal,
   EmojiPeople,
@@ -10,6 +9,7 @@ import {
   SignUpGenderInput,
   SignUpInputTitle,
   SignUpSlider,
+  SignUpFormButton,
 } from 'components';
 import { MESSAGES } from 'data';
 import React, { useCallback, useState } from 'react';
@@ -70,9 +70,7 @@ export default React.memo(function SiginUpForm(props) {
           updateValue={updateValue}
         />
       </form>
-      <Button variant="contained" color="primary" disableElevation>
-        {MESSAGES.common.next}
-      </Button>
+      <SignUpFormButton value={value} />
     </div>
   );
 });
