@@ -32,7 +32,9 @@ export default createMuiTheme({
         overflow: 'hidden',
       },
     },
-    MuiBottomNavigationAction: { root: { ...HOVER_EFFECT, minWidth: null } },
+    MuiBottomNavigationAction: {
+      root: { ...HOVER_EFFECT, minWidth: null, backgroundColor: '#fcfcfc' },
+    },
     MuiTabs: {
       flexContainer: {
         fontSize: 14,

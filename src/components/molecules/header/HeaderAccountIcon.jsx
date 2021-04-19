@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Divider, IconButton, Menu, MenuItem } from '@material-ui/core';
 import { AccountCircle } from '@material-ui/icons';
 import { MESSAGES } from 'data';
+import { inject } from 'mobx-react';
 
 const MENU_ID = 'account-menu';
 
@@ -29,23 +30,34 @@ export default React.memo(function HeaderAccountIcon(props) {
 
 const ORIGIN = { vertical: 'top', horizontal: 'right' };
 
-function AccountMenu(props) {
-  const { anchorEl, closeMenu } = props;
+@inject('userStore')
+class AccountMenu extends React.Component {
+  openProfilePage = () => {
+    const { closeMenu, userStore } = this.props;
+    userStore.openProfilePage();
+    closeMenu();
+  };
 
-  return (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={ORIGIN}
-      id={MENU_ID}
-      keepMounted
-      transformOrigin={ORIGIN}
-      open={anchorEl !== null}
-      onClose={closeMenu}
-    >
-      <MenuItem onClick={closeMenu}>{MESSAGES.menu.profile}</MenuItem>
-      <MenuItem onClick={closeMenu}>{MESSAGES.menu.account}</MenuItem>
-      <Divider />
-      <MenuItem onClick={closeMenu}>{MESSAGES.menu.logout}</MenuItem>
-    </Menu>
-  );
+  render() {
+    const { anchorEl, closeMenu } = this.props;
+
+    return (
+      <Menu
+        anchorEl={anchorEl}
+        anchorOrigin={ORIGIN}
+        id={MENU_ID}
+        keepMounted
+        transformOrigin={ORIGIN}
+        open={anchorEl !== null}
+        onClose={closeMenu}
+      >
+        <MenuItem onClick={this.openProfilePage}>
+          {MESSAGES.menu.profile}
+        </MenuItem>
+        <MenuItem onClick={closeMenu}>{MESSAGES.menu.account}</MenuItem>
+        <Divider />
+        <MenuItem onClick={closeMenu}>{MESSAGES.menu.logout}</MenuItem>
+      </Menu>
+    );
+  }
 }

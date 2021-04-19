@@ -5,7 +5,7 @@ import { Notifications } from '@material-ui/icons';
 export default React.memo(function HeaderNotiIcon(props) {
   return (
     <IconButton aria-label="show notifications" color="inherit">
-      <Badge badgeContent={17} color="secondary">
+      <Badge badgeContent="N" color="secondary">
         <Notifications />
       </Badge>
     </IconButton>

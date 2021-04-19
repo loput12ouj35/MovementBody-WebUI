@@ -6,7 +6,8 @@ export { default as MemberInputTitle } from './molecules/Member/MemberInputTitle
 export { default as MemberExerciseCodeInput } from './molecules/Member/MemberExerciseCodeInput';
 export { default as SignUpFormButton } from './molecules/Member/SignUpFormButton';
 
-export { default as Header } from './organisms/Header';
-export { default as SignUpHeader } from './organisms/SignUpHeader';
+export { default as HomePageHeader } from './organisms/Header/HomePageHeader';
+export { default as SignUpPageHeader } from './organisms/Header/SignUpPageHeader';
+export { default as ProfilePageHeader } from './organisms/Header/ProfilePageHeader';
 export { default as Bnb } from './organisms/BottomNavigationBar';
 export { default as SignUpForm } from './organisms/SignUpForm';

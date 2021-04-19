@@ -6,6 +6,7 @@ import {
   Slide,
   Toolbar,
   Typography,
+  useScrollTrigger,
 } from '@material-ui/core';
 import { ArrowBack } from '@material-ui/icons';
 import { MESSAGES } from 'data';
@@ -16,12 +17,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default React.memo(function (props) {
-  const { scrolled } = props;
+  const { scrollTarget } = props;
+  const scrolled = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: scrollTarget,
+  });
   const classes = useStyles();
 
   return (
     <Slide appear={false} direction="down" in={scrolled}>
-      <AppBar>
+      <AppBar color="inherit">
         <Toolbar>
           <IconButton color="inherit" edge="start" component={Link} to="/home">
             <ArrowBack />

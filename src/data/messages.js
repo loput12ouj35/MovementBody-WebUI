@@ -15,6 +15,7 @@ const messages = {
 
   header: {
     signUp: '가입하기',
+    profile: '프로필',
   },
 
   signUp: {
