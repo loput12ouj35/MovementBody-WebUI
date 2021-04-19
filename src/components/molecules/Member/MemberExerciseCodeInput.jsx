@@ -1,26 +1,56 @@
 import { Button, makeStyles, MobileStepper } from '@material-ui/core';
-import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
+import {
+  DirectionsBike,
+  DirectionsRun,
+  DirectionsWalk,
+  Hotel,
+  KeyboardArrowLeft,
+  KeyboardArrowRight,
+  Rowing,
+} from '@material-ui/icons';
 import { MESSAGES } from 'data';
 import React, { useCallback } from 'react';
 import SwipeableViews from 'react-swipeable-views';
-import step1Img from 'img/execise_steps/1.jpg';
-import step2Img from 'img/execise_steps/1.jpg';
-import step3Img from 'img/execise_steps/1.jpg';
-import step4Img from 'img/execise_steps/1.jpg';
-import step5Img from 'img/execise_steps/1.jpg';
+// import step1Img from 'img/execise_steps/1.jpg';
+// import step2Img from 'img/execise_steps/1.jpg';
+// import step3Img from 'img/execise_steps/1.jpg';
+// import step4Img from 'img/execise_steps/1.jpg';
+// import step5Img from 'img/execise_steps/1.jpg';
 
-const STEPS_IMGS = [step1Img, step2Img, step3Img, step4Img, step5Img];
+// const STEPS_IMGS = [step1Img, step2Img, step3Img, step4Img, step5Img];
+const STEPS = [
+  { icon: <Hotel /> },
+  { icon: <DirectionsWalk /> },
+  { icon: <DirectionsRun /> },
+  { icon: <DirectionsBike /> },
+  { icon: <Rowing /> },
+];
 
 const useStyles = makeStyles((theme) => ({
-  label: {
-    backgroundColor: '#fafafa',
-    height: '3rem',
-    fontSize: '0.875em',
+  view: {
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
-    paddingLeft: '2rem',
+    backgroundColor: '#fdfdfd',
+    overflow: 'hidden',
+    padding: '0.5em',
   },
-  img: { width: '100%', display: 'block', overflow: 'hidden' },
+  label: {
+    fontSize: '2em',
+    margin: '1rem',
+    transition: 'all ease .3s',
+    transitionDelay: 200,
+    transform: 'translateY(0)',
+    '&.inactive': { opacity: 0, transform: 'translateY(-1.25rem)' },
+  },
+  icon: {
+    fontSize: '4em',
+    margin: '1rem',
+    transition: 'all ease .3s',
+    transitionDelay: 100,
+    transform: 'translateY(0)',
+    '&.inactive': { opacity: 0, transform: 'translateY(1.25rem)' },
+  },
 }));
 
 export default React.memo(function (props) {
@@ -34,17 +64,21 @@ export default React.memo(function (props) {
 
   return (
     <div>
-      <p className={classes.label}>{MESSAGES.signUp.exerciesSteps[value]}</p>
       <SwipeableViews
         index={value}
         enableMouseEvents
         onChangeIndex={handleChangeIndex}
       >
-        {STEPS_IMGS.map((src, i) => (
-          <div key={i}>
-            {Math.abs(value - i) <= 2 ? (
-              <img className={classes.img} src={src} alt={`exercise-${i}`} />
-            ) : null}
+        {STEPS.map(({ icon }, i) => (
+          <div key={i} className={classes.view}>
+            {Math.abs(value - i) <= 2
+              ? React.cloneElement(icon, {
+                  className: classes.icon + (value === i ? '' : ' inactive'),
+                })
+              : null}
+            <p className={classes.label + (value === i ? '' : ' inactive')}>
+              {MESSAGES.signUp.exerciesSteps[i]}
+            </p>
           </div>
         ))}
       </SwipeableViews>
