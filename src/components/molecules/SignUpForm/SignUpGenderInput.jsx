@@ -7,11 +7,9 @@ const useStyles = makeStyles((theme) => ({
   button: { flex: '1 1 20px', '&.Mui-selected': { flexGrow: 2 } },
 }));
 
-export default function (props) {
+export default React.memo(function (props) {
   const { name, value, updateValue } = props;
-  const handleChange = useCallback((e, value) => {
-    updateValue({ target: { name, value } });
-  }, []);
+  const handleChange = useCallback((e, value) => updateValue(name, value), []);
   const classes = useStyles();
 
   return (
@@ -32,4 +30,4 @@ export default function (props) {
       </ToggleButton>
     </ToggleButtonGroup>
   );
-}
+});

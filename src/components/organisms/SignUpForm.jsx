@@ -15,10 +15,10 @@ export default React.memo(function SiginUpForm(props) {
     height: 165,
     weight: 60,
   });
-  const updateValue = useCallback((e) => {
-    const { name, value } = e.target;
-    setValue((v) => ({ ...v, [name]: value }));
-  }, []);
+  const updateValue = useCallback(
+    (name, value) => setValue((v) => ({ ...v, [name]: value })),
+    []
+  );
 
   return (
     <div>
