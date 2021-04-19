@@ -7,5 +7,6 @@ export { default as SignUpExerciseCode } from './molecules/SignUpForm/SignUpExer
 export { default as SignUpFormButton } from './molecules/SignUpForm/SignUpFormButton';
 
 export { default as Header } from './organisms/Header';
+export { default as SignUpHeader } from './organisms/SignUpHeader';
 export { default as Bnb } from './organisms/BottomNavigationBar';
-export { default as SingUpForm } from './organisms/SignUpForm';
+export { default as SignUpForm } from './organisms/SignUpForm';

@@ -13,6 +13,10 @@ const messages = {
     logout: '로그아웃',
   },
 
+  header: {
+    signUp: '가입하기',
+  },
+
   signUp: {
     title: (id) => `반값읍니다, ${id}님.`,
     subtitle: '아래 내용을 작성해주세요.',

@@ -18,8 +18,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-
-  // 스크롤 바 개조. 크롬, safari
   ::-webkit-scrollbar-track,
   &::-webkit-scrollbar-track {
     background-color: transparent;
@@ -40,12 +38,11 @@ body {
     border: 2px solid transparent;
   }
 
-  // 스크롤 바 개조. firefox
   scrollbar-width: thin;
   scrollbar-color: #C8CDD4 transparent;
 }
 
-// 브라우저 테이블 스타일 취소
+// table reset
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -56,7 +53,7 @@ table {
   }
 }
 
-// 폰트 기본적으로 상위 폰트 쓰게 함
+// font reset
 input,
 button,
 select,
@@ -65,7 +62,7 @@ pre {
   font-family: inherit;
 }
 
-// 브라우저 ul 스타일 취소
+// list reset
 ul,
 ol {
   margin: 0;
@@ -73,7 +70,7 @@ ol {
   list-style: none;
 }
 
-// 브라우저 button 스타일 취소
+// button reset
 button {
   cursor: pointer;
   background: none;
@@ -84,13 +81,11 @@ button {
   outline: inherit;
 }
 
-// 브라우저 pre, p 스타일 취소
+// pre, p reset
 pre,
 p {
   margin: 0;
 }
-
-/* 공통 상위 컴포넌트 설정*/
 
 div#root {
   height: 100%;
