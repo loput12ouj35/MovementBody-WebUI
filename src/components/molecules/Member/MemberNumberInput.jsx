@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
 export default React.memo(function (props) {
   const { name, min, max, value = min, updateValue } = props;
   const handleChange = useCallback(
-    (e) => updateValue(name, e.target.value),
+    (e) => updateValue(name, Number(e.target.value)),
     []
   );
   const handleBlur = useCallback((e) => {

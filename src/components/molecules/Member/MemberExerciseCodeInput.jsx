@@ -13,7 +13,7 @@ const STEPS_IMGS = [step1Img, step2Img, step3Img, step4Img, step5Img];
 
 const useStyles = makeStyles((theme) => ({
   label: {
-    backgroundColor: 'white',
+    backgroundColor: '#fafafa',
     height: '3rem',
     fontSize: '0.875em',
     display: 'flex',

@@ -15,7 +15,7 @@ import { MESSAGES } from 'data';
 import React, { useCallback, useState } from 'react';
 import 'scss/sign-up-form.scss';
 
-export default React.memo(function (props, ref) {
+export default React.memo(function (props) {
   const [value, setValue] = useState({
     gender: 2,
     height: 165,
@@ -23,7 +23,8 @@ export default React.memo(function (props, ref) {
     exerciseCode: 2,
   });
   const updateValue = useCallback(
-    (name, value) => setValue((v) => ({ ...v, [name]: value })),
+    (name, value) =>
+      setValue((v) => (value === v?.[name] ? v : { ...v, [name]: value })),
     []
   );
 
