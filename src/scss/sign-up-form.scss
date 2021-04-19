@@ -1,18 +1,24 @@
-form.sign-up-form {
+div.sign-up-form {
   display: flex;
   flex-direction: column;
-  padding: 0.5em 0;
+  max-width: 768px;
 
-  .sign-up-input-title {
+  >form {
     display: flex;
-    margin-bottom: 1em;
+    flex-direction: column;
+    padding: 0.5em 0;
 
-    &:not(:first-child) {
-      margin-top: 2em;
-    }
+    .sign-up-input-title {
+      display: flex;
+      margin-bottom: 1em;
 
-    >p {
-      margin-left: 0.5em;
+      &:not(:first-child) {
+        margin-top: 2em;
+      }
+
+      >p {
+        margin-left: 0.5em;
+      }
     }
   }
 }

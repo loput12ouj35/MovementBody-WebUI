@@ -1,6 +1,7 @@
 const messages = {
   common: {
     next: '다음',
+    confirm: '확인',
   },
 
   menu: {
@@ -22,6 +23,14 @@ const messages = {
     other: '기타',
     height: '키 (cm)',
     weight: '몸무게 (kg)',
+    exercise: '운동량',
+    exerciesSteps: [
+      '운동을 아예 하지 않음',
+      '운동을 거의 하지 않음',
+      '가끔 운동 하고 있음',
+      '자주 운동 하고 있음',
+      '매일 운동 하고 있음',
+    ],
   },
 };
 

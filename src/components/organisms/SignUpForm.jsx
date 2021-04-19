@@ -3,8 +3,14 @@ import {
   AirlineSeatReclineNormal,
   EmojiPeople,
   Face,
+  FitnessCenter,
 } from '@material-ui/icons';
-import { SignUpGenderInput, SignUpInputTitle, SignUpSlider } from 'components';
+import {
+  SignUpExerciseCode,
+  SignUpGenderInput,
+  SignUpInputTitle,
+  SignUpSlider,
+} from 'components';
 import { MESSAGES } from 'data';
 import React, { useCallback, useState } from 'react';
 import 'scss/sign-up-form.scss';
@@ -14,6 +20,7 @@ export default React.memo(function SiginUpForm(props) {
     gender: 2,
     height: 165,
     weight: 60,
+    exerciseCode: 2,
   });
   const updateValue = useCallback(
     (name, value) => setValue((v) => ({ ...v, [name]: value })),
@@ -21,10 +28,10 @@ export default React.memo(function SiginUpForm(props) {
   );
 
   return (
-    <div>
+    <div className="sign-up-form">
       <h2>{MESSAGES.signUp.title('존맥')}</h2>
       <h4>{MESSAGES.signUp.subtitle}</h4>
-      <form className="sign-up-form">
+      <form>
         <SignUpInputTitle icon={<Face />} label={MESSAGES.signUp.gender} />
         <SignUpGenderInput
           name="gender"
@@ -53,6 +60,15 @@ export default React.memo(function SiginUpForm(props) {
           min={1}
           max={300}
         />
+        <SignUpInputTitle
+          icon={<FitnessCenter />}
+          label={MESSAGES.signUp.exercise}
+        />
+        <SignUpExerciseCode
+          name="exerciseCode"
+          value={value.exerciseCode}
+          updateValue={updateValue}
+        />
       </form>
       <Button variant="contained" color="primary" disableElevation>
         {MESSAGES.common.next}
@@ -60,13 +76,3 @@ export default React.memo(function SiginUpForm(props) {
     </div>
   );
 });
-
-// (note) The followiong fields will be deriven from OAuth service:
-// - memberId
-// - birth
-// - email
-// - loginType
-
-// {
-//   exerciseCode: 0;
-// }
