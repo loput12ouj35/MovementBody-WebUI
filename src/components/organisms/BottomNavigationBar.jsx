@@ -25,7 +25,7 @@ export default React.memo(function BottomNavigationBar(props) {
   const value = MENUS.findIndex(([type]) => pathname.startsWith(`/${type}`));
 
   return (
-    <BottomNavigation value={value} showLabels>
+    <BottomNavigation value={value} showLabels component="nav">
       {MENU_COMPONENTS}
     </BottomNavigation>
   );
