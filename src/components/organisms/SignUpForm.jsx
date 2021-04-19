@@ -5,10 +5,10 @@ import {
   FitnessCenter,
 } from '@material-ui/icons';
 import {
-  SignUpExerciseCode,
-  SignUpGenderInput,
-  SignUpInputTitle,
-  SignUpSlider,
+  MemberExerciseCodeInput,
+  MemberGenderInput,
+  MemberInputTitle,
+  MemberNumberInput,
   SignUpFormButton,
 } from 'components';
 import { MESSAGES } from 'data';
@@ -33,39 +33,39 @@ export default React.memo(
         <h2>{MESSAGES.signUp.title('존맥')}</h2>
         <h4>{MESSAGES.signUp.subtitle}</h4>
         <form>
-          <SignUpInputTitle icon={<Face />} label={MESSAGES.signUp.gender} />
-          <SignUpGenderInput
+          <MemberInputTitle icon={<Face />} label={MESSAGES.signUp.gender} />
+          <MemberGenderInput
             name="gender"
             value={value.gender}
             updateValue={updateValue}
           />
-          <SignUpInputTitle
+          <MemberInputTitle
             icon={<EmojiPeople />}
             label={MESSAGES.signUp.height}
           />
-          <SignUpSlider
+          <MemberNumberInput
             name="height"
             value={value.height}
             updateValue={updateValue}
             min={1}
             max={300}
           />
-          <SignUpInputTitle
+          <MemberInputTitle
             icon={<AirlineSeatReclineNormal />}
             label={MESSAGES.signUp.weight}
           />
-          <SignUpSlider
+          <MemberNumberInput
             name="weight"
             value={value.weight}
             updateValue={updateValue}
             min={1}
             max={300}
           />
-          <SignUpInputTitle
+          <MemberInputTitle
             icon={<FitnessCenter />}
             label={MESSAGES.signUp.exercise}
           />
-          <SignUpExerciseCode
+          <MemberExerciseCodeInput
             name="exerciseCode"
             value={value.exerciseCode}
             updateValue={updateValue}
