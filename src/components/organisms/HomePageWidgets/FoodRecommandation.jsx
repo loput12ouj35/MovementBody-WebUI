@@ -1,17 +1,24 @@
-import { Chip, IconButton, makeStyles, Grow, Slide } from '@material-ui/core';
+import {
+  Chip,
+  IconButton,
+  makeStyles,
+  Zoom,
+  Slide,
+  Avatar,
+} from '@material-ui/core';
 import { Close } from '@material-ui/icons';
 import { MESSAGES } from 'data';
 import React, { useCallback, useState } from 'react';
 
 const dummy = [
-  '마제소바',
-  '수주육편',
-  '우육면',
-  '양다리',
-  '꿔바로우',
-  '훠궈',
-  '사천짜장',
-  '가나요',
+  ['마제소바', 'images/foods/1.jpg'],
+  ['수주육편', 'images/foods/1.jpg'],
+  ['우육면', 'images/foods/1.jpg'],
+  ['양다리', 'images/foods/1.jpg'],
+  ['꿔바로우', 'images/foods/1.jpg'],
+  ['훠궈', 'images/foods/1.jpg'],
+  ['사천짜장', 'images/foods/1.jpg'],
+  ['언제 가나요', 'images/foods/1.jpg'],
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -43,17 +50,26 @@ export default React.memo(function FoodRecommandation(props) {
   return (
     <Slide direction="left" in={!hidden} mountOnEnter unmountOnExit>
       <div className={classes.root}>
-        <IconButton className={classes.button}>
-          <Close onClick={handleClick} />
+        <IconButton className={classes.button} onClick={handleClick}>
+          <Close />
         </IconButton>
         <h4>
           {MESSAGES.homePage.foodRecommandation(MESSAGES.homePage.protein)}
         </h4>
         <div className={classes.chipWrapper}>
-          {dummy.map((e, i) => (
-            <Grow in timeout={500 + i * 500}>
-              <Chip color="primary" size="small" label={e} />
-            </Grow>
+          {dummy.map(([label, src], i) => (
+            <Zoom
+              key={label}
+              in
+              timeout={300}
+              style={{ transitionDelay: i * 50 }}
+            >
+              <Chip
+                color="primary"
+                label={label}
+                avatar={<Avatar alt={label} src={src} />}
+              />
+            </Zoom>
           ))}
         </div>
       </div>

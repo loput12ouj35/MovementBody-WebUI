@@ -11,13 +11,7 @@ import {
 import { MESSAGES } from 'data';
 import React, { useCallback } from 'react';
 import SwipeableViews from 'react-swipeable-views';
-// import step1Img from 'img/execise_steps/1.jpg';
-// import step2Img from 'img/execise_steps/1.jpg';
-// import step3Img from 'img/execise_steps/1.jpg';
-// import step4Img from 'img/execise_steps/1.jpg';
-// import step5Img from 'img/execise_steps/1.jpg';
 
-// const STEPS_IMGS = [step1Img, step2Img, step3Img, step4Img, step5Img];
 const STEPS = [
   { icon: <Hotel /> },
   { icon: <DirectionsWalk /> },
