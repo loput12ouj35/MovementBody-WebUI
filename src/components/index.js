@@ -1,6 +1,5 @@
 export { default as SliderRuler } from './atoms/SliderRuler/index';
 
-export { default as HeaderNotiIcon } from './molecules/Header/HeaderNotiIcon';
 export { default as HeaderAccountIcon } from './molecules/Header/HeaderAccountIcon';
 export { default as MemberNumberInput } from './molecules/Member/MemberNumberInput';
 export { default as MemberGenderInput } from './molecules/Member/MemberGenderInput';
