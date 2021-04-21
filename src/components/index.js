@@ -1,4 +1,4 @@
-export { default as SliderRuler } from './atoms/SliderRuler';
+export { default as SliderRuler } from './atoms/SliderRuler/index';
 
 export { default as HeaderNotiIcon } from './molecules/Header/HeaderNotiIcon';
 export { default as HeaderAccountIcon } from './molecules/Header/HeaderAccountIcon';

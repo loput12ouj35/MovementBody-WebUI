@@ -1,5 +1,6 @@
 .ruler-box {
   position: relative;
+  overflow: hidden;
 
   .ruler-center-box {
     position: absolute;
@@ -7,10 +8,9 @@
     left: 50%;
     top: 0;
     transform: translateX(-50%);
-    content: '';
     width: 3px;
     height: 35px;
-    background-color: #00b0ab;
+    background-color: lightseagreen;
   }
 }
 
