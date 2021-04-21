@@ -2,6 +2,7 @@ import { Fab, makeStyles } from '@material-ui/core';
 import { Edit } from '@material-ui/icons';
 import {
   ActiveTimeCard,
+  FoodRecommandationCard,
   StepCountCard,
 } from 'components';
 import React from 'react';
@@ -23,6 +24,7 @@ export default React.memo(function HomePage(props) {
   return (
     <div className={classes.root}>
       <div className={classes.cardContainer}>
+        <FoodRecommandationCard />
         <StepCountCard />
         <ActiveTimeCard />
       </div>
