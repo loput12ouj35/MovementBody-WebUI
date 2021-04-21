@@ -2,7 +2,7 @@ import { SliderRuler } from 'components';
 import React, { useCallback } from 'react';
 import 'scss/components/MemberNumberInput.scss';
 
-export default React.memo(function (props) {
+export default React.memo(function MemberNumberInput(props) {
   const { name, min, max, value = min, updateValue } = props;
   const handleChange = useCallback(
     (e) => updateValue(name, Number(e.target.value)),
@@ -29,7 +29,7 @@ export default React.memo(function (props) {
         min={min}
         max={max}
         type="number"
-        ariaLabelledby={name}
+        aria-labelledby={name}
       />
       <SliderRuler
         value={value}

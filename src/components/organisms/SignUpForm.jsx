@@ -15,7 +15,7 @@ import { MESSAGES } from 'data';
 import React, { useCallback, useState } from 'react';
 import 'scss/components/sign-up-form.scss';
 
-export default React.memo(function (props) {
+export default React.memo(function SignUpForm(props) {
   const [value, setValue] = useState({
     gender: 2,
     height: 165,

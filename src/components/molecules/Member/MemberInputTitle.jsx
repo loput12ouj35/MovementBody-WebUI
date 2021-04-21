@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default React.memo(function (props) {
+export default React.memo(function MemberInputTitle(props) {
   const { icon, label } = props;
   return (
     <div className="sign-up-input-title">

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   h6: { flex: 'auto' },
 }));
 
-export default React.memo(function (props) {
+export default React.memo(function SignUpPageHeader(props) {
   const { scrollTarget } = props;
   const scrolled = useScrollTrigger({
     disableHysteresis: true,

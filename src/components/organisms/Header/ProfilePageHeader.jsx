@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   h6: { flex: 'auto' },
 }));
 
-export default React.memo(function (props) {
+export default React.memo(function ProfilePageHeader(props) {
   const { close } = props;
   const classes = useStyles();
 

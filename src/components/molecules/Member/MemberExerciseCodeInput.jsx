@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default React.memo(function (props) {
+export default React.memo(function MemberExerciseCodeInput(props) {
   const { name, value, updateValue } = props;
   const max = 5;
   // No need 'useCallback' in the following two methods, as this component rerenders only if the value changes.
