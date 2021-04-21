@@ -36,9 +36,19 @@ const messages = {
   },
 
   homePage: {
+    title: {
+      stepCount: '걸음 수',
+      activeTime: '활동 시간',
+    },
     protein: '단백질',
     foodRecommandation: (n) => `${n}이 부족해요! 이런 음식은 어떠세요?`,
-    stepCount: (n) => `오늘 ${n}걸음 걸으셨습니다!`,
+  },
+
+  unit: {
+    step: '걸음',
+    min: '분',
+    kcal: 'kcal',
+    km: 'km',
   },
 };
 
