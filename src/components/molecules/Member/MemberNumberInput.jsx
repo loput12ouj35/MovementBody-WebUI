@@ -1,10 +1,6 @@
-import { Input, makeStyles } from '@material-ui/core';
 import { SliderRuler } from 'components';
 import React, { useCallback } from 'react';
-
-const useStyles = makeStyles((theme) => ({
-  input: { width: '4em' },
-}));
+import 'scss/components/MemberNumberInput.scss';
 
 export default React.memo(function (props) {
   const { name, min, max, value = min, updateValue } = props;
@@ -20,24 +16,20 @@ export default React.memo(function (props) {
     (_value) => updateValue(name, _value),
     []
   );
-  const classes = useStyles();
 
   return (
-    <>
-      <Input
-        className={classes.input}
+    <div className="member-number-input">
+      <div className="arrow" />
+      <input
         name={name}
         value={value}
         onChange={handleChange}
         onBlur={handleBlur}
-        inputProps={{
-          step: 0.1,
-          min,
-          max,
-          type: 'number',
-          'aria-labelledby': name,
-          required: true,
-        }}
+        step={0.1}
+        min={min}
+        max={max}
+        type="number"
+        ariaLabelledby={name}
       />
       <SliderRuler
         value={value}
@@ -46,6 +38,6 @@ export default React.memo(function (props) {
         max={max}
         precision={0.1}
       />
-    </>
+    </div>
   );
 });

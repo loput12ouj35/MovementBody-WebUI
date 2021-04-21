@@ -1,0 +1,29 @@
+.member-number-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  >.arrow {
+    background-color: black;
+    width: 0.5em;
+    height: 0.5em;
+    position: absolute;
+    top: 1.8em;
+    transform: rotate(45deg);
+  }
+
+  >input {
+    z-index: 1;
+    width: 4em;
+    height: 2em;
+    background-color: black;
+    border-radius: 0.25em;
+    color: white;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    margin-bottom: 0.5em;
+  }
+}
