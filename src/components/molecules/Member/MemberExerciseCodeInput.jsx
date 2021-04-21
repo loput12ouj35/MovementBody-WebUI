@@ -1,4 +1,4 @@
-import { Button, makeStyles, MobileStepper } from '@material-ui/core';
+import { Button, makeStyles, MobileStepper, Slide } from '@material-ui/core';
 import {
   DirectionsBike,
   DirectionsRun,
@@ -29,22 +29,8 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     padding: '0.5em',
   },
-  label: {
-    fontSize: '2em',
-    margin: '1rem',
-    transition: 'all ease .3s',
-    transitionDelay: 200,
-    transform: 'translateY(0)',
-    '&.inactive': { opacity: 0, transform: 'translateY(-1.25rem)' },
-  },
-  icon: {
-    fontSize: '4em',
-    margin: '1rem',
-    transition: 'all ease .3s',
-    transitionDelay: 100,
-    transform: 'translateY(0)',
-    '&.inactive': { opacity: 0, transform: 'translateY(1.25rem)' },
-  },
+  label: { fontSize: '2em', margin: '1rem' },
+  icon: { fontSize: '4em', margin: '1rem' },
 }));
 
 export default React.memo(function MemberExerciseCodeInput(props) {
@@ -65,14 +51,22 @@ export default React.memo(function MemberExerciseCodeInput(props) {
       >
         {STEPS.map(({ icon }, i) => (
           <div key={i} className={classes.view}>
-            {Math.abs(value - i) <= 2
-              ? React.cloneElement(icon, {
-                  className: classes.icon + (value === i ? '' : ' inactive'),
-                })
-              : null}
-            <p className={classes.label + (value === i ? '' : ' inactive')}>
-              {MESSAGES.signUp.exerciesSteps[i]}
-            </p>
+            <Slide
+              in={value === i}
+              direction="down"
+              style={{ transitionDelay: 200 }}
+            >
+              {React.cloneElement(icon, { className: classes.icon })}
+            </Slide>
+            <Slide
+              in={value === i}
+              direction="up"
+              style={{ transitionDelay: 100 }}
+            >
+              <p className={classes.label}>
+                {MESSAGES.signUp.exerciesSteps[i]}
+              </p>
+            </Slide>
           </div>
         ))}
       </SwipeableViews>
