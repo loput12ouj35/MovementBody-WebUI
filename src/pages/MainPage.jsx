@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import 'scss/main-page.scss';
+import 'scss/pages/main-page.scss';
 import { Route, Switch } from 'react-router';
 import { Bnb, HomePageHeader, SignUpPageHeader } from 'components';
 import { HomePage, ProfilePage, SignUpPage } from 'pages';

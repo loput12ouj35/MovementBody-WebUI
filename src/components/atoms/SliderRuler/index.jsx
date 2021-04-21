@@ -1,5 +1,5 @@
 import React from 'react';
-import 'scss/slider-ruler.scss';
+import 'scss/components/slider-ruler.scss';
 import Canvas from './Canvas';
 
 export default class SliderRuler extends React.PureComponent {

@@ -13,7 +13,7 @@ import {
 } from 'components';
 import { MESSAGES } from 'data';
 import React, { useCallback, useState } from 'react';
-import 'scss/sign-up-form.scss';
+import 'scss/components/sign-up-form.scss';
 
 export default React.memo(function (props) {
   const [value, setValue] = useState({
