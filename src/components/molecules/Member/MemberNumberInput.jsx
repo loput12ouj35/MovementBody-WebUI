@@ -1,6 +1,6 @@
 import { SliderRuler } from 'components';
 import React, { useCallback } from 'react';
-import 'scss/components/MemberNumberInput.scss';
+import 'scss/components/member-number-input.scss';
 
 export default React.memo(function MemberNumberInput(props) {
   const { name, min, max, value = min, updateValue } = props;
