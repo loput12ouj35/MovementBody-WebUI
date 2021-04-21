@@ -6,8 +6,8 @@ import React, { useCallback } from 'react';
 const useStyles = makeStyles((theme) => ({
   button: {
     flex: '1 1 20px',
-    '&.Mui-selected': { flexGrow: 2 },
     transition: 'flex-grow ease .3s',
+    '&.Mui-selected': { flexGrow: 2, backgroundColor: 'rgba(0, 0, 255, 0.12)' },
   },
 }));
 
