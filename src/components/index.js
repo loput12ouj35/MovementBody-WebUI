@@ -12,3 +12,5 @@ export { default as SignUpPageHeader } from './organisms/Header/SignUpPageHeader
 export { default as ProfilePageHeader } from './organisms/Header/ProfilePageHeader';
 export { default as Bnb } from './organisms/BottomNavigationBar';
 export { default as SignUpForm } from './organisms/SignUpForm';
+export { default as FoodRecommandation } from './organisms/HomePageWidgets/FoodRecommandation';
+export { default as StepCount } from './organisms/HomePageWidgets/StepCount';

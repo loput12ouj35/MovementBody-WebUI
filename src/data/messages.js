@@ -37,6 +37,12 @@ const messages = {
       '매일 운동 하고 있음',
     ],
   },
+
+  homePage: {
+    protein: '단백질',
+    foodRecommandation: (n) => `${n}이 부족해요! 이런 음식은 어떠세요?`,
+    stepCount: (n) => `오늘 ${n}걸음 걸으셨습니다!`,
+  },
 };
 
 export default messages;
