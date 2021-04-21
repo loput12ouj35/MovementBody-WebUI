@@ -2,7 +2,6 @@ import React from 'react';
 import { CalendarToday, Home, Menu } from '@material-ui/icons';
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
 import { Link, useLocation } from 'react-router-dom';
-import { MESSAGES } from 'data';
 
 const MENUS = [
   ['home', <Home />],
@@ -14,7 +13,6 @@ const MENU_COMPONENTS = MENUS.map(([type, icon]) => (
   <BottomNavigationAction
     key={type}
     to={`/${type}`}
-    label={MESSAGES.menu[type]}
     icon={icon}
     component={Link}
   />
