@@ -39,6 +39,8 @@ const messages = {
     title: {
       stepCount: '걸음 수',
       activeTime: '활동 시간',
+      food: '음식',
+      water: '물',
     },
     protein: '단백질',
     foodRecommandation: (n) => `${n}이 부족해요! 이런 음식은 어떠세요?`,
@@ -49,6 +51,8 @@ const messages = {
     min: '분',
     kcal: 'kcal',
     km: 'km',
+    cup: '컵',
+    ml: 'ml',
   },
 };
 

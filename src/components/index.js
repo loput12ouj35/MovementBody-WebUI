@@ -15,3 +15,5 @@ export { default as SignUpForm } from './organisms/SignUpForm';
 export { default as FoodRecommandationCard } from './organisms/HomePageCards/FoodRecommandationCard';
 export { default as StepCountCard } from './organisms/HomePageCards/StepCountCard';
 export { default as ActiveTimeCard } from './organisms/HomePageCards/ActiveTimeCard';
+export { default as FoodCard } from './organisms/HomePageCards/FoodCard';
+export { default as WaterCard } from './organisms/HomePageCards/WaterCard';

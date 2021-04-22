@@ -2,8 +2,10 @@ import { Fab, makeStyles } from '@material-ui/core';
 import { Edit } from '@material-ui/icons';
 import {
   ActiveTimeCard,
+  FoodCard,
   FoodRecommandationCard,
   StepCountCard,
+  WaterCard,
 } from 'components';
 import React from 'react';
 
@@ -27,6 +29,8 @@ export default React.memo(function HomePage(props) {
         <FoodRecommandationCard />
         <StepCountCard />
         <ActiveTimeCard />
+        <FoodCard />
+        <WaterCard />
       </div>
       <Fab
         color="secondary"
