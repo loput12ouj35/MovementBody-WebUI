@@ -16,9 +16,13 @@ export default new (class UserDailyRecordStore {
     makeObservable(this);
   }
 
-  shallowMerge = (key, value) => (this[key] = { ...this[key], ...value });
-  @action setStepCount = (v) => this.shallowMerge('stepCount', v);
-  @action setActiveTime = (v) => this.shallowMerge('activeTime', v);
-  @action setWater = (v) => this.shallowMerge('water', v);
-  @action setFood = (v) => this.shallowMerge('food', v);
+  createSetter = (key) => (input) => {
+    const value = typeof input === 'function' ? input(this[key]) : input;
+    this[key] = { ...this[key], ...value };
+  };
+
+  @action setStepCount = this.createSetter('stepCount');
+  @action setActiveTime = this.createSetter('activeTime');
+  @action setWater = this.createSetter('water');
+  @action setFood = this.createSetter('food');
 })();

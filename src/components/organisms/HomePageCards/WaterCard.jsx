@@ -6,7 +6,7 @@ import {
   withStyles,
 } from '@material-ui/core';
 import { LocalDrink } from '@material-ui/icons';
-import { CardMainText, ToggleIconButton } from 'components';
+import { CardMainText, WaterInput } from 'components';
 import { MESSAGES } from 'data';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
@@ -14,7 +14,8 @@ import React from 'react';
 const styles = (theme) => ({
   root: { gridColumnEnd: 'span 6' },
   avatar: { backgroundColor: 'dodgerblue' },
-  content: { fontSize: '0.75em' },
+  content: { fontSize: '0.75em', display: 'flex' },
+  grow: { flexGrow: 1 },
 });
 
 @withStyles(styles)
@@ -37,10 +38,14 @@ class WaterCard extends React.PureComponent {
           subheader="뭐라하지"
         />
         <CardContent className={classes.content}>
-          <CardMainText
-            mainText={cup ?? 0}
-            subText={` ${MESSAGES.unit.cup} (${(ml ?? 0) + MESSAGES.unit.ml})`}
-          />
+          <div className={classes.grow}>
+            <CardMainText
+              mainText={cup ?? 0}
+              subText={` ${MESSAGES.unit.cup}`}
+            />
+            <p>{(ml ?? 0) + MESSAGES.unit.ml}</p>
+          </div>
+          <WaterInput />
         </CardContent>
       </Card>
     );
