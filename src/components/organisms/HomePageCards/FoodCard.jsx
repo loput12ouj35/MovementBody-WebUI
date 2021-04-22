@@ -10,14 +10,12 @@ import { MESSAGES } from 'data';
 import React from 'react';
 import _ from 'lodash';
 import { inject, observer } from 'mobx-react';
+import { CardMainText } from 'components';
 
 const styles = (theme) => ({
   root: { gridColumnEnd: 'span 6' },
   avatar: { backgroundColor: 'orange' },
-  content: {
-    '& p': { fontSize: '0.75em' },
-    '& b': { fontSize: '2em' },
-  },
+  content: { fontSize: '0.75em' },
 });
 
 @withStyles(styles)
@@ -45,10 +43,10 @@ class FoodCrad extends React.PureComponent {
           subheader="뭐라하지"
         />
         <CardContent className={classes.content}>
-          <p>
-            <b>{total}</b>
-            {` /${goal + MESSAGES.unit.kcal}`}
-          </p>
+          <CardMainText
+            mainText={total}
+            subText={` /${goal + MESSAGES.unit.kcal}`}
+          />
         </CardContent>
       </Card>
     );

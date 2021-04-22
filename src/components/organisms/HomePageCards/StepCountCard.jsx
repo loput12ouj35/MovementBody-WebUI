@@ -7,6 +7,7 @@ import {
   withStyles,
 } from '@material-ui/core';
 import { DirectionsWalk, Settings } from '@material-ui/icons';
+import { CardMainText } from 'components';
 import { MESSAGES } from 'data';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
@@ -14,10 +15,7 @@ import React from 'react';
 const styles = (theme) => ({
   root: { gridColumnEnd: 'span 6' },
   avatar: { backgroundColor: 'lightseagreen' },
-  content: {
-    '& p': { fontSize: '0.75em' },
-    '& b': { fontSize: '2em' },
-  },
+  content: { fontSize: '0.75em' },
 });
 
 @withStyles(styles)
@@ -45,10 +43,10 @@ class StepCountCard extends React.PureComponent {
           }
         />
         <CardContent className={classes.content}>
-          <p>
-            <b>{current ?? 0}</b>
-            {` /${(goal ?? 0) + MESSAGES.unit.step}`}
-          </p>
+          <CardMainText
+            mainText={current ?? 0}
+            subText={` /${(goal ?? 0) + MESSAGES.unit.step}`}
+          />
           <p>{(km ?? 0) + MESSAGES.unit.km}</p>
         </CardContent>
       </Card>
