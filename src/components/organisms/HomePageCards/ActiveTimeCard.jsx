@@ -10,18 +10,19 @@ import { AccessTime, Settings } from '@material-ui/icons';
 import { MESSAGES } from 'data';
 import React from 'react';
 
-const dummy = { current: 30, goal: 60, kcal: 120 };
+const DUMMY = { current: 30, goal: 60, kcal: 120 };
 
 const useStyles = makeStyles((theme) => ({
   root: { gridColumnEnd: 'span 6' },
   avatar: { backgroundColor: 'lightseagreen' },
   content: {
     '& p': { fontSize: '0.75em' },
-    '& b': { fontSize: '2em', marginRight: '0.25em' },
+    '& b': { fontSize: '2em' },
   },
 }));
 
 export default React.memo(function ActiveTimeCard(props) {
+  const { current, goal, kcal } = DUMMY;
   const classes = useStyles();
 
   return (
@@ -42,9 +43,10 @@ export default React.memo(function ActiveTimeCard(props) {
       />
       <CardContent className={classes.content}>
         <p>
-          <b>{dummy.current}</b>/{dummy.goal + MESSAGES.unit.min}
+          <b>{current ?? 0}</b>
+          {` /${(goal ?? 0) + MESSAGES.unit.min}`}
         </p>
-        <p>{dummy.kcal + MESSAGES.unit.kcal}</p>
+        <p>{(kcal ?? 0) + MESSAGES.unit.kcal}</p>
       </CardContent>
     </Card>
   );
