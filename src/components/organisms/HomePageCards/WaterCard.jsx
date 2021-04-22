@@ -28,7 +28,7 @@ class WaterCard extends React.PureComponent {
     const { cup, ml } = userDailyRecordStore.water;
 
     return (
-      <Card className={classes.root}>
+      <Card className={classes.root} component="article">
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>

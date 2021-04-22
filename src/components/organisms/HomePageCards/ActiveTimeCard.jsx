@@ -29,7 +29,7 @@ class ActiveTimeCard extends React.PureComponent {
     const { current, goal, kcal } = userDailyRecordStore.activeTime;
 
     return (
-      <Card className={classes.root}>
+      <Card className={classes.root} component="article">
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>

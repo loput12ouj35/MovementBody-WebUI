@@ -29,7 +29,7 @@ class StepCountCard extends React.PureComponent {
     const { current, goal, km } = userDailyRecordStore.stepCount;
 
     return (
-      <Card className={classes.root}>
+      <Card className={classes.root} component="article">
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>

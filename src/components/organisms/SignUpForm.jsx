@@ -29,7 +29,7 @@ export default React.memo(function SignUpForm(props) {
   );
 
   return (
-    <div className="sign-up-form">
+    <article className="sign-up-form">
       <h2>{MESSAGES.signUp.title('존맥')}</h2>
       <h4>{MESSAGES.signUp.subtitle}</h4>
       <form>
@@ -72,6 +72,6 @@ export default React.memo(function SignUpForm(props) {
         />
       </form>
       <SignUpFormButton value={value} />
-    </div>
+    </article>
   );
 });

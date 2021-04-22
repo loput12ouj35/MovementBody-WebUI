@@ -45,7 +45,7 @@ export default React.memo(function FoodRecommandation(props) {
 
   return (
     <Slide direction="left" in={!hidden} mountOnEnter unmountOnExit>
-      <Card className={classes.root}>
+      <Card className={classes.root} component="article">
         <CardHeader
           title={MESSAGES.homePage.foodRecommandation(
             MESSAGES.homePage.protein

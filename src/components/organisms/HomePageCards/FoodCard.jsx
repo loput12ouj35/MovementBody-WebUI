@@ -34,7 +34,7 @@ class FoodCrad extends React.PureComponent {
     const total = breakfirst + lunch + dinner;
 
     return (
-      <Card className={classes.root}>
+      <Card className={classes.root} component="article">
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>
