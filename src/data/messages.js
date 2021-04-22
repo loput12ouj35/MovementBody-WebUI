@@ -41,9 +41,13 @@ const messages = {
       activeTime: '활동 시간',
       food: '음식',
       water: '물',
+      foodRecommandation: (n) => `${n}이 부족해요!`,
+    },
+    subheader: {
+      foodRecommandation: '이런 음식은 어떠세요?',
     },
     protein: '단백질',
-    foodRecommandation: (n) => `${n}이 부족해요! 이런 음식은 어떠세요?`,
+    mental: '정신력',
   },
 
   unit: {

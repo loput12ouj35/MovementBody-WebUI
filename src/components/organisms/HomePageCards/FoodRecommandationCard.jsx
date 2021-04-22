@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardContent,
 } from '@material-ui/core';
-import { Close } from '@material-ui/icons';
+import { Announcement, Close } from '@material-ui/icons';
 import { MESSAGES } from 'data';
 import React, { useCallback, useState } from 'react';
 
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'ivory',
     gridColumnEnd: 'span 12',
   },
+  avatar: { backgroundColor: 'hotpink' },
   chipContainer: {
     display: 'flex',
     justifyContent: 'center',
@@ -36,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '1em',
     '& > *': { margin: '0.25em' },
   },
+  chip: { color: 'white', backgroundColor: 'cornflowerblue' },
 }));
 
 export default React.memo(function FoodRecommandation(props) {
@@ -47,10 +49,15 @@ export default React.memo(function FoodRecommandation(props) {
     <Slide direction="left" in={!hidden} mountOnEnter unmountOnExit>
       <Card className={classes.root} component="article">
         <CardHeader
-          title={MESSAGES.homePage.foodRecommandation(
-            MESSAGES.homePage.protein
+          avatar={
+            <Avatar className={classes.avatar}>
+              <Announcement />
+            </Avatar>
+          }
+          title={MESSAGES.homePage.title.foodRecommandation(
+            MESSAGES.homePage.mental
           )}
-          titleTypographyProps={{ variant: 'body1' }}
+          subheader={MESSAGES.homePage.subheader.foodRecommandation}
           action={
             <IconButton onClick={handleClick}>
               <Close />
@@ -67,8 +74,9 @@ export default React.memo(function FoodRecommandation(props) {
                 style={{ transitionDelay: i * 50 }}
               >
                 <Chip
-                  color="primary"
+                  className={classes.chip}
                   label={label}
+                  size="small"
                   avatar={<Avatar alt={label} src={src} />}
                 />
               </Zoom>
