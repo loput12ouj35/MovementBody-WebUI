@@ -6,6 +6,8 @@ export { default as MemberGenderInput } from './molecules/Member/MemberGenderInp
 export { default as MemberInputTitle } from './molecules/Member/MemberInputTitle';
 export { default as MemberExerciseCodeInput } from './molecules/Member/MemberExerciseCodeInput';
 export { default as SignUpFormButton } from './molecules/Member/SignUpFormButton';
+export { default as CardMainText } from './molecules/HomePageCards/CardMainText';
+export { default as WaterInput } from './molecules/HomePageCards/WaterInput';
 
 export { default as HomePageHeader } from './organisms/Header/HomePageHeader';
 export { default as SignUpPageHeader } from './organisms/Header/SignUpPageHeader';
