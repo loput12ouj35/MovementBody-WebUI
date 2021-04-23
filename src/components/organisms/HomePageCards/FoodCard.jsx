@@ -13,7 +13,6 @@ import { inject, observer } from 'mobx-react';
 import { CardMainText } from 'components';
 
 const styles = (theme) => ({
-  root: { gridColumnEnd: 'span 6' },
   avatar: { backgroundColor: 'orange' },
   content: { fontSize: '0.75em' },
 });
@@ -32,7 +31,7 @@ class FoodCrad extends React.PureComponent {
     const total = breakfirst + lunch + dinner;
 
     return (
-      <Card className={classes.root} component="article">
+      <Card component="article">
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>

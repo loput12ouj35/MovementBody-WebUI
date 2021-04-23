@@ -25,10 +25,7 @@ const dummy = [
 ];
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: 'ivory',
-    gridColumnEnd: 'span 12',
-  },
+  root: { backgroundColor: 'ivory' },
   avatar: { backgroundColor: 'hotpink' },
   chipContainer: {
     display: 'flex',
@@ -46,7 +43,7 @@ export default React.memo(function FoodRecommandation(props) {
   const classes = useStyles();
 
   return (
-    <Slide direction="left" in={!hidden} mountOnEnter unmountOnExit>
+    <Slide direction="right" in={!hidden} mountOnEnter unmountOnExit>
       <Card className={classes.root} component="article">
         <CardHeader
           avatar={

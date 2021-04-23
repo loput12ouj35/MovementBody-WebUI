@@ -12,7 +12,6 @@ import { inject, observer } from 'mobx-react';
 import React from 'react';
 
 const styles = (theme) => ({
-  root: { gridColumnEnd: 'span 6' },
   avatar: { backgroundColor: 'dodgerblue' },
   content: { fontSize: '0.75em', display: 'flex' },
   grow: { flexGrow: 1 },
@@ -27,7 +26,7 @@ class WaterCard extends React.PureComponent {
     const { cup, ml } = userDailyRecordStore.water;
 
     return (
-      <Card className={classes.root} component="article">
+      <Card component="article">
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>

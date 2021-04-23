@@ -13,7 +13,6 @@ import { inject, observer } from 'mobx-react';
 import React from 'react';
 
 const styles = (theme) => ({
-  root: { gridColumnEnd: 'span 6' },
   avatar: { backgroundColor: 'lightseagreen' },
   content: { fontSize: '0.75em' },
 });
@@ -27,7 +26,7 @@ class StepCountCard extends React.PureComponent {
     const { current, goal, km } = userDailyRecordStore.stepCount;
 
     return (
-      <Card className={classes.root} component="article">
+      <Card component="article">
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>

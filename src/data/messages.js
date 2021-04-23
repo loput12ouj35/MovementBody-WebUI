@@ -2,6 +2,8 @@ const messages = {
   common: {
     next: '다음',
     confirm: '확인',
+    highPriority: '중요',
+    other: '기타',
   },
 
   menu: {
