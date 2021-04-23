@@ -24,10 +24,15 @@ export default createMuiTheme({
 
   overrides: {
     MuiBottomNavigation: {
-      root: { width: '100%', flex: 'none', overflow: 'hidden' },
+      root: {
+        width: '100%',
+        flex: 'none',
+        overflow: 'hidden',
+        backgroundColor: '#f2f2f2',
+      },
     },
     MuiBottomNavigationAction: {
-      root: { ...HOVER_EFFECT, minWidth: null, backgroundColor: '#f2f2f2' },
+      root: { ...HOVER_EFFECT, minWidth: null },
     },
     MuiTabs: {
       flexContainer: {
