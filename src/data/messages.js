@@ -1,11 +1,22 @@
-const messages = {
-  common: {
-    next: '다음',
-    confirm: '확인',
-    highPriority: '중요',
-    other: '기타',
-  },
+const common = {
+  next: '다음',
+  confirm: '확인',
+  highPriority: '중요',
+  other: '기타',
+};
 
+const unit = {
+  step: '걸음',
+  hour: '시간',
+  min: '분',
+  kcal: 'kcal',
+  km: 'km',
+  kg: 'kg',
+  cup: '컵',
+  ml: 'ml',
+};
+
+const rest = {
   menu: {
     profile: '프로필',
     account: '계정 설정',
@@ -43,23 +54,17 @@ const messages = {
       activeTime: '활동 시간',
       food: '음식',
       water: '물',
+      weight: '무게',
+      sleep: '수면',
       foodRecommandation: (n) => `${n}이 부족해요!`,
     },
     subheader: {
       foodRecommandation: '이런 음식은 어떠세요?',
+      weightDown: (n) => `어제보다 ${n}kg 빠지셨어요!`,
     },
     protein: '단백질',
     mental: '정신력',
   },
-
-  unit: {
-    step: '걸음',
-    min: '분',
-    kcal: 'kcal',
-    km: 'km',
-    cup: '컵',
-    ml: 'ml',
-  },
 };
 
-export default messages;
+export default { common, unit, ...rest };

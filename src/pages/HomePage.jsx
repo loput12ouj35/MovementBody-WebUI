@@ -4,8 +4,10 @@ import {
   ActiveTimeCard,
   FoodCard,
   FoodRecommandationCard,
+  SleepCard,
   StepCountCard,
   WaterCard,
+  WeightCard,
 } from 'components';
 import { MESSAGES } from 'data';
 import React from 'react';
@@ -65,6 +67,8 @@ export default React.memo(function HomePage(props) {
         <ActiveTimeCard />
         <FoodCard />
         <WaterCard />
+        <WeightCard />
+        <SleepCard />
       </div>
       <Fab
         color="secondary"

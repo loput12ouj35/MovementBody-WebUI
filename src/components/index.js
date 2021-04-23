@@ -6,6 +6,7 @@ export { default as MemberGenderInput } from './molecules/Member/MemberGenderInp
 export { default as MemberInputTitle } from './molecules/Member/MemberInputTitle';
 export { default as MemberExerciseCodeInput } from './molecules/Member/MemberExerciseCodeInput';
 export { default as SignUpFormButton } from './molecules/Member/SignUpFormButton';
+export { default as ToggleIconButton } from './molecules/HomePageCards/ToggleIconButton';
 export { default as CardMainText } from './molecules/HomePageCards/CardMainText';
 export { default as WaterInput } from './molecules/HomePageCards/WaterInput';
 
@@ -19,3 +20,5 @@ export { default as StepCountCard } from './organisms/HomePageCards/StepCountCar
 export { default as ActiveTimeCard } from './organisms/HomePageCards/ActiveTimeCard';
 export { default as FoodCard } from './organisms/HomePageCards/FoodCard';
 export { default as WaterCard } from './organisms/HomePageCards/WaterCard';
+export { default as WeightCard } from './organisms/HomePageCards/WeightCard';
+export { default as SleepCard } from './organisms/HomePageCards/SleepCard';

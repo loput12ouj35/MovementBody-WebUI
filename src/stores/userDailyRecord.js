@@ -11,6 +11,12 @@ export default new (class UserDailyRecordStore {
     dinner: null,
     snack: 100,
   };
+  @observable.ref weight = { current: 75, last: 73, goal: 70 };
+  @observable.ref sleep = {
+    lastSleepTime: new Date('2021-04-14 23:00'),
+    wakeUpTime: new Date('2021-04-15 07:00'),
+    goal: 7.5,
+  };
 
   constructor() {
     makeObservable(this);
@@ -25,4 +31,6 @@ export default new (class UserDailyRecordStore {
   @action setActiveTime = this.createSetter('activeTime');
   @action setWater = this.createSetter('water');
   @action setFood = this.createSetter('food');
+  @action setWeight = this.createSetter('weight');
+  @action setSleep = this.createSetter('sleep');
 })();
