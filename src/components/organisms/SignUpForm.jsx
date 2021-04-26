@@ -27,8 +27,11 @@ export default React.memo(function SignUpForm(props) {
     exerciseCode: 2,
   });
   const updateValue = useCallback(
-    (name, value) =>
-      setValue((v) => (value === v?.[name] ? v : { ...v, [name]: value })),
+    (name, input) =>
+      setValue((v) => {
+        const _value = typeof input === 'function' ? input(v?.[name]) : input;
+        return _value === v?.[name] ? v : { ...v, [name]: _value };
+      }),
     []
   );
   const classes = useStyles();

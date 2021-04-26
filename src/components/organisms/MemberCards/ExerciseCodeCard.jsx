@@ -45,9 +45,8 @@ const useStyles = makeStyles((theme) => ({
 export default React.memo(function ExerciseCodeCard(props) {
   const { name, value, updateValue } = props;
   const max = 5;
-  // No need 'useCallback' in the following two methods, as this component rerenders only if the value changes.
-  const handleNext = () => updateValue(name, value + 1);
-  const handleBack = () => updateValue(name, value - 1);
+  const handleNext = useCallback(() => updateValue(name, (v) => v + 1), []);
+  const handleBack = useCallback(() => updateValue(name, (v) => v - 1), []);
   const handleChangeIndex = useCallback((step) => updateValue(name, step), []);
   const classes = useStyles();
 
@@ -98,13 +97,13 @@ export default React.memo(function ExerciseCodeCard(props) {
             <Button
               size="small"
               onClick={handleNext}
-              disabled={value === max - 1}
+              disabled={value >= max - 1}
             >
               <KeyboardArrowRight />
             </Button>
           }
           backButton={
-            <Button size="small" onClick={handleBack} disabled={value === 0}>
+            <Button size="small" onClick={handleBack} disabled={value <= 0}>
               <KeyboardArrowLeft />
             </Button>
           }
