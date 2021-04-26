@@ -22,7 +22,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default React.memo(function MemberGenderInput(props) {
   const { name, value, updateValue } = props;
-  const handleChange = useCallback((e, value) => updateValue(name, value), []);
+  const handleChange = useCallback((e, value) => {
+    if (value === null) return;
+    updateValue(name, value);
+  }, []);
   const classes = useStyles();
 
   return (
