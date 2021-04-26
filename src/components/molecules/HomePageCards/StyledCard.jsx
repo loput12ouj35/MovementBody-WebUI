@@ -11,7 +11,7 @@ const _createMediaQuery = (n, widthRem) => ({
 
 const _createResponsiveWidths = ({ responsiveOptions = {} }) => {
   if (!responsiveOptions) return {};
-  const { range = [2, 7], widthRem = 11 } = responsiveOptions;
+  const { range = [2, 7], widthRem = 11.5 } = responsiveOptions;
 
   return Object.assign(
     ..._.range(...range).map((n) => _createMediaQuery(n, widthRem))
