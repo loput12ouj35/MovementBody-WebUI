@@ -9,7 +9,21 @@ const CUP_SIZES = { small: 150, medium: 200, large: 250 };
 const styles = (theme) => ({
   root: { display: 'flex', flexDirection: 'column', alignItems: 'center' },
   buttonContainer: { display: 'flex', marginTop: -12 },
-  cupButton: { padding: 0, width: '2.5em', fontSize: '1em', height: '2.5em' },
+  cupButton: {
+    padding: 0,
+    paddingBottom: '1em',
+    width: '2em',
+    fontSize: '1em',
+    height: '2.5em',
+    border: 0,
+    position: 'relative',
+  },
+  cupLabel: {
+    fontSize: '0.75em',
+    position: 'absolute',
+    bottom: 0,
+    lineHeight: 1.5,
+  },
   cup: {
     '&.small': { fontSize: '0.75rem' },
     '&.medium': { fontSize: '1rem' },
@@ -63,6 +77,7 @@ class WaterInput extends React.PureComponent {
               aria-label={key}
             >
               <LocalDrink className={classes.cup + ` ${key}`} />
+              <span className={classes.cupLabel}>{value}</span>
             </ToggleButton>
           ))}
         </ToggleButtonGroup>
