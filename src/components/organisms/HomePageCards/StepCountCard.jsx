@@ -1,4 +1,4 @@
-import { CardContent } from '@material-ui/core';
+import { CardContent, Typography } from '@material-ui/core';
 import { DirectionsWalk } from '@material-ui/icons';
 import { CardMainText, StyledCard, StyledCardHeader } from 'components';
 import { MESSAGES } from 'data';
@@ -25,7 +25,9 @@ class StepCountCard extends React.PureComponent {
             mainText={current ?? 0}
             subText={` /${(goal ?? 0) + MESSAGES.unit.step}`}
           />
-          <p>{(km ?? 0) + MESSAGES.unit.km}</p>
+          <Typography variant="body2">
+            {(km ?? 0) + MESSAGES.unit.km}
+          </Typography>
         </CardContent>
       </StyledCard>
     );

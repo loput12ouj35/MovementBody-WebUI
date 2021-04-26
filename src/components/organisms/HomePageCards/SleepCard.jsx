@@ -1,9 +1,11 @@
-import { CardContent } from '@material-ui/core';
+import { CardContent, Typography } from '@material-ui/core';
 import { NightsStay } from '@material-ui/icons';
 import { CardMainText, StyledCard, StyledCardHeader } from 'components';
 import { MESSAGES } from 'data';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
+
+const FORMAT = { hour: '2-digit', minute: '2-digit' };
 
 @inject('userDailyRecordStore')
 @observer
@@ -15,6 +17,8 @@ class SleepCard extends React.PureComponent {
       wakeUpTime && lastSleepTime
         ? (wakeUpTime - lastSleepTime) / 1000 / 3600
         : '-';
+    const from = lastSleepTime.toLocaleTimeString([], FORMAT);
+    const to = wakeUpTime.toLocaleTimeString([], FORMAT);
 
     return (
       <StyledCard>
@@ -29,7 +33,7 @@ class SleepCard extends React.PureComponent {
             mainText={diff}
             subText={` /${(goal ?? '-') + MESSAGES.unit.hour}`}
           />
-          <p>{`${lastSleepTime.toLocaleTimeString()} - ${wakeUpTime.toLocaleTimeString()}`}</p>
+          <Typography variant="body2">{`${from} - ${to}`}</Typography>
         </CardContent>
       </StyledCard>
     );

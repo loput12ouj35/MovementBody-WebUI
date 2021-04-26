@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
   card: {
     marginTop: '1em',
     height: 'calc(100% - 1em)',
-    '& .MuiCardContent-root': { fontSize: '0.75em' },
   },
 }));
 

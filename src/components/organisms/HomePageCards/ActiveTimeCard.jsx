@@ -1,4 +1,4 @@
-import { CardContent } from '@material-ui/core';
+import { CardContent, Typography } from '@material-ui/core';
 import { AccessTime } from '@material-ui/icons';
 import { CardMainText, StyledCard, StyledCardHeader } from 'components';
 import { MESSAGES } from 'data';
@@ -25,7 +25,9 @@ class ActiveTimeCard extends React.PureComponent {
             mainText={current ?? 0}
             subText={` /${(goal ?? 0) + MESSAGES.unit.min}`}
           />
-          <p>{(kcal ?? 0) + MESSAGES.unit.kcal}</p>
+          <Typography variant="body2">
+            {(kcal ?? 0) + MESSAGES.unit.kcal}
+          </Typography>
         </CardContent>
       </StyledCard>
     );

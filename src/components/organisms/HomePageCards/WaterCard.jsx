@@ -1,4 +1,4 @@
-import { CardContent, withStyles } from '@material-ui/core';
+import { CardContent, Typography, withStyles } from '@material-ui/core';
 import { LocalDrink } from '@material-ui/icons';
 import {
   CardMainText,
@@ -37,7 +37,9 @@ class WaterCard extends React.PureComponent {
               mainText={cup ?? 0}
               subText={` ${MESSAGES.unit.cup}`}
             />
-            <p>{(ml ?? 0) + MESSAGES.unit.ml}</p>
+            <Typography variant="body2">
+              {(ml ?? 0) + MESSAGES.unit.ml}
+            </Typography>
           </div>
           <WaterInput />
         </CardContent>

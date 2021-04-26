@@ -1,4 +1,4 @@
-import { CardContent } from '@material-ui/core';
+import { CardContent, Typography } from '@material-ui/core';
 import { AirlineSeatReclineNormal } from '@material-ui/icons';
 import { CardMainText, StyledCard, StyledCardHeader } from 'components';
 import { MESSAGES } from 'data';
@@ -26,7 +26,9 @@ class WeightCard extends React.PureComponent {
             mainText={current ?? '-'}
             subText={` →${(goal ?? '-') + MESSAGES.unit.kg}`}
           />
-          <p>{MESSAGES.homePage.subheader.weightDown(diff)}</p>
+          <Typography variant="body2">
+            {MESSAGES.homePage.subheader.weightDown(diff)}
+          </Typography>
         </CardContent>
       </StyledCard>
     );

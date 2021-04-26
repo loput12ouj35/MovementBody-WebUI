@@ -1,4 +1,4 @@
-import { Fab, makeStyles } from '@material-ui/core';
+import { Fab, makeStyles, Typography } from '@material-ui/core';
 import { Edit, LowPriority, PriorityHigh } from '@material-ui/icons';
 import {
   ActiveTimeCard,
@@ -30,17 +30,17 @@ export default React.memo(function HomePage(props) {
 
   return (
     <div className={classes.root}>
-      <p className={classes.title}>
+      <Typography className={classes.title}>
         <PriorityHigh fontSize="small" />
         {MESSAGES.common.highPriority}
-      </p>
+      </Typography>
       <ol className={classes.cardContainer}>
         <FoodRecommandationCard />
       </ol>
-      <p className={classes.title}>
+      <Typography className={classes.title}>
         <LowPriority fontSize="small" />
         {MESSAGES.common.other}
-      </p>
+      </Typography>
       <ol className={classes.cardContainer}>
         <StepCountCard />
         <ActiveTimeCard />

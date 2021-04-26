@@ -4,6 +4,7 @@ import {
   makeStyles,
   MobileStepper,
   Slide,
+  Typography,
 } from '@material-ui/core';
 import {
   DirectionsBike,
@@ -37,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     padding: '0.5em',
   },
-  label: { fontSize: '2em', margin: '1rem' },
+  label: { margin: '1rem' },
   icon: { fontSize: '4em', margin: '1rem' },
 }));
 
@@ -78,9 +79,13 @@ export default React.memo(function ExerciseCodeCard(props) {
                 direction="up"
                 style={{ transitionDelay: 100 }}
               >
-                <p className={classes.label}>
+                <Typography
+                  variant="h4"
+                  component="p"
+                  className={classes.label}
+                >
                   {MESSAGES.member.exerciesSteps[i]}
-                </p>
+                </Typography>
               </Slide>
             </div>
           ))}

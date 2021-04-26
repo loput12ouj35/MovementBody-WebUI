@@ -45,7 +45,7 @@ export default React.memo(function StyledCardHeader(props) {
       </div>
       {action && <div className={classes.action}>{action}</div>}
       <div className={classes.content}>
-        {title && <p>{title}</p>}
+        {title && <Typography>{title}</Typography>}
         {subheader && (
           <Typography display="block" variant="body2" color="textSecondary">
             {subheader}
