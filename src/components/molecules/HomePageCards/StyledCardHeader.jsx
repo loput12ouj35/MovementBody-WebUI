@@ -9,7 +9,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   action: { position: 'absolute', right: 0, top: 0 },
-  content: { flex: '1 1 auto', marginTop: '1em', paddingLeft: '4.5em' },
+  content: {
+    flex: '1 1 auto',
+    marginTop: '1em',
+    paddingLeft: '4.5em',
+    minHeight: '1.5em',
+  },
   bookmark: {
     backgroundImage: 'linear-gradient(60deg, transparent, rgba(0,0,0,0.14))',
     flex: '0 0 auto',
@@ -33,7 +38,7 @@ export default React.memo(function StyledCardHeader(props) {
         className={classes.bookmark}
         style={{
           backgroundColor: markColor,
-          boxShadow: `0 4px 20px 0 rgb(0 0 0 / 12%), 0 7px 10px -5px ${markShadow}`,
+          boxShadow: `0 4px 20px 0 rgba(0, 0, 0, 0.12), 0 7px 10px -5px ${markShadow}`,
         }}
       >
         {icon}

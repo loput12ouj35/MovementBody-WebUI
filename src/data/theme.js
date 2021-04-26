@@ -53,5 +53,6 @@ export default createMuiTheme({
       textColorInherit: { opacity: null },
     },
     MuiCard: { root: { overflow: null } },
+    MuiDivider: { root: { margin: '1rem 0' } },
   },
 });

@@ -1,19 +1,12 @@
-import {
-  AirlineSeatReclineNormal,
-  EmojiPeople,
-  Face,
-  FitnessCenter,
-} from '@material-ui/icons';
-import {
-  MemberExerciseCodeInput,
-  MemberGenderInput,
-  MemberInputTitle,
-  MemberNumberInput,
-  SignUpFormButton,
-} from 'components';
+import { makeStyles, Typography } from '@material-ui/core';
+import { BasicInfoCard, ExerciseCodeCard, SignUpFormButton } from 'components';
 import { MESSAGES } from 'data';
 import React, { useCallback, useState } from 'react';
 import 'scss/components/sign-up-form.scss';
+
+const useStyles = makeStyles((theme) => ({
+  title: { margin: '1rem' },
+}));
 
 export default React.memo(function SignUpForm(props) {
   const [value, setValue] = useState({
@@ -27,45 +20,19 @@ export default React.memo(function SignUpForm(props) {
       setValue((v) => (value === v?.[name] ? v : { ...v, [name]: value })),
     []
   );
+  const classes = useStyles();
 
   return (
     <article className="sign-up-form">
-      <h2>{MESSAGES.signUp.title('존맥')}</h2>
-      <h4>{MESSAGES.signUp.subtitle}</h4>
+      <Typography variant="h4" className={classes.title}>
+        {MESSAGES.signUp.title('존맥')}
+      </Typography>
+      <Typography variant="h6" className={classes.title}>
+        {MESSAGES.signUp.subtitle}
+      </Typography>
       <form>
-        <MemberInputTitle icon={<Face />} label={MESSAGES.signUp.gender} />
-        <MemberGenderInput
-          name="gender"
-          value={value.gender}
-          updateValue={updateValue}
-        />
-        <MemberInputTitle
-          icon={<EmojiPeople />}
-          label={MESSAGES.signUp.height}
-        />
-        <MemberNumberInput
-          name="height"
-          value={value.height}
-          updateValue={updateValue}
-          min={1}
-          max={300}
-        />
-        <MemberInputTitle
-          icon={<AirlineSeatReclineNormal />}
-          label={MESSAGES.signUp.weight}
-        />
-        <MemberNumberInput
-          name="weight"
-          value={value.weight}
-          updateValue={updateValue}
-          min={1}
-          max={300}
-        />
-        <MemberInputTitle
-          icon={<FitnessCenter />}
-          label={MESSAGES.signUp.exercise}
-        />
-        <MemberExerciseCodeInput
+        <BasicInfoCard value={value} updateValue={updateValue} />
+        <ExerciseCodeCard
           name="exerciseCode"
           value={value.exerciseCode}
           updateValue={updateValue}

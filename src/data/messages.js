@@ -31,14 +31,17 @@ const rest = {
   signUp: {
     title: (id) => `반값읍니다, ${id}님.`,
     subtitle: '아래 내용을 작성해주세요.',
-    email: 'Email 주소',
+  },
+
+  member: {
     gender: '성별',
     male: '남',
     female: '여',
     other: '기타',
     height: '키 (cm)',
     weight: '몸무게 (kg)',
-    exercise: '운동량',
+    basicInfoTitle: '기본 정보를 알려주세요',
+    exerciseTitle: '운동 빈도를 알려주세요.',
     exerciesSteps: [
       '운동을 아예 하지 않음',
       '운동을 거의 하지 않음',
