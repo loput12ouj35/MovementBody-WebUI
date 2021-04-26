@@ -1,19 +1,17 @@
-import {
-  Avatar,
-  Card,
-  CardContent,
-  CardHeader,
-  withStyles,
-} from '@material-ui/core';
+import { CardContent, withStyles } from '@material-ui/core';
 import { LocalDrink } from '@material-ui/icons';
-import { CardMainText, WaterInput } from 'components';
+import {
+  CardMainText,
+  StyledCard,
+  StyledCardHeader,
+  WaterInput,
+} from 'components';
 import { MESSAGES } from 'data';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
 
 const styles = (theme) => ({
-  avatar: { backgroundColor: 'dodgerblue' },
-  content: { fontSize: '0.75em', display: 'flex' },
+  content: { display: 'flex' },
   grow: { flexGrow: 1 },
 });
 
@@ -26,15 +24,12 @@ class WaterCard extends React.PureComponent {
     const { cup, ml } = userDailyRecordStore.water;
 
     return (
-      <Card>
-        <CardHeader
-          avatar={
-            <Avatar className={classes.avatar}>
-              <LocalDrink />
-            </Avatar>
-          }
+      <StyledCard>
+        <StyledCardHeader
+          icon={<LocalDrink />}
+          markColor="dodgerblue"
+          markShadow="rgba(30, 144, 255, 0.4)"
           title={MESSAGES.homePage.title.water}
-          subheader="뭐라하지"
         />
         <CardContent className={classes.content}>
           <div className={classes.grow}>
@@ -46,7 +41,7 @@ class WaterCard extends React.PureComponent {
           </div>
           <WaterInput />
         </CardContent>
-      </Card>
+      </StyledCard>
     );
   }
 }

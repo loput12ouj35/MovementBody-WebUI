@@ -5,11 +5,10 @@ import {
   Zoom,
   Slide,
   Avatar,
-  Card,
-  CardHeader,
   CardContent,
 } from '@material-ui/core';
 import { Announcement, Close } from '@material-ui/icons';
+import { StyledCard, StyledCardHeader } from 'components';
 import { MESSAGES } from 'data';
 import React, { useCallback, useState } from 'react';
 
@@ -26,7 +25,6 @@ const dummy = [
 
 const useStyles = makeStyles((theme) => ({
   root: { backgroundColor: 'ivory' },
-  avatar: { backgroundColor: 'hotpink' },
   chipContainer: {
     display: 'flex',
     justifyContent: 'center',
@@ -44,13 +42,11 @@ export default React.memo(function FoodRecommandation(props) {
 
   return (
     <Slide direction="right" in={!hidden} mountOnEnter unmountOnExit>
-      <Card className={classes.root}>
-        <CardHeader
-          avatar={
-            <Avatar className={classes.avatar}>
-              <Announcement />
-            </Avatar>
-          }
+      <StyledCard className={classes.root} responsiveOptions={{ widthRem: 22 }}>
+        <StyledCardHeader
+          icon={<Announcement />}
+          markColor="hotpink"
+          markShadow="rgba(255, 105, 180, 0.4)"
           title={MESSAGES.homePage.title.foodRecommandation(
             MESSAGES.homePage.mental
           )}
@@ -80,7 +76,7 @@ export default React.memo(function FoodRecommandation(props) {
             ))}
           </div>
         </CardContent>
-      </Card>
+      </StyledCard>
     </Slide>
   );
 });

@@ -1,53 +1,38 @@
-import {
-  Avatar,
-  Card,
-  CardContent,
-  CardHeader,
-  withStyles,
-} from '@material-ui/core';
+import { CardContent } from '@material-ui/core';
 import { Restaurant } from '@material-ui/icons';
 import { MESSAGES } from 'data';
 import React from 'react';
 import _ from 'lodash';
 import { inject, observer } from 'mobx-react';
-import { CardMainText } from 'components';
+import { CardMainText, StyledCard, StyledCardHeader } from 'components';
 
-const styles = (theme) => ({
-  avatar: { backgroundColor: 'orange' },
-  content: { fontSize: '0.75em' },
-});
-
-@withStyles(styles)
 @inject('userDailyRecordStore')
 @observer
 class FoodCrad extends React.PureComponent {
   toNumber = (data) => _.mapValues(data, (v) => v ?? 0);
 
   render() {
-    const { classes, userDailyRecordStore } = this.props;
+    const { userDailyRecordStore } = this.props;
     const { goal, breakfirst, lunch, dinner, snack } = this.toNumber(
       userDailyRecordStore.food
     );
     const total = breakfirst + lunch + dinner;
 
     return (
-      <Card>
-        <CardHeader
-          avatar={
-            <Avatar className={classes.avatar}>
-              <Restaurant />
-            </Avatar>
-          }
+      <StyledCard>
+        <StyledCardHeader
+          icon={<Restaurant />}
+          markColor="orange"
+          markShadow="rgba(255, 165, 0, 0.4)"
           title={MESSAGES.homePage.title.food}
-          subheader="뭐라하지"
         />
-        <CardContent className={classes.content}>
+        <CardContent>
           <CardMainText
             mainText={total}
             subText={` /${goal + MESSAGES.unit.kcal}`}
           />
         </CardContent>
-      </Card>
+      </StyledCard>
     );
   }
 }

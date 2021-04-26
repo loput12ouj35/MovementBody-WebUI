@@ -9,6 +9,8 @@ export { default as SignUpFormButton } from './molecules/Member/SignUpFormButton
 export { default as ToggleIconButton } from './molecules/HomePageCards/ToggleIconButton';
 export { default as CardMainText } from './molecules/HomePageCards/CardMainText';
 export { default as WaterInput } from './molecules/HomePageCards/WaterInput';
+export { default as StyledCardHeader } from './molecules/HomePageCards/StyledCardHeader';
+export { default as StyledCard } from './molecules/HomePageCards/StyledCard';
 
 export { default as HomePageHeader } from './organisms/Header/HomePageHeader';
 export { default as SignUpPageHeader } from './organisms/Header/SignUpPageHeader';

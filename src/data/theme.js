@@ -52,5 +52,6 @@ export default createMuiTheme({
       },
       textColorInherit: { opacity: null },
     },
+    MuiCard: { root: { overflow: null } },
   },
 });

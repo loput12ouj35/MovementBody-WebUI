@@ -1,27 +1,15 @@
-import {
-  Avatar,
-  Card,
-  CardContent,
-  CardHeader,
-  withStyles,
-} from '@material-ui/core';
+import { CardContent } from '@material-ui/core';
 import { NightsStay } from '@material-ui/icons';
-import { CardMainText } from 'components';
+import { CardMainText, StyledCard, StyledCardHeader } from 'components';
 import { MESSAGES } from 'data';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
 
-const styles = (theme) => ({
-  avatar: { backgroundColor: 'darkslategray', color: 'yellow' },
-  content: { fontSize: '0.75em' },
-});
-
-@withStyles(styles)
 @inject('userDailyRecordStore')
 @observer
 class SleepCard extends React.PureComponent {
   render() {
-    const { classes, userDailyRecordStore } = this.props;
+    const { userDailyRecordStore } = this.props;
     const { lastSleepTime, wakeUpTime, goal } = userDailyRecordStore.sleep;
     const diff =
       wakeUpTime && lastSleepTime
@@ -29,24 +17,21 @@ class SleepCard extends React.PureComponent {
         : '-';
 
     return (
-      <Card>
-        <CardHeader
-          avatar={
-            <Avatar className={classes.avatar}>
-              <NightsStay />
-            </Avatar>
-          }
+      <StyledCard>
+        <StyledCardHeader
+          icon={<NightsStay style={{ color: 'yellow' }} />}
+          markColor="darkslategray"
+          markShadow="rgba(47, 79, 79, 0.4)"
           title={MESSAGES.homePage.title.sleep}
-          subheader="뭐라하지"
         />
-        <CardContent className={classes.content}>
+        <CardContent>
           <CardMainText
             mainText={diff}
             subText={` /${(goal ?? '-') + MESSAGES.unit.hour}`}
           />
           <p>{`${lastSleepTime.toLocaleTimeString()} - ${wakeUpTime.toLocaleTimeString()}`}</p>
         </CardContent>
-      </Card>
+      </StyledCard>
     );
   }
 }
