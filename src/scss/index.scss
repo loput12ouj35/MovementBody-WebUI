@@ -70,6 +70,10 @@ ol {
   list-style: none;
 }
 
+li {
+  display: inline-block;
+}
+
 // button reset
 button {
   cursor: pointer;

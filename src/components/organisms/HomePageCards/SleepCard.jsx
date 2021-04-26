@@ -29,7 +29,7 @@ class SleepCard extends React.PureComponent {
         : '-';
 
     return (
-      <Card component="article">
+      <Card>
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>

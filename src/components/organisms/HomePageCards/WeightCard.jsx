@@ -26,7 +26,7 @@ class WeightCard extends React.PureComponent {
     const diff = (current ?? 0) - (last ?? 0);
 
     return (
-      <Card component="article">
+      <Card>
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>

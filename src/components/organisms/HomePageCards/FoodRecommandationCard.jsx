@@ -44,7 +44,7 @@ export default React.memo(function FoodRecommandation(props) {
 
   return (
     <Slide direction="right" in={!hidden} mountOnEnter unmountOnExit>
-      <Card className={classes.root} component="article">
+      <Card className={classes.root}>
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>

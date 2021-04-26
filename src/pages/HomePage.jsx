@@ -11,20 +11,15 @@ import {
 } from 'components';
 import { MESSAGES } from 'data';
 import React from 'react';
+import _ from 'lodash';
 
-const CARD_MIN_WIDTH = '10em';
-const CARD_GAP = '0.5em';
-const rowToMinWidth = (n) =>
-  `calc((${CARD_MIN_WIDTH} + ${CARD_GAP} * 2) * ${n})`;
-
-const CARD_COANINER_STYLE = {
-  display: 'flex',
-  padding: `calc(${CARD_GAP} / 2)`,
-  flexDirection: 'column',
-  flexWrap: 'wrap',
-  gap: CARD_GAP,
-  '& > *': { minWidth: CARD_MIN_WIDTH, flexShrink: 0 },
-};
+const CARD_GAP = '0.25em';
+const createMediaQuery = (n) => ({
+  [`@media (min-width:${12.5 * n}rem)`]: {
+    maxWidth: `${100 / n}%`,
+    flexBasis: `${100 / n}%`,
+  },
+});
 
 const useStyles = makeStyles((theme) => ({
   root: { backgroundColor: '#fafafa', height: '100%', overflow: 'hidden auto' },
@@ -32,17 +27,21 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     color: 'rgba(0, 0, 0, 0.87)',
-    margin: CARD_GAP,
+    margin: '0.5em',
     lineHeight: 'normal',
   },
   fab: { position: 'fixed', bottom: '5em', right: '2em' },
-  highCardContainer: {
-    ...CARD_COANINER_STYLE,
-    [`@media (min-width: ${rowToMinWidth(2)})`]: { maxHeight: 220 },
-  },
-  lowCardContainer: {
-    ...CARD_COANINER_STYLE,
-    [`@media (min-width: ${rowToMinWidth(2)})`]: { maxHeight: 500 },
+  cardContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '& > *': {
+      padding: CARD_GAP,
+      boxSizing: 'border-box',
+      maxWidth: '100%',
+      flexBasis: '100%',
+      '& > *': { height: '100%' },
+      ...Object.assign(..._.range(2, 7).map(createMediaQuery)),
+    },
   },
 }));
 
@@ -55,21 +54,35 @@ export default React.memo(function HomePage(props) {
         <PriorityHigh fontSize="small" />
         {MESSAGES.common.highPriority}
       </p>
-      <div className={classes.highCardContainer}>
-        <FoodRecommandationCard />
-      </div>
+      <ol className={classes.cardContainer}>
+        <li>
+          <FoodRecommandationCard />
+        </li>
+      </ol>
       <p className={classes.title}>
         <LowPriority fontSize="small" />
         {MESSAGES.common.other}
       </p>
-      <div className={classes.lowCardContainer}>
-        <StepCountCard />
-        <ActiveTimeCard />
-        <FoodCard />
-        <WaterCard />
-        <WeightCard />
-        <SleepCard />
-      </div>
+      <ol className={classes.cardContainer}>
+        <li>
+          <StepCountCard />
+        </li>
+        <li>
+          <ActiveTimeCard />
+        </li>
+        <li>
+          <FoodCard />
+        </li>
+        <li>
+          <WaterCard />
+        </li>
+        <li>
+          <WeightCard />
+        </li>
+        <li>
+          <SleepCard />
+        </li>
+      </ol>
       <Fab
         color="secondary"
         className={classes.fab}
