@@ -7,10 +7,10 @@ export default React.memo(function App() {
     <Switch>
       <Route path="/login">로그인 페이지</Route>
       <Route path={['/error', '/404', '/403']}>에러 페이지</Route>
-      <Route path={['/home', '/history', '/menu', '/signUp']}>
+      <Redirect exact from="/" to="/signUp" />
+      <Route path="/">
         <MainPage />
       </Route>
-      <Redirect exact from="/" to="/signUp" />
       <Redirect from="*" to="/404" />
     </Switch>
   );
