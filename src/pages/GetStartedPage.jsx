@@ -14,7 +14,7 @@ const reducer = (index, action) => {
   }
 };
 
-export default React.memo(function GetStartPage(props) {
+export default React.memo(function GetStartedPage(props) {
   const [index, dispacth] = useReducer(reducer, 0);
   const max = 3;
   const handleNext = useCallback(() => dispacth({ type: 'next' }), []);

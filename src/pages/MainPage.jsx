@@ -3,7 +3,7 @@ import 'scss/pages/main-page.scss';
 import { Route, Switch } from 'react-router';
 import { Bnb, HomePageHeader, SignUpPageHeader } from 'components';
 import { HomePage, ProfilePage, SignUpPage } from 'pages';
-import GetStartPage from './GetStartPage';
+import GetStartedPage from './GetStartedPage';
 
 export default React.memo(function MainPage(props) {
   const [scrollTarget, setScrollTarget] = useState(undefined); // keep it undefined here to not make it throw an error.
@@ -25,7 +25,7 @@ export default React.memo(function MainPage(props) {
         {route('history', <p>todo</p>)}
         {route('menu', <p>todo</p>)}
         {route('signUp', <SignUpPage />, <SignUpPageHeader />)}
-        {route('start', <GetStartPage />)}
+        {route('start', <GetStartedPage />)}
       </Switch>
       <ProfilePage />
     </div>
