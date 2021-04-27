@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     maxWidth: '48em',
+    padding: '1em 0',
     overflowX: 'hidden',
   },
   title: { margin: '1rem' },
