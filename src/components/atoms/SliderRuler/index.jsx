@@ -26,13 +26,13 @@ export default class SliderRuler extends React.PureComponent {
   state = { canvasWidth: 100 };
   wrapperRef = React.createRef();
 
-  adjustSize() {
+  adjustSize = () => {
     if (!this.wrapperRef.current) return;
     this.setState({ canvasWidth: this.wrapperRef.current.offsetWidth });
-  }
+  };
 
   componentDidMount() {
-    this.adjustSize();
+    setTimeout(this.adjustSize, 100);
   }
 
   componentDidUpdate() {
