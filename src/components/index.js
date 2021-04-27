@@ -24,3 +24,4 @@ export { default as WeightCard } from './organisms/HomePageCards/WeightCard';
 export { default as SleepCard } from './organisms/HomePageCards/SleepCard';
 export { default as ExerciseCodeCard } from './organisms/MemberCards/ExerciseCodeCard';
 export { default as BasicInfoCard } from './organisms/MemberCards/BasicInfoCard';
+export { default as StartView1 } from './organisms/GetStartedPageViews/StartView1';
