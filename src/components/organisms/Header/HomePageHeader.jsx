@@ -7,8 +7,12 @@ import {
   useScrollTrigger,
 } from '@material-ui/core';
 import { HeaderAccountIcon } from 'components';
+import { MESSAGES } from 'data';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundImage: 'linear-gradient(60deg, transparent, rgba(0,0,0,0.14))',
+  },
   h6: { flex: 'auto' },
 }));
 
@@ -22,10 +26,14 @@ export default React.memo(function HomePageHeader(props) {
   const classes = useStyles();
 
   return (
-    <AppBar position="relative" elevation={scrolled ? 4 : 0}>
+    <AppBar
+      className={classes.root}
+      elevation={scrolled ? 4 : 0}
+      position="relative"
+    >
       <Toolbar>
         <Typography className={classes.h6} variant="h6">
-          가제
+          {MESSAGES.header.home}
         </Typography>
         <HeaderAccountIcon />
       </Toolbar>

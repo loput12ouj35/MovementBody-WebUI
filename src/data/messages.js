@@ -26,6 +26,7 @@ const rest = {
   header: {
     signUp: '가입하기',
     profile: '프로필',
+    home: '홈',
   },
 
   signUp: {
