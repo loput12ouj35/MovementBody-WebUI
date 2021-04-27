@@ -6,15 +6,15 @@ import _ from 'lodash';
 import { inject, observer } from 'mobx-react';
 import { CardMainText, StyledCard, StyledCardHeader } from 'components';
 
-@inject('userDailyRecordStore')
+@inject('userDailyRecordStoreStore')
 @observer
 class FoodCrad extends React.PureComponent {
   toNumber = (data) => _.mapValues(data, (v) => v ?? 0);
 
   render() {
-    const { userDailyRecordStore } = this.props;
+    const { userDailyRecordStoreStore } = this.props;
     const { goal, breakfirst, lunch, dinner, snack } = this.toNumber(
-      userDailyRecordStore.food
+      userDailyRecordStoreStore.food
     );
     const total = breakfirst + lunch + dinner;
 

@@ -1,2 +1,2 @@
-export { default as userStore } from './userStore';
-export { default as userDailyRecordStore } from './userDailyRecord';
+export { default as profilePageStore } from './profilePageStore';
+export { default as userDailyRecordStoreStore } from './userDailyRecordStore';

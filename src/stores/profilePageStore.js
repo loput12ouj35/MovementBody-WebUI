@@ -1,6 +1,6 @@
 import { observable, action, makeObservable } from 'mobx';
 
-export default new (class UserStore {
+export default new (class ProfilePageStore {
   @observable profilePageOpen = false;
 
   constructor() {

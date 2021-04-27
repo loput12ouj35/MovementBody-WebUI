@@ -8,20 +8,20 @@ const styles = (theme) => ({
 });
 
 @withStyles(styles)
-@inject('userStore')
+@inject('profilePageStore')
 @observer
 class ProfilePage extends React.PureComponent {
   render() {
-    const { userStore, classes } = this.props;
+    const { profilePageStore, classes } = this.props;
 
     return (
       <Drawer
         anchor="bottom"
-        open={userStore.profilePageOpen}
+        open={profilePageStore.profilePageOpen}
         variant="persistent"
         PaperProps={{ className: classes.paper + ' main-popup-page' }}
       >
-        <ProfilePageHeader close={userStore.closeProfilePage} />
+        <ProfilePageHeader close={profilePageStore.closeProfilePage} />
         <section>test</section>
       </Drawer>
     );

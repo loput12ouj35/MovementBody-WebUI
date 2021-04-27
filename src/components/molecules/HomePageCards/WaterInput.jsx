@@ -32,13 +32,13 @@ const styles = (theme) => ({
 });
 
 @withStyles(styles)
-@inject('userDailyRecordStore')
+@inject('userDailyRecordStoreStore')
 @observer
 class WaterInput extends React.PureComponent {
   state = { cupSize: 200 };
 
   update = (cupDiff = 0, mlDiff = 0) =>
-    this.props.userDailyRecordStore.setWater(({ cup, ml }) => {
+    this.props.userDailyRecordStoreStore.setWater(({ cup, ml }) => {
       const _cup = Math.max(0, cup + cupDiff);
       const _ml = _cup === 0 ? 0 : Math.max(0, ml + mlDiff);
 
@@ -51,8 +51,8 @@ class WaterInput extends React.PureComponent {
   handleChange = (e, cupSize) => this.setState({ cupSize });
 
   render() {
-    const { userDailyRecordStore, classes } = this.props;
-    const disabled = userDailyRecordStore.water.cup <= 0;
+    const { userDailyRecordStoreStore, classes } = this.props;
+    const disabled = userDailyRecordStoreStore.water.cup <= 0;
     return (
       <div className={classes.root}>
         <div className={classes.buttonContainer}>

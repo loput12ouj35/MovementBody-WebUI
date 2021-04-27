@@ -30,11 +30,11 @@ export default React.memo(function HeaderAccountIcon(props) {
 
 const ORIGIN = { vertical: 'top', horizontal: 'right' };
 
-@inject('userStore')
+@inject('profilePageStore')
 class AccountMenu extends React.Component {
   openProfilePage = () => {
-    const { closeMenu, userStore } = this.props;
-    userStore.openProfilePage();
+    const { closeMenu, profilePageStore } = this.props;
+    profilePageStore.openProfilePage();
     closeMenu();
   };
 
