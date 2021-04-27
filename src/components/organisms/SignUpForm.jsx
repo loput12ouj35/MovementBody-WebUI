@@ -1,4 +1,4 @@
-import { makeStyles, Typography } from '@material-ui/core';
+import { Slide, makeStyles, Typography } from '@material-ui/core';
 import { BasicInfoCard, ExerciseCodeCard, SignUpFormButton } from 'components';
 import { MESSAGES } from 'data';
 import React, { useCallback, useState } from 'react';
@@ -46,14 +46,16 @@ export default React.memo(function SignUpForm(props) {
         <Typography variant="h6" className={classes.title}>
           {MESSAGES.signUp.subtitle}
         </Typography>
-        <form className={classes.form}>
-          <BasicInfoCard value={value} updateValue={updateValue} />
-          <ExerciseCodeCard
-            name="exerciseCode"
-            value={value.exerciseCode}
-            updateValue={updateValue}
-          />
-        </form>
+        <Slide in direction="up">
+          <form className={classes.form}>
+            <BasicInfoCard value={value} updateValue={updateValue} />
+            <ExerciseCodeCard
+              name="exerciseCode"
+              value={value.exerciseCode}
+              updateValue={updateValue}
+            />
+          </form>
+        </Slide>
         <SignUpFormButton value={value} />
       </div>
     </div>

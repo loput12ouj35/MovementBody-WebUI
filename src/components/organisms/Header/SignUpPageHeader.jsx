@@ -3,16 +3,20 @@ import {
   AppBar,
   IconButton,
   makeStyles,
-  Slide,
   Toolbar,
   Typography,
   useScrollTrigger,
 } from '@material-ui/core';
-import { ArrowBack } from '@material-ui/icons';
+import { Close } from '@material-ui/icons';
 import { MESSAGES } from 'data';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: 'mediumslateblue',
+    backgroundImage: 'linear-gradient(60deg, transparent, rgba(0,0,0,0.14))',
+    color: 'white',
+  },
   h6: { flex: 'auto' },
 }));
 
@@ -26,17 +30,19 @@ export default React.memo(function SignUpPageHeader(props) {
   const classes = useStyles();
 
   return (
-    <Slide appear={false} direction="down" in={scrolled}>
-      <AppBar color="inherit">
-        <Toolbar>
-          <IconButton color="inherit" edge="start" component={Link} to="/home">
-            <ArrowBack />
-          </IconButton>
-          <Typography className={classes.h6} variant="h6">
-            {MESSAGES.header.signUp}
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </Slide>
+    <AppBar
+      className={classes.root}
+      elevation={scrolled ? 4 : 0}
+      position="relative"
+    >
+      <Toolbar>
+        <Typography className={classes.h6} variant="h6">
+          {MESSAGES.header.signUp}
+        </Typography>
+        <IconButton color="inherit" edge="end" component={Link} to="/home">
+          <Close />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
   );
 });
