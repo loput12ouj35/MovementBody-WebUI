@@ -13,7 +13,11 @@ import { MESSAGES } from 'data';
 import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
-  root: { backgroundColor: '#fafafa', height: '100%' },
+  root: {
+    backgroundColor: '#fafafa',
+    display: 'flex',
+    flexDirection: 'column',
+  },
   title: {
     display: 'flex',
     alignItems: 'center',

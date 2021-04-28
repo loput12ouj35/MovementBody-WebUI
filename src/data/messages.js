@@ -17,16 +17,13 @@ const unit = {
 };
 
 const rest = {
-  menu: {
-    profile: '프로필',
-    account: '계정 설정',
-    logout: '로그아웃',
-  },
-
   header: {
+    logo: '대충 로고',
     signUp: '가입하기',
     profile: '프로필',
     home: '홈',
+    menu1: '마제소바1',
+    menu2: '마제소바2',
   },
 
   signUp: {

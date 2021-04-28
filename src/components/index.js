@@ -1,6 +1,7 @@
-export { default as SliderRuler } from './atoms/SliderRuler/index';
+export { default as SliderRuler } from './atoms/SliderRuler';
 
-export { default as HeaderAccountIcon } from './molecules/Header/HeaderAccountIcon';
+export { default as ProfileIconButton } from './molecules/Header/ProfileIconButton';
+export { default as LogoutIconButton } from './molecules/Header/LogoutIconButton';
 export { default as MemberNumberInput } from './molecules/Member/MemberNumberInput';
 export { default as MemberGenderInput } from './molecules/Member/MemberGenderInput';
 export { default as SignUpFormButton } from './molecules/Member/SignUpFormButton';
@@ -9,6 +10,7 @@ export { default as CardMainText } from './molecules/HomePageCards/CardMainText'
 export { default as WaterInput } from './molecules/HomePageCards/WaterInput';
 export { default as StyledCardHeader } from './molecules/HomePageCards/StyledCardHeader';
 export { default as StyledCard } from './molecules/HomePageCards/StyledCard';
+export { default as GlobalNavigation } from './molecules/Header/GlobalNavigation';
 
 export { default as HomePageHeader } from './organisms/Header/HomePageHeader';
 export { default as SignUpPageHeader } from './organisms/Header/SignUpPageHeader';

@@ -6,13 +6,18 @@ import {
   Typography,
   useScrollTrigger,
 } from '@material-ui/core';
-import { HeaderAccountIcon } from 'components';
+import {
+  GlobalNavigation,
+  LogoutIconButton,
+  ProfileIconButton,
+} from 'components';
 import { MESSAGES } from 'data';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundImage: 'linear-gradient(60deg, transparent, rgba(0,0,0,0.14))',
   },
+  grow: { flexGrow: 1 },
   h6: { flex: 'auto' },
 }));
 
@@ -32,10 +37,11 @@ export default React.memo(function HomePageHeader(props) {
       position="relative"
     >
       <Toolbar>
-        <Typography className={classes.h6} variant="h6">
-          {MESSAGES.header.home}
-        </Typography>
-        <HeaderAccountIcon />
+        <Typography variant="h6">{MESSAGES.header.logo}</Typography>
+        <div className={classes.grow} />
+        <GlobalNavigation />
+        <ProfileIconButton />
+        <LogoutIconButton />
       </Toolbar>
     </AppBar>
   );
