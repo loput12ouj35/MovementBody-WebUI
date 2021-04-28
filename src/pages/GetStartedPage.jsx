@@ -6,12 +6,6 @@ import SwipeableViews from 'react-swipeable-views';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: '#fafafa',
-    display: 'flex',
-    justifyContent: 'center',
-    height: '100%',
-  },
-  container: {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
@@ -54,45 +48,43 @@ export default React.memo(function GetStartedPage(props) {
 
   return (
     <div className={classes.root}>
-      <div className={classes.container}>
-        <SwipeableViews
-          style={{ height: '100%' }}
-          containerStyle={{ height: '100%' }}
-          index={index}
-          enableMouseEvents
-          onChangeIndex={handleChangeIndex}
-        >
-          <StartView1 />
-          <span>todo</span>
-          <span>todo</span>
-        </SwipeableViews>
-        <MobileStepper
-          className={classes.stepper}
-          steps={max}
-          position="static"
-          activeStep={index}
-          nextButton={
-            <Button
-              className={classes.button}
-              size="small"
-              onClick={handleNext}
-              disabled={index >= max - 1}
-            >
-              <KeyboardArrowRight />
-            </Button>
-          }
-          backButton={
-            <Button
-              className={classes.button}
-              size="small"
-              onClick={handleBack}
-              disabled={index <= 0}
-            >
-              <KeyboardArrowLeft />
-            </Button>
-          }
-        />
-      </div>
+      <SwipeableViews
+        style={{ height: '100%' }}
+        containerStyle={{ height: '100%' }}
+        index={index}
+        enableMouseEvents
+        onChangeIndex={handleChangeIndex}
+      >
+        <StartView1 />
+        <span>todo</span>
+        <span>todo</span>
+      </SwipeableViews>
+      <MobileStepper
+        className={classes.stepper}
+        steps={max}
+        position="static"
+        activeStep={index}
+        nextButton={
+          <Button
+            className={classes.button}
+            size="small"
+            onClick={handleNext}
+            disabled={index >= max - 1}
+          >
+            <KeyboardArrowRight />
+          </Button>
+        }
+        backButton={
+          <Button
+            className={classes.button}
+            size="small"
+            onClick={handleBack}
+            disabled={index <= 0}
+          >
+            <KeyboardArrowLeft />
+          </Button>
+        }
+      />
     </div>
   );
 });

@@ -5,16 +5,10 @@ import React, { useCallback, useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: '#fafafa',
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  container: {
     display: 'flex',
     flexDirection: 'column',
     maxWidth: '48em',
     padding: '1em 0',
-    overflowX: 'hidden',
   },
   title: { margin: '1rem' },
   form: { display: 'flex', flexDirection: 'column', padding: '0.5em 0' },
@@ -39,25 +33,23 @@ export default React.memo(function SignUpForm(props) {
 
   return (
     <div className={classes.root}>
-      <div className={classes.container}>
-        <Typography variant="h4" className={classes.title}>
-          {MESSAGES.signUp.title('존맥')}
-        </Typography>
-        <Typography variant="h6" className={classes.title}>
-          {MESSAGES.signUp.subtitle}
-        </Typography>
-        <Slide in direction="up">
-          <form className={classes.form}>
-            <BasicInfoCard value={value} updateValue={updateValue} />
-            <ExerciseCodeCard
-              name="exerciseCode"
-              value={value.exerciseCode}
-              updateValue={updateValue}
-            />
-          </form>
-        </Slide>
-        <SignUpFormButton value={value} />
-      </div>
+      <Typography variant="h4" className={classes.title}>
+        {MESSAGES.signUp.title('존맥')}
+      </Typography>
+      <Typography variant="h6" className={classes.title}>
+        {MESSAGES.signUp.subtitle}
+      </Typography>
+      <Slide in direction="up">
+        <form className={classes.form}>
+          <BasicInfoCard value={value} updateValue={updateValue} />
+          <ExerciseCodeCard
+            name="exerciseCode"
+            value={value.exerciseCode}
+            updateValue={updateValue}
+          />
+        </form>
+      </Slide>
+      <SignUpFormButton value={value} />
     </div>
   );
 });
