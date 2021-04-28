@@ -1,31 +1,36 @@
-import { Drawer, withStyles } from '@material-ui/core';
+import { Drawer } from '@material-ui/core';
 import { ProfilePageHeader } from 'components';
 import { inject, observer } from 'mobx-react';
-import React from 'react';
+import React, { useState } from 'react';
 
-const styles = (theme) => ({
-  paper: { height: '100%' },
-});
-
-@withStyles(styles)
 @inject('profilePageStore')
 @observer
-class ProfilePage extends React.PureComponent {
+class ProfilePagePopUp extends React.PureComponent {
   render() {
-    const { profilePageStore, classes } = this.props;
+    const { profilePageStore } = this.props;
 
     return (
       <Drawer
         anchor="bottom"
         open={profilePageStore.profilePageOpen}
         variant="persistent"
-        PaperProps={{ className: classes.paper + ' main-popup-page' }}
       >
-        <ProfilePageHeader close={profilePageStore.closeProfilePage} />
-        <section>test</section>
+        <ProfilePage close={profilePageStore.closeProfilePage} />
       </Drawer>
     );
   }
 }
 
-export default ProfilePage;
+export default ProfilePagePopUp;
+
+const ProfilePage = React.memo(function ProfilePage(props) {
+  const { close } = props;
+  const [scrollTarget, setScrollTarget] = useState(undefined);
+
+  return (
+    <>
+      <ProfilePageHeader close={close} scrollTarget={scrollTarget} />
+      <div ref={(node) => setScrollTarget(node)}>test</div>
+    </>
+  );
+});
