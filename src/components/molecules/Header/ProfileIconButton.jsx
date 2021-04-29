@@ -1,23 +1,19 @@
 import React from 'react';
 import { IconButton } from '@material-ui/core';
 import { AccountCircle } from '@material-ui/icons';
-import { inject } from 'mobx-react';
+import { Link, useLocation } from 'react-router-dom';
 
-@inject('profilePageStore')
-class ProfileIconButton extends React.PureComponent {
-  render() {
-    const { profilePageStore } = this.props;
+export default React.memo(function (props) {
+  const { pathname } = useLocation();
 
-    return (
-      <IconButton
-        aria-label="user profile"
-        color="inherit"
-        onClick={profilePageStore.openProfilePage}
-      >
-        <AccountCircle />
-      </IconButton>
-    );
-  }
-}
-
-export default ProfileIconButton;
+  return (
+    <IconButton
+      aria-label="user profile"
+      color="inherit"
+      component={Link}
+      to={{ pathname: '/profile', state: { from: pathname } }}
+    >
+      <AccountCircle />
+    </IconButton>
+  );
+});

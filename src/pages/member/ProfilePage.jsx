@@ -4,28 +4,8 @@ import {
   ExerciseCodeCard,
   ProfilePageHeader,
 } from 'components';
-import { inject, observer } from 'mobx-react';
 import React, { useState } from 'react';
-
-@inject('profilePageStore')
-@observer
-class ProfilePagePopUp extends React.PureComponent {
-  render() {
-    const { profilePageStore } = this.props;
-
-    return (
-      <Drawer
-        anchor="bottom"
-        open={profilePageStore.profilePageOpen}
-        variant="persistent"
-      >
-        <ProfilePage close={profilePageStore.closeProfilePage} />
-      </Drawer>
-    );
-  }
-}
-
-export default ProfilePagePopUp;
+import { useLocation } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -40,20 +20,24 @@ const useStyles = makeStyles((theme) => ({
   form: { display: 'flex', flexDirection: 'column', padding: '0.5em 0' },
 }));
 
-const ProfilePage = React.memo(function ProfilePage(props) {
-  const { close } = props;
+export default React.memo(function ProfilePage(props) {
+  const { pathname } = useLocation();
   const [scrollTarget, setScrollTarget] = useState(undefined);
   const classes = useStyles();
 
   return (
-    <>
-      <ProfilePageHeader close={close} scrollTarget={scrollTarget} />
+    <Drawer
+      anchor="bottom"
+      open={pathname.startsWith('/profile')}
+      variant="persistent"
+    >
+      <ProfilePageHeader scrollTarget={scrollTarget} />
       <div ref={(node) => setScrollTarget(node)} className={classes.main}>
         <form className={classes.form}>
           <BasicInfoUpdateCard />
           <ExerciseCodeCard update />
         </form>
       </div>
-    </>
+    </Drawer>
   );
 });

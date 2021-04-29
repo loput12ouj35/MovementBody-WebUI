@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     color: 'rgba(255, 255, 255, 0.87)',
     padding: '0.5em 1.25em',
+    margin: '0 0.5em',
     '&:hover': { backgroundColor: 'rgba(255,255,255,0.24)' },
     '&.active': { backgroundColor: 'rgba(255,255,255,0.12)' },
   },

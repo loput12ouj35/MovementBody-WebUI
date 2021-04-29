@@ -2,7 +2,6 @@ import { observable, action, makeObservable, computed, toJS } from 'mobx';
 import _ from 'lodash';
 
 export default new (class ProfilePageStore {
-  @observable profilePageOpen = false;
   @observable _profile = {
     gender: 2,
     height: 165,
@@ -17,9 +16,6 @@ export default new (class ProfilePageStore {
   constructor() {
     makeObservable(this);
   }
-
-  @action openProfilePage = () => (this.profilePageOpen = true);
-  @action closeProfilePage = () => (this.profilePageOpen = false);
 
   @action updateProfile = (key, value) => _.set(this._profile, key, value);
 

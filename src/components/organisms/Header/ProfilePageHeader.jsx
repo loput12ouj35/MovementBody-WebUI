@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core';
 import { ArrowBack } from '@material-ui/icons';
 import { MESSAGES } from 'data';
+import { pathUtil } from 'custom_util';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default React.memo(function ProfilePageHeader(props) {
-  const { scrollTarget, close } = props;
+  const { scrollTarget } = props;
   const scrolled = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -35,7 +36,11 @@ export default React.memo(function ProfilePageHeader(props) {
       position="relative"
     >
       <Toolbar>
-        <IconButton color="inherit" edge="start" onClick={close}>
+        <IconButton
+          color="inherit"
+          edge="start"
+          onClick={pathUtil.history.goBack}
+        >
           <ArrowBack />
         </IconButton>
         <Typography className={classes.h6} variant="h6">
