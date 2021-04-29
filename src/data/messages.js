@@ -32,14 +32,14 @@ const rest = {
   },
 
   member: {
+    memberId: '이름',
     gender: '성별',
+    birth: '생년월일',
     male: '남',
     female: '여',
     other: '기타',
     height: '키 (cm)',
     weight: '몸무게 (kg)',
-    basicInfoTitle: '기본 정보를 알려주세요',
-    exerciseTitle: '운동 빈도를 알려주세요.',
     exerciesSteps: [
       '운동을 아예 하지 않음',
       '운동을 거의 하지 않음',
@@ -47,6 +47,12 @@ const rest = {
       '자주 운동 하고 있음',
       '매일 운동 하고 있음',
     ],
+    title: {
+      createBasic: '기본 정보를 알려주세요',
+      readBasic: '기본 정보',
+      createExercise: '운동 빈도를 알려주세요.',
+      updateExercise: '운동 빈도가 변하였나요?',
+    },
   },
 
   getStartedPage: {

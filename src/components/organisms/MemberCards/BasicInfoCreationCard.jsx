@@ -39,7 +39,7 @@ class BasicInfoCreationCard extends React.PureComponent {
           icon={<Face />}
           markColor="lightseagreen"
           markShadow="rgba(32, 178, 170, 0.4)"
-          title={MESSAGES.member.basicInfoTitle}
+          title={MESSAGES.member.title.createBasic}
         />
         <CardContent>
           <Typography className={classes.subtitle}>

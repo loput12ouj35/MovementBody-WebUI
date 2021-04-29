@@ -21,7 +21,8 @@ class ExerciseCodeCard extends React.PureComponent {
 
   render() {
     const max = 5;
-    const { increaseCode, decreaseCode, profile } = this.props.profilePageStore;
+    const { profilePageStore, update = false } = this.props;
+    const { increaseCode, decreaseCode, profile } = profilePageStore;
     const value = profile.exerciseCode;
 
     return (
@@ -30,7 +31,11 @@ class ExerciseCodeCard extends React.PureComponent {
           icon={<FitnessCenter />}
           markColor="darkred"
           markShadow="rgba(139, 0, 0, 0.4)"
-          title={MESSAGES.member.exerciseTitle}
+          title={
+            update
+              ? MESSAGES.member.title.updateExercise
+              : MESSAGES.member.title.createExercise
+          }
         />
         <CardContent>
           <ExerciseCodeSwipeableViews
