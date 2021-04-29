@@ -21,7 +21,7 @@ export default createMuiTheme({
   },
 
   typography: {
-    fontFamily: 'Nanum Barun Gothic, sans-serif',
+    fontFamily: 'Noto Sans KR, sans-serif',
     body2: { fontSize: '0.75rem', lineHeight: 1.5 },
   },
 
