@@ -1,6 +1,7 @@
 import { Button, CircularProgress, withStyles } from '@material-ui/core';
 import { requester } from 'custom_util';
 import { MESSAGES } from 'data';
+import { inject } from 'mobx-react';
 import React from 'react';
 import { withRouter } from 'react-router';
 
@@ -14,13 +15,8 @@ const buttonStyle = (theme) => ({
 // using class component for readability
 @withRouter
 @withStyles(buttonStyle)
+@inject('profilePageStore')
 class SignUpFormButton extends React.Component {
-  TEMP_VALUES = {
-    memberId: 'tempId',
-    birth: 'temp',
-    email: 'temp@temp.temp',
-    // loginType: null, // TBD
-  };
   state = { pending: false };
 
   shouldComponentUpdate() {
@@ -29,9 +25,9 @@ class SignUpFormButton extends React.Component {
 
   handleClick = async () => {
     try {
-      const { value } = this.props;
+      const { profilePageStore } = this.props;
       this.setState({ pending: true });
-      await requester.member.create({ ...this.TEMP_VALUES, ...value });
+      await requester.member.create(profilePageStore.profile);
       // TBD: call login API here (or not)
       this.props.history.push('/home');
     } catch (e) {

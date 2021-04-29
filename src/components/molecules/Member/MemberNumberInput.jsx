@@ -3,19 +3,13 @@ import React, { useCallback } from 'react';
 import 'scss/components/member-number-input.scss';
 
 export default React.memo(function MemberNumberInput(props) {
-  const { name, min, max, value = min, updateValue } = props;
-  const handleChange = useCallback(
-    (e) => updateValue(name, Number(e.target.value)),
-    []
-  );
+  const { name, min, max, value = min, onChange } = props;
+  const handleChange = useCallback((e) => onChange(Number(e.target.value)), []);
   const handleBlur = useCallback((e) => {
     const _value = Math.max(min, Math.min(e.target.value, max));
-    if (e.target.value !== _value) updateValue(name, _value);
+    if (e.target.value !== _value) onChange(_value);
   }, []);
-  const handlerSliderChange = useCallback(
-    (_value) => updateValue(name, _value),
-    []
-  );
+  const handlerSliderChange = useCallback((_value) => onChange(_value), []);
 
   return (
     <div className="member-number-input">

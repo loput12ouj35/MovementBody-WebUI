@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
 import { MESSAGES } from 'data';
-import React, { useCallback } from 'react';
+import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
   buttonGroup: { margin: '1em', width: '15em' },
@@ -20,12 +20,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default React.memo(function MemberGenderInput(props) {
-  const { name, value, updateValue } = props;
-  const handleChange = useCallback((e, value) => {
-    if (value === null) return;
-    updateValue(name, value);
-  }, []);
+export default React.memo(function GenderInput(props) {
+  const { value, onChange } = props;
   const classes = useStyles();
 
   return (
@@ -33,8 +29,8 @@ export default React.memo(function MemberGenderInput(props) {
       className={classes.buttonGroup}
       value={value}
       exclusive
-      onChange={handleChange}
-      aria-label={name}
+      onChange={onChange}
+      aria-label="gender"
     >
       <ToggleButton className={classes.button} value={0} aria-label="male">
         {MESSAGES.member.male}
