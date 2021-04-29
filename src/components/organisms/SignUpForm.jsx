@@ -1,5 +1,9 @@
 import { Slide, makeStyles, Typography } from '@material-ui/core';
-import { BasicInfoCard, ExerciseCodeCard, SignUpFormButton } from 'components';
+import {
+  BasicInfoCreationCard,
+  ExerciseCodeCard,
+  SignUpFormButton,
+} from 'components';
 import { MESSAGES } from 'data';
 import React, { useCallback, useState } from 'react';
 
@@ -41,7 +45,7 @@ export default React.memo(function SignUpForm(props) {
       </Typography>
       <Slide in direction="up">
         <form className={classes.form}>
-          <BasicInfoCard value={value} updateValue={updateValue} />
+          <BasicInfoCreationCard value={value} updateValue={updateValue} />
           <ExerciseCodeCard
             name="exerciseCode"
             value={value.exerciseCode}

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   subtitle: { margin: '1em 0' },
 }));
 
-export default React.memo(function BasicInfoCard(props) {
+export default React.memo(function BasicInfoCreationCard(props) {
   const { value, updateValue } = props;
   const classes = useStyles();
 
