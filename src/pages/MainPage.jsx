@@ -27,56 +27,57 @@ export default React.memo(function MainPage(props) {
   const classes = useStyles();
   const [mainRef, setMainRef] = useState(undefined); // keep it undefined here to not make it throw an error.
   const render = useCallback(
-    (Page, Header = null, Footer = null) => (
+    (page, header = null, footer = null) => (
       <>
-        {Header &&
-          React.cloneElement(Header, { scrollTarget: mainRef ?? undefined })}
+        {header &&
+          React.cloneElement(header, { scrollTarget: mainRef ?? undefined })}
         <main ref={(node) => setMainRef(node)} className={classes.main}>
-          {Page}
+          {page}
         </main>
-        {Footer}
+        {footer}
       </>
     ),
     [mainRef]
   );
+
   const route = useCallback(
     (path, ...rest) => <Route path={path}>{render(...rest)}</Route>,
-    []
+    [render]
+  );
+
+  // helper function for three main pages: /home, /history, and /menu.
+  const routePrimary = useCallback(
+    (path, page) => (
+      <Route
+        path={path}
+        children={({ match, location }) => {
+          const isProfilePage = location.pathname.startsWith('/profile');
+          const isFromThis = (location.state?.from ?? '/home').startsWith(path);
+          return match || (isProfilePage && isFromThis)
+            ? render(page, <HomePageHeader />, <Bnb />)
+            : null;
+        }}
+      />
+    ),
+    [render]
   );
 
   return (
     <div className={classes.root}>
       <Switch>
+        <Route path={['/home', '/history', '/menu', '/profile']}>
+          {routePrimary('/home', <HomePage />)}
+          {routePrimary('/history', <p>todo</p>)}
+          {routePrimary('/menu', <p>todo</p>)}
+        </Route>
         {route('/signUp', <SignUpPage />, <SignUpPageHeader />)}
         {route('/start', <GetStartedPage />)}
-        <RouterWithProfile render={render} />
         <Redirect from="*" to="/404" />
       </Switch>
-      <ProfilePage />
-    </div>
-  );
-});
-
-const RouterWithProfile = React.memo(function (props) {
-  const { render } = props;
-  const route = useCallback(
-    (path, ...rest) => (
       <Route
-        path={path}
-        children={({ match, location }) => {
-          const from = location.state?.from ?? '';
-          return match || from.startsWith(path) ? render(...rest) : null;
-        }}
+        path="/profile"
+        children={({ match }) => <ProfilePage open={match !== null} />}
       />
-    ),
-    []
-  );
-
-  return (
-    <Route path={['/home', '/history', '/menu', '/profile']}>
-      {route('/home', <HomePage />, <HomePageHeader />, <Bnb />)}
-      {route('/history', <p>todo</p>)}
-      {route('/menu', <p>todo</p>)}
-    </Route>
+    </div>
   );
 });

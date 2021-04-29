@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 import { ArrowBack } from '@material-ui/icons';
 import { MESSAGES } from 'data';
-import { pathUtil } from 'custom_util';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,7 +39,8 @@ export default React.memo(function ProfilePageHeader(props) {
         <IconButton
           color="inherit"
           edge="start"
-          onClick={pathUtil.history.goBack}
+          component={Link}
+          to={({ state }) => state?.from ?? '/home'}
         >
           <ArrowBack />
         </IconButton>

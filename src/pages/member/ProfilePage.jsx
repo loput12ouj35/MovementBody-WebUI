@@ -5,7 +5,6 @@ import {
   ProfilePageHeader,
 } from 'components';
 import React, { useState } from 'react';
-import { useLocation } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -21,16 +20,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default React.memo(function ProfilePage(props) {
-  const { pathname } = useLocation();
+  const { open } = props;
   const [scrollTarget, setScrollTarget] = useState(undefined);
   const classes = useStyles();
 
   return (
-    <Drawer
-      anchor="bottom"
-      open={pathname.startsWith('/profile')}
-      variant="persistent"
-    >
+    <Drawer anchor="bottom" open={open} variant="persistent">
       <ProfilePageHeader scrollTarget={scrollTarget} />
       <div ref={(node) => setScrollTarget(node)} className={classes.main}>
         <form className={classes.form}>
