@@ -7,13 +7,13 @@ import {
 import React, { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
+  root: { height: '100%' },
   main: {
     backgroundColor: '#fafafa',
     width: '100%',
     flex: 'auto',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
     overflow: 'hidden auto',
   },
   form: { display: 'flex', flexDirection: 'column', padding: '0.5em 0' },
@@ -25,7 +25,12 @@ export default React.memo(function ProfilePage(props) {
   const classes = useStyles();
 
   return (
-    <Drawer anchor="bottom" open={open} variant="persistent">
+    <Drawer
+      anchor="bottom"
+      open={open}
+      variant="persistent"
+      PaperProps={{ className: classes.root }}
+    >
       <ProfilePageHeader scrollTarget={scrollTarget} />
       <div ref={(node) => setScrollTarget(node)} className={classes.main}>
         <form className={classes.form}>

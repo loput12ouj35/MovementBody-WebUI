@@ -7,7 +7,30 @@ import React from 'react';
 
 const styles = (theme) => ({
   content: { display: 'flex', flexWrap: 'wrap' },
-  infos: { display: 'flex', flexDirection: 'column', width: '20em' },
+  infoBox: {
+    display: 'flex',
+    alignItems: 'center',
+    width: '100%',
+    '@media (min-width: 48em)': {
+      flexBasis: '50%',
+      maxWidth: '50%',
+      '&:not(:first-child)': { paddingLeft: '1em' },
+      '&:not(:last-child)': { paddingRight: '1em' },
+    },
+  },
+  infos: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '20em',
+    flex: 'auto',
+  },
+  divider: {
+    width: '0.25em',
+    height: '8.5em',
+    padding: '1em 0',
+    backgroundColor: 'rgba(47, 79, 79, 0.8)',
+    '&:not(:first-child)': { marginLeft: 'calc(50% - 21em)' },
+  },
 });
 
 const GENDER_TEXTS = [
@@ -20,9 +43,30 @@ const GENDER_TEXTS = [
 @inject('profilePageStore')
 @observer
 class BasicInfoUpdateCard extends React.PureComponent {
+  renderInfoBox(data) {
+    const { classes } = this.props;
+    return (
+      <div className={classes.infoBox}>
+        <div className={classes.divider} />
+        <div className={classes.infos}>
+          {data.map(([label, value]) => (
+            <InfoRow key={label} label={label} value={value} />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   render() {
     const { classes, profilePageStore } = this.props;
-    const { birth, gender, memberId } = profilePageStore.profile;
+    const {
+      birth,
+      gender,
+      memberId,
+      email,
+      weight,
+      height,
+    } = profilePageStore.profile;
 
     return (
       <StyledCard Component="div" responsiveOptions={false}>
@@ -33,14 +77,16 @@ class BasicInfoUpdateCard extends React.PureComponent {
           title={MESSAGES.member.title.readBasic}
         />
         <CardContent className={classes.content}>
-          <div className={classes.infos}>
-            <InfoRow label={MESSAGES.member.memberId} value={memberId} />
-            <InfoRow
-              label={MESSAGES.member.gender}
-              value={GENDER_TEXTS[gender]}
-            />
-            <InfoRow label={MESSAGES.member.birth} value={birth} />
-          </div>
+          {this.renderInfoBox([
+            [MESSAGES.member.memberId, memberId],
+            [MESSAGES.member.gender, GENDER_TEXTS[gender]],
+            [MESSAGES.member.birth, birth],
+          ])}
+          {this.renderInfoBox([
+            [MESSAGES.member.email, email],
+            [MESSAGES.member.height, height],
+            [MESSAGES.member.weight, weight],
+          ])}
         </CardContent>
       </StyledCard>
     );
@@ -48,6 +94,3 @@ class BasicInfoUpdateCard extends React.PureComponent {
 }
 
 export default BasicInfoUpdateCard;
-
-// height, weight
-// email

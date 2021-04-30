@@ -40,6 +40,7 @@ const rest = {
     other: '기타',
     height: '키 (cm)',
     weight: '몸무게 (kg)',
+    email: '이메일',
     exerciesSteps: [
       '운동을 아예 하지 않음',
       '운동을 거의 하지 않음',
