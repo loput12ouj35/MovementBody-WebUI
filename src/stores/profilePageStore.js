@@ -1,5 +1,6 @@
-import { observable, action, makeObservable, computed, toJS } from 'mobx';
+import { observable, action, makeObservable, computed, toJS, flow } from 'mobx';
 import _ from 'lodash';
+import { requester } from 'custom_util';
 
 export default new (class ProfilePageStore {
   @observable _profile = {
@@ -17,6 +18,11 @@ export default new (class ProfilePageStore {
 
   constructor() {
     makeObservable(this);
+  }
+
+  @flow *getProfile() {
+    const profile = yield requester.member.get('0'); // todo: change dummy id to logined id
+    this._profile = profile;
   }
 
   @action updateProfile = (key, value) => _.set(this._profile, key, value);

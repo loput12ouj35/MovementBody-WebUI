@@ -4,8 +4,9 @@ import { Bnb, HomePageHeader } from 'components';
 import { HomePage, ProfilePage } from 'pages';
 import { inject } from 'mobx-react';
 
-@withRouter
+// using class component for readability
 @inject('profilePageStore')
+@withRouter
 class MainPage extends React.PureComponent {
   state = {};
 
@@ -21,18 +22,17 @@ class MainPage extends React.PureComponent {
 
   render() {
     const { mainRef } = this.state;
-    const { pathname } = this.props.location;
 
     return (
       <>
         <HomePageHeader scrollTarget={mainRef ?? undefined} />
-        <main ref={(mainRef) => this.setState(mainRef)}>
+        <main ref={(mainRef) => this.setState({ mainRef })}>
           {this.renderPage('/home', <HomePage />)}
           {this.renderPage('/history', <p>todo</p>)}
           {this.renderPage('/menu', <p>todo</p>)}
-          <Bnb />
         </main>
-        <ProfilePage open={pathname.startsWith('/profile')} />
+        <Bnb />
+        <ProfilePage />
       </>
     );
   }
