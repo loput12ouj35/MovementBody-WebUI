@@ -6,8 +6,9 @@ import { inject } from 'mobx-react';
 import profilePageStore from 'stores/profilePageStore';
 import { pathUtil } from 'custom_util';
 
-@withRouter
+// using class component for readability
 @inject('profilePageStore')
+@withRouter
 class ProfileIconButton extends React.PureComponent {
   handleClick = () => {
     const { pathname } = this.props.location;

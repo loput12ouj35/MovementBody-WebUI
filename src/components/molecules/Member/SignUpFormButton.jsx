@@ -13,9 +13,9 @@ const buttonStyle = (theme) => ({
 });
 
 // using class component for readability
-@withRouter
 @withStyles(buttonStyle)
 @inject('profilePageStore')
+@withRouter
 class SignUpFormButton extends React.Component {
   state = { pending: false };
 
