@@ -3,9 +3,10 @@ import {
   BasicInfoCreationCard,
   ExerciseCodeCard,
   SignUpFormButton,
+  SignUpPageHeader,
 } from 'components';
 import { MESSAGES } from 'data';
-import React from 'react';
+import React, { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,23 +20,29 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default React.memo(function SignUpPage(props) {
+  const [mainRef, setMainRef] = useState(undefined); // keep it undefined here to not make it throw an error.
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Typography variant="h4" className={classes.title}>
-        {MESSAGES.signUp.title('존맥')}
-      </Typography>
-      <Typography variant="h6" className={classes.title}>
-        {MESSAGES.signUp.subtitle}
-      </Typography>
-      <Slide in direction="up">
-        <form className={classes.form}>
-          <BasicInfoCreationCard />
-          <ExerciseCodeCard />
-        </form>
-      </Slide>
-      <SignUpFormButton />
-    </div>
+    <>
+      <SignUpPageHeader scrollTarget={mainRef ?? undefined} />
+      <main ref={(node) => setMainRef(node)}>
+        <div className={classes.root}>
+          <Typography variant="h4" className={classes.title}>
+            {MESSAGES.signUp.title('존맥')}
+          </Typography>
+          <Typography variant="h6" className={classes.title}>
+            {MESSAGES.signUp.subtitle}
+          </Typography>
+          <Slide in direction="up">
+            <form className={classes.form}>
+              <BasicInfoCreationCard />
+              <ExerciseCodeCard />
+            </form>
+          </Slide>
+          <SignUpFormButton />
+        </div>
+      </main>
+    </>
   );
 });

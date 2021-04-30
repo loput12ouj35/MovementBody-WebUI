@@ -47,44 +47,46 @@ export default React.memo(function GetStartedPage(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <SwipeableViews
-        style={{ height: '100%' }}
-        containerStyle={{ height: '100%' }}
-        index={index}
-        enableMouseEvents
-        onChangeIndex={handleChangeIndex}
-      >
-        <StartView1 />
-        <span>todo</span>
-        <span>todo</span>
-      </SwipeableViews>
-      <MobileStepper
-        className={classes.stepper}
-        steps={max}
-        position="static"
-        activeStep={index}
-        nextButton={
-          <Button
-            className={classes.button}
-            size="small"
-            onClick={handleNext}
-            disabled={index >= max - 1}
-          >
-            <KeyboardArrowRight />
-          </Button>
-        }
-        backButton={
-          <Button
-            className={classes.button}
-            size="small"
-            onClick={handleBack}
-            disabled={index <= 0}
-          >
-            <KeyboardArrowLeft />
-          </Button>
-        }
-      />
-    </div>
+    <main>
+      <div className={classes.root}>
+        <SwipeableViews
+          style={{ height: '100%' }}
+          containerStyle={{ height: '100%' }}
+          index={index}
+          enableMouseEvents
+          onChangeIndex={handleChangeIndex}
+        >
+          <StartView1 />
+          <span>todo</span>
+          <span>todo</span>
+        </SwipeableViews>
+        <MobileStepper
+          className={classes.stepper}
+          steps={max}
+          position="static"
+          activeStep={index}
+          nextButton={
+            <Button
+              className={classes.button}
+              size="small"
+              onClick={handleNext}
+              disabled={index >= max - 1}
+            >
+              <KeyboardArrowRight />
+            </Button>
+          }
+          backButton={
+            <Button
+              className={classes.button}
+              size="small"
+              onClick={handleBack}
+              disabled={index <= 0}
+            >
+              <KeyboardArrowLeft />
+            </Button>
+          }
+        />
+      </div>
+    </main>
   );
 });

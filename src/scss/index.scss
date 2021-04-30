@@ -91,10 +91,27 @@ p {
   margin: 0;
 }
 
-div#root {
+// All elements are border-box
+* {
+  box-sizing: border-box;
+}
+
+// Basic root layout
+@mixin basic-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100%;
 }
 
-* {
-  box-sizing: border-box;
+body>#root {
+  @include basic-layout;
+  background-color: #fafafa;
+
+  main {
+    @include basic-layout;
+    width: 100%;
+    flex: auto;
+    overflow: hidden auto;
+  }
 }

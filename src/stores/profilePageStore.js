@@ -13,6 +13,8 @@ export default new (class ProfilePageStore {
     // loginType: null, // TBD
   };
 
+  lastPath = '/home'; // the last path before entering /profile
+
   constructor() {
     makeObservable(this);
   }
@@ -25,4 +27,6 @@ export default new (class ProfilePageStore {
 
   @action increaseCode = () => this._profile.exerciseCode++;
   @action decreaseCode = () => this._profile.exerciseCode--;
+
+  setLastPath = (path) => (path ? (this.lastPath = path) : null);
 })();
