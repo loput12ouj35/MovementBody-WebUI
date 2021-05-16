@@ -16,8 +16,10 @@ import React from 'react';
 @inject('profilePageStore')
 @observer
 class ExerciseCodeCard extends React.PureComponent {
-  handleChangeIndex = (step) =>
-    this.props.profilePageStore.updateProfile('exerciseCode', step);
+  handleChangeIndex = (step) => {
+    const { profilePageStore } = this.props;
+    profilePageStore.updateProfile('exerciseCode', step);
+  };
 
   render() {
     const max = 5;

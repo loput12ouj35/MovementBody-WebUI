@@ -4,7 +4,7 @@ import { inject } from 'mobx-react';
 import React from 'react';
 import { withRouter } from 'react-router';
 
-const buttonStyle = (theme) => ({
+const buttonStyle = () => ({
   root: {
     marginTop: '4em',
     backgroundImage: 'linear-gradient(60deg, transparent, rgba(0,0,0,0.14))',
@@ -24,11 +24,11 @@ class MemberFormSubmitButton extends React.Component {
 
   createMember = async () => {
     try {
-      const { profilePageStore } = this.props;
+      const { profilePageStore, history } = this.props;
       this.setState({ pending: true });
       await profilePageStore.requestCreation();
       // TBD: call login API here (or not)
-      this.props.history.push('/home');
+      history.push('/home');
     } catch (e) {
       this.setState({ pending: false });
       console.error(e);
@@ -48,6 +48,7 @@ class MemberFormSubmitButton extends React.Component {
 
   render() {
     const { classes, update = false } = this.props;
+    const { pending } = this.state;
 
     return (
       <Button
@@ -56,9 +57,9 @@ class MemberFormSubmitButton extends React.Component {
         color="primary"
         disableElevation
         onClick={update ? this.updateMember : this.createMember}
-        disabled={this.state.pending}
+        disabled={pending}
       >
-        {this.state.pending ? <CircularProgress /> : MESSAGES.common.submit}
+        {pending ? <CircularProgress /> : MESSAGES.common.submit}
       </Button>
     );
   }

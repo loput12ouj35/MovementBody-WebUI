@@ -12,7 +12,7 @@ import {
 import { MESSAGES } from 'data';
 import React from 'react';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: { display: 'flex', flexDirection: 'column', width: '100%' },
   title: {
     display: 'flex',
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   cardContainer: { display: 'flex', flexWrap: 'wrap' },
 }));
 
-export default React.memo(function HomePage(props) {
+export default React.memo(function HomePage() {
   const classes = useStyles();
 
   return (

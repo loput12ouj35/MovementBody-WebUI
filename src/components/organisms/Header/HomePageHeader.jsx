@@ -13,7 +13,7 @@ import {
 } from 'components';
 import { MESSAGES } from 'data';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     backgroundImage: 'linear-gradient(60deg, transparent, rgba(0,0,0,0.14))',
   },

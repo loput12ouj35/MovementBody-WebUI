@@ -4,7 +4,7 @@ import { StartView1 } from 'components';
 import React, { useCallback, useReducer } from 'react';
 import SwipeableViews from 'react-swipeable-views';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
@@ -38,7 +38,7 @@ const reducer = (index, action) => {
   }
 };
 
-export default React.memo(function GetStartedPage(props) {
+export default React.memo(function GetStartedPage() {
   const [index, dispacth] = useReducer(reducer, 0);
   const max = 3;
   const handleNext = useCallback(() => dispacth({ type: 'next' }), []);

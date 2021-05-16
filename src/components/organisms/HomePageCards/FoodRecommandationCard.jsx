@@ -23,7 +23,7 @@ const dummy = [
   ['언제 가나요', 'images/foods/1.jpg'],
 ];
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: { backgroundColor: 'ivory' },
   chipContainer: {
     display: 'flex',
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   chip: { color: 'white', backgroundColor: 'cornflowerblue' },
 }));
 
-export default React.memo(function FoodRecommandation(props) {
+export default React.memo(function FoodRecommandation() {
   const [hidden, setHidden] = useState(false);
   const handleClick = useCallback(() => setHidden(true), []);
   const classes = useStyles();

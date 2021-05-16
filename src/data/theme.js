@@ -1,11 +1,11 @@
 import { createMuiTheme } from '@material-ui/core';
 
 const HOVER_EFFECT = { '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.08)' } };
-const BREAKALL = {
-  overflowWrap: 'anywhere',
-  wordBreak: 'break-all',
-  whiteSpace: 'pre-wrap',
-};
+// const BREAKALL = {
+//   overflowWrap: 'anywhere',
+//   wordBreak: 'break-all',
+//   whiteSpace: 'pre-wrap',
+// };
 
 // todo: primary, secondary의 light/dark와, waring, info, success, error 결정
 export default createMuiTheme({

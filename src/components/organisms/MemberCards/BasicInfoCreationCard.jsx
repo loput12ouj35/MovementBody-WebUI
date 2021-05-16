@@ -15,7 +15,7 @@ import { MESSAGES } from 'data';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
 
-const styles = (theme) => ({
+const styles = () => ({
   subtitle: { margin: '1em 0' },
 });
 
@@ -23,10 +23,13 @@ const styles = (theme) => ({
 @inject('profilePageStore')
 @observer
 class BasicInfoCreationCard extends React.PureComponent {
+  // eslint-disable-next-line react/destructuring-assignment
   update = this.props.profilePageStore.updateProfile;
 
   handleGenderChange = (e, v) => (v === null ? null : this.update('gender', v));
+
   handleHeightChange = (v) => this.update('height', v);
+
   handleWeightChange = (v) => this.update('weight', v);
 
   render() {

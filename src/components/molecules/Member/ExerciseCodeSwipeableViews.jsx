@@ -18,7 +18,7 @@ const STEPS = [
   { icon: <Rowing /> },
 ];
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   view: {
     display: 'flex',
     flexDirection: 'column',
@@ -42,7 +42,7 @@ export default React.memo(function ExerciseCodeSwipeableViews(props) {
       onChangeIndex={handleChangeIndex}
     >
       {STEPS.map(({ icon }, i) => (
-        <div key={i} className={classes.view}>
+        <div key={icon} className={classes.view}>
           <Slide
             in={value === i}
             direction="down"

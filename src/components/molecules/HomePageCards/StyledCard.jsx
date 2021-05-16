@@ -18,7 +18,7 @@ const _createResponsiveWidths = ({ responsiveOptions = {} }) => {
   );
 };
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: (props) => ({
     padding: '0.5em 0.25em',
     maxWidth: '100%',

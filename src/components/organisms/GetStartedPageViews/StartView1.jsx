@@ -2,7 +2,7 @@ import { makeStyles, Typography } from '@material-ui/core';
 import { MESSAGES } from 'data';
 import React from 'react';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     background: 'url(images/start/1.jpg) no-repeat top -200px right -400px',
     height: '100%',
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   subtitle: { whiteSpace: 'pre', color: 'yellow', margin: '1em 0' },
 }));
 
-export default React.memo(function StartView1(props) {
+export default React.memo(function StartView1() {
   const classes = useStyles();
 
   return (

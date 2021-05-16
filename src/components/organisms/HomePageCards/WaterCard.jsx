@@ -10,7 +10,7 @@ import { MESSAGES } from 'data';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
 
-const styles = (theme) => ({
+const styles = () => ({
   content: { display: 'flex' },
   grow: { flexGrow: 1 },
 });

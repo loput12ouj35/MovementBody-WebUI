@@ -8,7 +8,7 @@ import {
 import { MESSAGES } from 'data';
 import React, { useState } from 'react';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   form: { display: 'flex', flexDirection: 'column', padding: '0.5em 0' },
 }));
 
-export default React.memo(function SignUpPage(props) {
+export default React.memo(function SignUpPage() {
   const [ref, setRef] = useState(undefined);
   const classes = useStyles();
 

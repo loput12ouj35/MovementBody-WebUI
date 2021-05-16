@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'scss/index.scss';
 import App from 'App';
-import * as serviceWorker from './serviceWorker';
 import { Router } from 'react-router';
 import { pathUtil } from 'custom_util';
 import { ThemeProvider } from '@material-ui/styles';
 import { theme } from 'data';
 import { Provider } from 'mobx-react';
 import * as stores from 'stores';
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Provider {...stores}>

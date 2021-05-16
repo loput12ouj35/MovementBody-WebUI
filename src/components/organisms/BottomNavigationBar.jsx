@@ -22,7 +22,7 @@ const MENU_COMPONENTS = MENUS.map(([type, icon]) => (
   />
 ));
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     '@media (min-width: 48rem)': { display: 'none' },
   },

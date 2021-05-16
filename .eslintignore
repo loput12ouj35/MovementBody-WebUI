@@ -4,3 +4,4 @@ node_modules/
 public/
 src/img
 src/scss
+src/serviceWorker.js

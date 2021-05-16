@@ -51,7 +51,9 @@
     "lint-check": "eslint --print-config .eslintrc.json | eslint-config-prettier-check"
   },
   "husky": {
-    "hooks": {}
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   },
   "browserslist": {
     "production": [

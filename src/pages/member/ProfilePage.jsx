@@ -9,7 +9,7 @@ import { useStore } from 'custom_util';
 import React, { useState } from 'react';
 import { useLocation } from 'react-router';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: { height: '100%' },
   main: {
     backgroundColor: '#fafafa',
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   form: { display: 'flex', flexDirection: 'column', padding: '0.5em 0' },
 }));
 
-export default React.memo(function ProfilePage(props) {
+export default React.memo(function ProfilePage() {
   const [ref, setRef] = useState(undefined);
   const classes = useStyles();
   const { profilePageStore } = useStore();

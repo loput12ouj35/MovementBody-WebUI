@@ -37,7 +37,10 @@ export default new (class ProfilePageStore {
   }
 
   @action increaseCode = () => this._profile.exerciseCode++;
+
   @action decreaseCode = () => this._profile.exerciseCode--;
 
-  setLastPath = (path) => (path ? (this.lastPath = path) : null);
+  setLastPath = (path) => {
+    if (path) this.lastPath = path;
+  };
 })();

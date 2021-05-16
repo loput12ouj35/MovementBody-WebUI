@@ -3,7 +3,7 @@ import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
 import { MESSAGES } from 'data';
 import React from 'react';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   buttonGroup: { margin: '1em', width: '15em' },
   button: {
     flex: '1 1 20px',

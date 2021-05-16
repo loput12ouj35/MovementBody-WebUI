@@ -11,7 +11,7 @@ import { Close } from '@material-ui/icons';
 import { MESSAGES } from 'data';
 import { Link } from 'react-router-dom';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     backgroundColor: 'mediumslateblue',
     backgroundImage: 'linear-gradient(60deg, transparent, rgba(0,0,0,0.14))',
