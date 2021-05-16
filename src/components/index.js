@@ -11,6 +11,7 @@ export { default as StyledCardHeader } from './molecules/HomePageCards/StyledCar
 export { default as StyledCard } from './molecules/HomePageCards/StyledCard';
 export { default as GlobalNavigation } from './molecules/Header/GlobalNavigation';
 export { default as InfoRow } from './molecules/Member/InfoRow';
+export { default as GoalInput } from './molecules/Member/GoalInput';
 
 export { default as HomePageHeader } from './organisms/Header/HomePageHeader';
 export { default as SignUpPageHeader } from './organisms/Header/SignUpPageHeader';
@@ -30,3 +31,4 @@ export { default as StartView1 } from './organisms/GetStartedPageViews/StartView
 export { default as SignUpView1 } from './organisms/SignUpViews/SignUpView1';
 export { default as SignUpView2 } from './organisms/SignUpViews/SignUpView2';
 export { default as SignUpPageButtons } from './organisms/SignUpViews/SignUpPageButtons';
+export { default as GoalCard } from './organisms/MemberCards/GoalCard';

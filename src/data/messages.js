@@ -30,7 +30,7 @@ const rest = {
   signUp: {
     title1: (id) => `반값읍니다, ${id}님.`,
     subtitle1: '아래 내용을 작성해주세요.',
-    title2: (id) => `${id}님의 목표를 알려주세요.`,
+    title2: '거의 다 끝났습니다.',
   },
 
   member: {
@@ -50,11 +50,18 @@ const rest = {
       '자주 운동 하고 있음',
       '매일 운동 하고 있음',
     ],
+    goal: '몸무게를...',
+    goalType: {
+      losing: '줄이기',
+      keeping: '유지',
+      gaining: '늘이기',
+    },
     title: {
       createBasic: '기본 정보를 알려주세요',
       readBasic: '기본 정보',
       createExercise: '운동 빈도를 알려주세요.',
       updateExercise: '운동 빈도가 변하였나요?',
+      goal: '식단 관리의 목표를 알려주세요.',
     },
   },
 

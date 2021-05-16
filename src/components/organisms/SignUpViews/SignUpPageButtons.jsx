@@ -7,6 +7,7 @@ const useStyles = makeStyles(() => ({
   root: { padding: '0.5rem 2rem' },
   button: {
     backgroundImage: 'linear-gradient(60deg, transparent, rgba(0,0,0,0.14))',
+    width: '6rem',
     margin: '0 0.5rem',
   },
 }));
