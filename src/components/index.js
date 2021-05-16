@@ -27,3 +27,6 @@ export { default as ExerciseCodeCard } from './organisms/MemberCards/ExerciseCod
 export { default as BasicInfoCreationCard } from './organisms/MemberCards/BasicInfoCreationCard';
 export { default as BasicInfoUpdateCard } from './organisms/MemberCards/BasicInfoUpdateCard';
 export { default as StartView1 } from './organisms/GetStartedPageViews/StartView1';
+export { default as SignUpView1 } from './organisms/SignUpViews/SignUpView1';
+export { default as SignUpView2 } from './organisms/SignUpViews/SignUpView2';
+export { default as SignUpPageButtons } from './organisms/SignUpViews/SignUpPageButtons';

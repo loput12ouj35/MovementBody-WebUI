@@ -28,8 +28,9 @@ const rest = {
   },
 
   signUp: {
-    title: (id) => `반값읍니다, ${id}님.`,
-    subtitle: '아래 내용을 작성해주세요.',
+    title1: (id) => `반값읍니다, ${id}님.`,
+    subtitle1: '아래 내용을 작성해주세요.',
+    title2: (id) => `${id}님의 목표를 알려주세요.`,
   },
 
   member: {
