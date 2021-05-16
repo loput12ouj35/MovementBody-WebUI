@@ -21,13 +21,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default React.memo(function SignUpPage(props) {
-  const [mainRef, setMainRef] = useState(undefined);
+  const [ref, setRef] = useState(undefined);
   const classes = useStyles();
 
   return (
     <>
-      <SignUpPageHeader scrollTarget={mainRef ?? undefined} />
-      <main ref={(node) => setMainRef(node)}>
+      <SignUpPageHeader scrollTarget={ref ?? undefined} />
+      <main ref={setRef}>
         <div className={classes.root}>
           <Typography variant="h4" className={classes.title}>
             {MESSAGES.signUp.title('존맥')}

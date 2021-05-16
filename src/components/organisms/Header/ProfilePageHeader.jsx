@@ -10,9 +10,9 @@ import {
 import { ArrowBack } from '@material-ui/icons';
 import { MESSAGES } from 'data';
 import { Link } from 'react-router-dom';
-import { inject } from 'mobx-react';
+import { useStore } from 'custom_util';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     backgroundColor: 'darkslategray',
     backgroundImage:
@@ -29,6 +29,8 @@ export default React.memo(function ProfilePageHeader(props) {
     target: scrollTarget,
   });
   const classes = useStyles();
+  const { profilePageStore } = useStore();
+  const { lastPath } = profilePageStore;
 
   return (
     <AppBar
@@ -37,7 +39,9 @@ export default React.memo(function ProfilePageHeader(props) {
       position="relative"
     >
       <Toolbar>
-        <CloseButton />
+        <IconButton color="inherit" edge="start" component={Link} to={lastPath}>
+          <ArrowBack />
+        </IconButton>
         <Typography className={classes.h6} variant="h6">
           {MESSAGES.header.profile}
         </Typography>
@@ -45,17 +49,3 @@ export default React.memo(function ProfilePageHeader(props) {
     </AppBar>
   );
 });
-
-@inject('profilePageStore')
-class CloseButton extends React.PureComponent {
-  render() {
-    const { profilePageStore } = this.props;
-    const { lastPath } = profilePageStore;
-
-    return (
-      <IconButton color="inherit" edge="start" component={Link} to={lastPath}>
-        <ArrowBack />
-      </IconButton>
-    );
-  }
-}

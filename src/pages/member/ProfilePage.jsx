@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default React.memo(function ProfilePage(props) {
-  const [mainRef, setMainRef] = useState(undefined);
+  const [ref, setRef] = useState(undefined);
   const classes = useStyles();
   const { profilePageStore } = useStore();
   const { pathname } = useLocation();
@@ -38,8 +38,8 @@ export default React.memo(function ProfilePage(props) {
       variant="persistent"
       PaperProps={{ className: classes.root }}
     >
-      <ProfilePageHeader scrollTarget={mainRef} />
-      <div ref={(node) => setMainRef(node)} className={classes.main}>
+      <ProfilePageHeader scrollTarget={ref} />
+      <div ref={setRef} className={classes.main}>
         <form className={classes.form}>
           <BasicInfoUpdateCard />
           <ExerciseCodeCard update />

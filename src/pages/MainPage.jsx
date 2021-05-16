@@ -1,41 +1,34 @@
-import React from 'react';
-import { withRouter } from 'react-router';
+import React, { useCallback, useState } from 'react';
 import { Bnb, HomePageHeader } from 'components';
 import { HomePage, ProfilePage } from 'pages';
-import { inject } from 'mobx-react';
+import { useStore } from 'custom_util';
+import { useLocation } from 'react-router';
 
-// using class component for readability
-@inject('profilePageStore')
-@withRouter
-class MainPage extends React.PureComponent {
-  state = {};
+export default React.memo(function MainPage() {
+  const [ref, setRef] = useState(undefined);
+  const { profilePageStore } = useStore();
+  const { pathname } = useLocation();
+  const renderPage = useCallback(
+    (path, page) => {
+      const isThisPage = pathname.startsWith(path);
+      const isProfilePage = pathname.startsWith('/profile');
+      const wasThisPage = profilePageStore.lastPath.startsWith(path);
 
-  renderPage(path, page) {
-    const { location, profilePageStore } = this.props;
-    const { pathname } = location;
-    const isThisPage = pathname.startsWith(path);
-    const isProfilePage = pathname.startsWith('/profile');
-    const wasThisPage = profilePageStore.lastPath.startsWith(path);
+      return (isThisPage || (isProfilePage && wasThisPage)) && page;
+    },
+    [pathname]
+  );
 
-    return (isThisPage || (isProfilePage && wasThisPage)) && page;
-  }
-
-  render() {
-    const { mainRef } = this.state;
-
-    return (
-      <>
-        <HomePageHeader scrollTarget={mainRef ?? undefined} />
-        <main ref={(mainRef) => this.setState({ mainRef })}>
-          {this.renderPage('/home', <HomePage />)}
-          {this.renderPage('/history', <p>todo</p>)}
-          {this.renderPage('/menu', <p>todo</p>)}
-        </main>
-        <Bnb />
-        <ProfilePage />
-      </>
-    );
-  }
-}
-
-export default MainPage;
+  return (
+    <>
+      <HomePageHeader scrollTarget={ref ?? undefined} />
+      <main ref={setRef}>
+        {renderPage('/home', <HomePage />)}
+        {renderPage('/history', <p>todo</p>)}
+        {renderPage('/menu', <p>todo</p>)}
+      </main>
+      <Bnb />
+      <ProfilePage />
+    </>
+  );
+});
