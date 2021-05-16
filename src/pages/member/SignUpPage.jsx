@@ -2,7 +2,7 @@ import { Slide, makeStyles, Typography } from '@material-ui/core';
 import {
   BasicInfoCreationCard,
   ExerciseCodeCard,
-  SignUpFormButton,
+  MemberFormSubmitButton,
   SignUpPageHeader,
 } from 'components';
 import { MESSAGES } from 'data';
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default React.memo(function SignUpPage(props) {
-  const [mainRef, setMainRef] = useState(undefined); // keep it undefined here to not make it throw an error.
+  const [mainRef, setMainRef] = useState(undefined);
   const classes = useStyles();
 
   return (
@@ -41,7 +41,7 @@ export default React.memo(function SignUpPage(props) {
               <ExerciseCodeCard />
             </form>
           </Slide>
-          <SignUpFormButton />
+          <MemberFormSubmitButton />
         </div>
       </main>
     </>

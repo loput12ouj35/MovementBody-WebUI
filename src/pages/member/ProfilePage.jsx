@@ -1,14 +1,15 @@
-import { Drawer, withStyles } from '@material-ui/core';
+import { Drawer, makeStyles } from '@material-ui/core';
 import {
   BasicInfoUpdateCard,
   ExerciseCodeCard,
+  MemberFormSubmitButton,
   ProfilePageHeader,
 } from 'components';
-import { inject } from 'mobx-react';
-import React from 'react';
-import { withRouter } from 'react-router';
+import { useStore } from 'custom_util';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router';
 
-const styles = (theme) => ({
+const useStyles = makeStyles((theme) => ({
   root: { height: '100%' },
   main: {
     backgroundColor: '#fafafa',
@@ -19,42 +20,32 @@ const styles = (theme) => ({
     overflow: 'hidden auto',
   },
   form: { display: 'flex', flexDirection: 'column', padding: '0.5em 0' },
+}));
+
+export default React.memo(function ProfilePage(props) {
+  const [mainRef, setMainRef] = useState(undefined);
+  const classes = useStyles();
+  const { profilePageStore } = useStore();
+  const { pathname } = useLocation();
+  const open = pathname.startsWith('/profile');
+
+  if (open) profilePageStore.requestGet('0'); // todo: change dummy id to logined id
+
+  return (
+    <Drawer
+      anchor="bottom"
+      open={open}
+      variant="persistent"
+      PaperProps={{ className: classes.root }}
+    >
+      <ProfilePageHeader scrollTarget={mainRef} />
+      <div ref={(node) => setMainRef(node)} className={classes.main}>
+        <form className={classes.form}>
+          <BasicInfoUpdateCard />
+          <ExerciseCodeCard update />
+        </form>
+        <MemberFormSubmitButton update />
+      </div>
+    </Drawer>
+  );
 });
-
-// using class component for readability
-@withStyles(styles)
-@inject('profilePageStore')
-@withRouter
-class ProfilePage extends React.PureComponent {
-  state = {};
-
-  render() {
-    const { mainRef } = this.state;
-    const { classes, location, profilePageStore } = this.props;
-    const open = location.pathname.startsWith('/profile');
-
-    if (open) profilePageStore.getProfile();
-
-    return (
-      <Drawer
-        anchor="bottom"
-        open={open}
-        variant="persistent"
-        PaperProps={{ className: classes.root }}
-      >
-        <ProfilePageHeader scrollTarget={mainRef} />
-        <div
-          ref={(mainRef) => this.setState({ mainRef })}
-          className={classes.main}
-        >
-          <form className={classes.form}>
-            <BasicInfoUpdateCard />
-            <ExerciseCodeCard update />
-          </form>
-        </div>
-      </Drawer>
-    );
-  }
-}
-
-export default ProfilePage;

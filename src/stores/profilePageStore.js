@@ -20,10 +20,15 @@ export default new (class ProfilePageStore {
     makeObservable(this);
   }
 
-  @flow *getProfile() {
-    const profile = yield requester.member.get('0'); // todo: change dummy id to logined id
+  @flow *requestGet(id) {
+    const profile = yield requester.member.get(id);
+    if (!profile) return;
     this._profile = profile;
   }
+
+  requestCreation = async () => requester.member.create(this.profile);
+
+  requestUpdate = async () => requester.member.update(this.profile);
 
   @action updateProfile = (key, value) => _.set(this._profile, key, value);
 

@@ -1,5 +1,4 @@
 import { Button, CircularProgress, withStyles } from '@material-ui/core';
-import { requester } from 'custom_util';
 import { MESSAGES } from 'data';
 import { inject } from 'mobx-react';
 import React from 'react';
@@ -16,18 +15,18 @@ const buttonStyle = (theme) => ({
 @withStyles(buttonStyle)
 @inject('profilePageStore')
 @withRouter
-class SignUpFormButton extends React.Component {
+class MemberFormSubmitButton extends React.Component {
   state = { pending: false };
 
   shouldComponentUpdate() {
     return false;
   }
 
-  handleClick = async () => {
+  createMember = async () => {
     try {
       const { profilePageStore } = this.props;
       this.setState({ pending: true });
-      await requester.member.create(profilePageStore.profile);
+      await profilePageStore.requestCreation();
       // TBD: call login API here (or not)
       this.props.history.push('/home');
     } catch (e) {
@@ -36,8 +35,19 @@ class SignUpFormButton extends React.Component {
     }
   };
 
+  updateMember = async () => {
+    try {
+      const { profilePageStore } = this.props;
+      this.setState({ pending: true });
+      await profilePageStore.requestUpdate();
+    } catch (e) {
+      console.error(e);
+    }
+    this.setState({ pending: false });
+  };
+
   render() {
-    const { classes } = this.props;
+    const { classes, update = false } = this.props;
 
     return (
       <Button
@@ -45,13 +55,13 @@ class SignUpFormButton extends React.Component {
         variant="contained"
         color="primary"
         disableElevation
-        onClick={this.handleClick}
+        onClick={update ? this.updateMember : this.createMember}
         disabled={this.state.pending}
       >
-        {this.state.pending ? <CircularProgress /> : MESSAGES.common.confirm}
+        {this.state.pending ? <CircularProgress /> : MESSAGES.common.submit}
       </Button>
     );
   }
 }
 
-export default SignUpFormButton;
+export default MemberFormSubmitButton;

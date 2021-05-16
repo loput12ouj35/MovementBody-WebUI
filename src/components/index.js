@@ -3,7 +3,7 @@ export { default as LogoutIconButton } from './molecules/Header/LogoutIconButton
 export { default as MemberNumberInput } from './molecules/Member/MemberNumberInput';
 export { default as GenderInput } from './molecules/Member/GenderInput';
 export { default as ExerciseCodeSwipeableViews } from './molecules/Member/ExerciseCodeSwipeableViews';
-export { default as SignUpFormButton } from './molecules/Member/SignUpFormButton';
+export { default as MemberFormSubmitButton } from './molecules/Member/MemberFormSubmitButton';
 export { default as ToggleIconButton } from './molecules/HomePageCards/ToggleIconButton';
 export { default as CardMainText } from './molecules/HomePageCards/CardMainText';
 export { default as WaterInput } from './molecules/HomePageCards/WaterInput';

@@ -1,6 +1,7 @@
 const common = {
   next: '다음',
   confirm: '확인',
+  submit: '제출',
   highPriority: '중요',
   other: '기타',
 };
