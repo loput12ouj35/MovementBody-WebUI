@@ -4,7 +4,7 @@ import { MESSAGES } from 'data';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: 'none',
     '@media (min-width: 48rem)': { display: 'initial' },
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default React.memo(function Gnb(props) {
+export default React.memo(function Gnb() {
   const classes = useStyles();
 
   return (

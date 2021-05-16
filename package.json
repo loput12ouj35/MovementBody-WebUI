@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/plugin-proposal-decorators": "^7.12.1",
     "@material-ui/core": "4.11.0",
     "@material-ui/icons": "4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.57",
@@ -12,57 +10,48 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
-    "core-decorators": "^0.20.0",
-    "customize-cra": "^1.0.0",
     "lodash": "^4.17.20",
     "material-table": "^1.69.1",
     "mobx": "^6.0.1",
     "mobx-react": "^7.0.0",
-    "node-sass": "^4.14.1",
     "notistack": "1.0.1",
     "react": "^16.14.0",
-    "react-app-rewired": "^2.1.6",
     "react-dom": "^16.14.0",
+    "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-slide-rule": "^1.0.5",
-    "react-swipeable-views": "^0.13.9",
-    "source-map-explorer": "^2.5.2"
+    "react-swipeable-views": "^0.13.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "core-decorators": "^0.20.0",
+    "customize-cra": "^1.0.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "prettier": "2.1.2",
+    "react-app-rewired": "^2.1.6"
   },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject",
     "lint": "eslint --ext .jsx,.js src",
-    "lint-check": "eslint --print-config .eslintrc.json | eslint-config-prettier-check",
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ],
-    "plugins": [
-      [
-        "@babel/plugin-proposal-decorators",
-        {
-          "legacy": true
-        }
-      ],
-      [
-        "@babel/plugin-proposal-class-properties",
-        {
-          "loose": true
-        }
-      ]
-    ]
+    "lint-check": "eslint --print-config .eslintrc.json | eslint-config-prettier-check"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
+    "hooks": {}
   },
   "browserslist": {
     "production": [
@@ -75,14 +64,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "babel-loader": "^8.1.0",
-    "eslint-config-prettier": "^6.13.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.3.0",
-    "prettier": "2.1.2"
   },
   "homepage": "."
 }
