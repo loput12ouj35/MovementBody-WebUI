@@ -1,6 +1,6 @@
 export { default as ProfileIconButton } from './molecules/Header/ProfileIconButton';
 export { default as LogoutIconButton } from './molecules/Header/LogoutIconButton';
-export { default as MemberNumberInput } from './molecules/Member/MemberNumberInput';
+export { default as NumberInput } from './molecules/Member/NumberInput';
 export { default as GenderInput } from './molecules/Member/GenderInput';
 export { default as ExerciseCodeSwipeableViews } from './molecules/Member/ExerciseCodeSwipeableViews';
 export { default as MemberFormSubmitButton } from './molecules/Member/MemberFormSubmitButton';

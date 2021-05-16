@@ -7,7 +7,7 @@ import {
 import { Face } from '@material-ui/icons';
 import {
   GenderInput,
-  MemberNumberInput,
+  NumberInput,
   StyledCard,
   StyledCardHeader,
 } from 'components';
@@ -53,7 +53,7 @@ class BasicInfoCreationCard extends React.PureComponent {
           <Typography className={classes.subtitle}>
             {MESSAGES.member.height}
           </Typography>
-          <MemberNumberInput
+          <NumberInput
             name="height"
             value={height}
             onChange={this.handleHeightChange}
@@ -64,7 +64,7 @@ class BasicInfoCreationCard extends React.PureComponent {
           <Typography className={classes.subtitle}>
             {MESSAGES.member.weight}
           </Typography>
-          <MemberNumberInput
+          <NumberInput
             name="weight"
             value={weight}
             onChange={this.handleWeightChange}
