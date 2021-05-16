@@ -1,5 +1,3 @@
-export { default as SliderRuler } from './atoms/SliderRuler';
-
 export { default as ProfileIconButton } from './molecules/Header/ProfileIconButton';
 export { default as LogoutIconButton } from './molecules/Header/LogoutIconButton';
 export { default as MemberNumberInput } from './molecules/Member/MemberNumberInput';

@@ -1,5 +1,5 @@
-import { SliderRuler } from 'components';
 import React, { useCallback } from 'react';
+import SlideRule from 'react-slide-rule';
 import 'scss/components/member-number-input.scss';
 
 export default React.memo(function MemberNumberInput(props) {
@@ -9,7 +9,7 @@ export default React.memo(function MemberNumberInput(props) {
     const _value = Math.max(min, Math.min(e.target.value, max));
     if (e.target.value !== _value) onChange(_value);
   }, []);
-  const handlerSliderChange = useCallback((_value) => onChange(_value), []);
+  const handlerSlideChange = useCallback((_value) => onChange(_value), []);
 
   return (
     <div className="member-number-input">
@@ -25,12 +25,12 @@ export default React.memo(function MemberNumberInput(props) {
         type="number"
         aria-labelledby={name}
       />
-      <SliderRuler
+      <SlideRule
         value={value}
-        onChange={handlerSliderChange}
+        onChange={handlerSlideChange}
         min={min}
         max={max}
-        precision={0.1}
+        step={0.1}
       />
     </div>
   );

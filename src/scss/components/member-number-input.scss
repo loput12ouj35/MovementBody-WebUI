@@ -6,25 +6,26 @@
 
   >.arrow {
     background-color: black;
-    width: 0.5em;
-    height: 0.5em;
+    width: 0.5rem;
+    height: 0.5rem;
     position: absolute;
-    top: 1.8em;
+    top: 2.25rem;
     transform: rotate(45deg);
   }
 
   >input {
     z-index: 1;
-    width: 4em;
-    height: 2em;
+    width: 4.5rem;
+    height: 2.5rem;
+    padding: 0.25rem;
     background-color: black;
-    border-radius: 0.25em;
+    border-radius: 0.25rem;
     color: white;
     text-align: center;
     border: 0;
     outline: 0;
     font: inherit;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 20px 0px, rgba(85, 107, 47, 0.4) 0px 7px 10px -5px;
   }
 }
