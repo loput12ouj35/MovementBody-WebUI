@@ -7,8 +7,7 @@ import { withRouter } from 'react-router';
 const buttonStyle = () => ({
   root: {
     backgroundImage: 'linear-gradient(60deg, transparent, rgba(0,0,0,0.14))',
-    margin: '0 0.5rem',
-    width: '6rem',
+    width: '6em',
   },
 });
 

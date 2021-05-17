@@ -30,5 +30,4 @@ export { default as BasicInfoUpdateCard } from './organisms/MemberCards/BasicInf
 export { default as StartView1 } from './organisms/GetStartedPageViews/StartView1';
 export { default as SignUpView1 } from './organisms/SignUpViews/SignUpView1';
 export { default as SignUpView2 } from './organisms/SignUpViews/SignUpView2';
-export { default as SignUpPageButtons } from './organisms/SignUpViews/SignUpPageButtons';
 export { default as GoalCard } from './organisms/MemberCards/GoalCard';
