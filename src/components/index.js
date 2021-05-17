@@ -9,6 +9,7 @@ export { default as CardMainText } from './molecules/HomePageCards/CardMainText'
 export { default as WaterInput } from './molecules/HomePageCards/WaterInput';
 export { default as StyledCardHeader } from './molecules/HomePageCards/StyledCardHeader';
 export { default as StyledCard } from './molecules/HomePageCards/StyledCard';
+export { default as NutritionBar } from './molecules/HomePageCards/NutritionBar';
 export { default as GlobalNavigation } from './molecules/Header/GlobalNavigation';
 export { default as InfoRow } from './molecules/Member/InfoRow';
 export { default as GoalInput } from './molecules/Member/GoalInput';
@@ -24,6 +25,7 @@ export { default as FoodCard } from './organisms/HomePageCards/FoodCard';
 export { default as WaterCard } from './organisms/HomePageCards/WaterCard';
 export { default as WeightCard } from './organisms/HomePageCards/WeightCard';
 export { default as SleepCard } from './organisms/HomePageCards/SleepCard';
+export { default as NutritionGoalCard } from './organisms/HomePageCards/NutritionGoalCard';
 export { default as ExerciseCodeCard } from './organisms/MemberCards/ExerciseCodeCard';
 export { default as BasicInfoCreationCard } from './organisms/MemberCards/BasicInfoCreationCard';
 export { default as BasicInfoUpdateCard } from './organisms/MemberCards/BasicInfoUpdateCard';

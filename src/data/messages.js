@@ -4,6 +4,9 @@ const common = {
   submit: '제출',
   highPriority: '중요',
   other: '기타',
+  carbohydrate: '탄수화물',
+  protein: '단백질',
+  fat: '지방',
 };
 
 const unit = {
@@ -79,13 +82,13 @@ const rest = {
       water: '물',
       weight: '무게',
       sleep: '수면',
+      nutrition: '오늘의 영양을 확인하세요!',
       foodRecommandation: (n) => `${n}이 부족해요!`,
     },
     subheader: {
       foodRecommandation: '이런 음식은 어떠세요?',
       weightDown: (n) => `어제보다 ${n}kg 빠지셨어요!`,
     },
-    protein: '단백질',
     mental: '정신력',
   },
 };
