@@ -10,7 +10,6 @@ import {
 import { ArrowBack } from '@material-ui/icons';
 import { MESSAGES } from 'data';
 import { Link } from 'react-router-dom';
-import { useStore } from 'custom_util';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -22,15 +21,13 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default React.memo(function ProfilePageHeader(props) {
-  const { scrollTarget } = props;
+  const { scrollTarget, lastPath } = props;
   const scrolled = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
     target: scrollTarget,
   });
   const classes = useStyles();
-  const { profilePageStore } = useStore();
-  const { lastPath } = profilePageStore;
 
   return (
     <AppBar
