@@ -40,7 +40,7 @@ export default React.memo(function ProfilePage() {
   const open = pathname.startsWith('/profile');
   const { lastPath } = profilePageStore;
 
-  if (open) profilePageStore.requestGet('0'); // todo: change dummy id to logined id
+  if (open) profilePageStore.requestGet('tempId'); // todo: change dummy id to logined id
 
   return (
     <Drawer

@@ -25,11 +25,7 @@ export default React.memo(function SignUpPage() {
       <SignUpPageHeader scrollTarget={ref ?? undefined} />
       <main ref={setRef}>
         <div className={classes.root}>
-          <SwipeableViews
-            index={index}
-            enableMouseEvents
-            onChangeIndex={setIndex}
-          >
+          <SwipeableViews index={index} onChangeIndex={setIndex} disabled>
             <SignUpView1 goNext={goNext} />
             <SignUpView2 goBack={goBack} />
           </SwipeableViews>
