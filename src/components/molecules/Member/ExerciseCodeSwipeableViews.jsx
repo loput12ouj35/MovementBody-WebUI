@@ -42,7 +42,7 @@ export default React.memo(function ExerciseCodeSwipeableViews(props) {
       onChangeIndex={handleChangeIndex}
     >
       {STEPS.map(({ icon }, i) => (
-        <div key={icon} className={classes.view}>
+        <div key={i} className={classes.view}>
           <Slide
             in={value === i}
             direction="down"
