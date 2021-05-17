@@ -15,12 +15,12 @@ const styles = () => ({
 class BasicInfoCreationCard extends React.PureComponent {
   handleGoalChange = (e, v) => {
     const { profilePageStore } = this.props;
-    profilePageStore.updateProfile('goal', v);
+    profilePageStore.updateProfile('targetDietType', v);
   };
 
   render() {
     const { profilePageStore, classes, update } = this.props;
-    const { goal } = profilePageStore.profile;
+    const { targetDietType } = profilePageStore.profile;
     const title = update
       ? MESSAGES.member.title.updateGoal
       : MESSAGES.member.title.createGoal;
@@ -37,7 +37,7 @@ class BasicInfoCreationCard extends React.PureComponent {
           <Typography className={classes.subtitle}>
             {MESSAGES.member.goal}
           </Typography>
-          <GoalInput value={goal} onChange={this.handleGoalChange} />
+          <GoalInput value={targetDietType} onChange={this.handleGoalChange} />
         </CardContent>
       </StyledCard>
     );

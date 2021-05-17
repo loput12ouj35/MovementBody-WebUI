@@ -5,7 +5,7 @@ import { GoalCard, MemberFormSubmitButton } from 'components';
 import { ArrowBack } from '@material-ui/icons';
 
 const useStyles = makeStyles(() => ({
-  title: { margin: '1em' },
+  title: { margin: '1em 0' },
   form: { display: 'flex', flexDirection: 'column', padding: '0.5em 0' },
   buttons: { padding: '0.25em', textAlign: 'right' },
   button: {

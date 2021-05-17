@@ -11,7 +11,7 @@ export default new (class ProfilePageStore {
     memberId: 'tempId',
     birth: 'temp',
     email: 'temp@temp.temp',
-    goal: 0,
+    targetDietType: 0,
     // loginType: null, // TBD
   };
 
