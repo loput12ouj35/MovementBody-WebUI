@@ -5,12 +5,12 @@ import { MESSAGES } from 'data';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
 
-@inject('userDailyRecordStoreStore')
+@inject('userDailyRecordStore')
 @observer
 class WeightCard extends React.PureComponent {
   render() {
-    const { userDailyRecordStoreStore } = this.props;
-    const { current, goal, last } = userDailyRecordStoreStore.weight;
+    const { userDailyRecordStore } = this.props;
+    const { current, goal, last } = userDailyRecordStore.weight;
     const diff = (current ?? 0) - (last ?? 0);
 
     return (

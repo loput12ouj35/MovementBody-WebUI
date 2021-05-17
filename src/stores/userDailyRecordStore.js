@@ -1,6 +1,6 @@
 import { observable, action, makeObservable } from 'mobx';
 
-export default new (class UserDailyRecordStoreStore {
+export default new (class userDailyRecordStore {
   @observable.ref stepCount = { current: 1234, goal: 6000, km: '0.9' };
 
   @observable.ref activeTime = { current: 40, kcal: 120, goal: 60 };
