@@ -1,15 +1,17 @@
+export { default as ToggleIconButton } from './atoms/ToggleIconButton';
+export { default as CardMainText } from './atoms/CardMainText';
+
 export { default as ProfileIconButton } from './molecules/Header/ProfileIconButton';
 export { default as LogoutIconButton } from './molecules/Header/LogoutIconButton';
 export { default as NumberInput } from './molecules/Member/NumberInput';
 export { default as GenderInput } from './molecules/Member/GenderInput';
 export { default as ExerciseCodeSwipeableViews } from './molecules/Member/ExerciseCodeSwipeableViews';
 export { default as MemberFormSubmitButton } from './molecules/Member/MemberFormSubmitButton';
-export { default as ToggleIconButton } from './molecules/HomePageCards/ToggleIconButton';
-export { default as CardMainText } from './molecules/HomePageCards/CardMainText';
 export { default as WaterInput } from './molecules/HomePageCards/WaterInput';
 export { default as StyledCardHeader } from './molecules/HomePageCards/StyledCardHeader';
 export { default as StyledCard } from './molecules/HomePageCards/StyledCard';
 export { default as NutritionBar } from './molecules/HomePageCards/NutritionBar';
+export { default as NutritionChart } from './molecules/HomePageCards/NutritionChart';
 export { default as GlobalNavigation } from './molecules/Header/GlobalNavigation';
 export { default as InfoRow } from './molecules/Member/InfoRow';
 export { default as GoalInput } from './molecules/Member/GoalInput';

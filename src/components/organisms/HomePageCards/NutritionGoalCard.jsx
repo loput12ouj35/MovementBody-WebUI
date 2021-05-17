@@ -1,12 +1,18 @@
 import { CardContent, makeStyles } from '@material-ui/core';
 import { PieChart } from '@material-ui/icons';
-import { NutritionBar, StyledCard, StyledCardHeader } from 'components';
+import {
+  NutritionBar,
+  NutritionChart,
+  StyledCard,
+  StyledCardHeader,
+} from 'components';
 import { MESSAGES } from 'data';
 import React from 'react';
 
 const useStyles = makeStyles(() => ({
   root: { backgroundColor: 'ivory' },
 }));
+const TYPES = ['carbohydrate', 'protein', 'fat'];
 
 export default React.memo(function NutritionGoalCard() {
   const classes = useStyles();
@@ -21,10 +27,11 @@ export default React.memo(function NutritionGoalCard() {
       />
       <CardContent>
         <div>
-          <NutritionBar type="carbohydrate" />
-          <NutritionBar type="protein" />
-          <NutritionBar type="fat" />
+          {TYPES.map((type) => (
+            <NutritionBar key={type} type={type} />
+          ))}
         </div>
+        <NutritionChart types={TYPES} />
       </CardContent>
     </StyledCard>
   );
