@@ -61,7 +61,8 @@ const rest = {
       readBasic: '기본 정보',
       createExercise: '운동 빈도를 알려주세요.',
       updateExercise: '운동 빈도가 변하였나요?',
-      goal: '식단 관리의 목표를 알려주세요.',
+      createGoal: '식단 관리의 목표를 알려주세요.',
+      updateGoal: '식단 관리 목표가 변하셨나요?',
     },
   },
 

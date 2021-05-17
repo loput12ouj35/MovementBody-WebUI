@@ -2,6 +2,7 @@ import { Drawer, makeStyles } from '@material-ui/core';
 import {
   BasicInfoUpdateCard,
   ExerciseCodeCard,
+  GoalCard,
   MemberFormSubmitButton,
   ProfilePageHeader,
 } from 'components';
@@ -13,12 +14,21 @@ const useStyles = makeStyles(() => ({
   root: { height: '100%' },
   main: {
     backgroundColor: '#fafafa',
-    width: '100%',
-    flex: 'auto',
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    flex: 'auto',
     overflow: 'hidden auto',
   },
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    maxWidth: '48em',
+    padding: '1em 0',
+  },
+  buttons: { padding: '0.25em', textAlign: 'right' },
   form: { display: 'flex', flexDirection: 'column', padding: '0.5em 0' },
 }));
 
@@ -40,11 +50,16 @@ export default React.memo(function ProfilePage() {
     >
       <ProfilePageHeader scrollTarget={ref} />
       <div ref={setRef} className={classes.main}>
-        <form className={classes.form}>
-          <BasicInfoUpdateCard />
-          <ExerciseCodeCard update />
-        </form>
-        <MemberFormSubmitButton update />
+        <div className={classes.container}>
+          <form className={classes.form}>
+            <BasicInfoUpdateCard />
+            <ExerciseCodeCard update />
+            <GoalCard update />
+          </form>
+          <div className={classes.buttons}>
+            <MemberFormSubmitButton update />
+          </div>
+        </div>
       </div>
     </Drawer>
   );

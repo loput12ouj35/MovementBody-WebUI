@@ -19,8 +19,11 @@ class BasicInfoCreationCard extends React.PureComponent {
   };
 
   render() {
-    const { profilePageStore, classes } = this.props;
+    const { profilePageStore, classes, update } = this.props;
     const { goal } = profilePageStore.profile;
+    const title = update
+      ? MESSAGES.member.title.updateGoal
+      : MESSAGES.member.title.createGoal;
 
     return (
       <StyledCard Component="div" responsiveOptions={false}>
@@ -28,7 +31,7 @@ class BasicInfoCreationCard extends React.PureComponent {
           icon={<AssignmentTurnedIn />}
           markColor="darkblue"
           markShadow="rgba(0, 0, 139, 0.4)"
-          title={MESSAGES.member.title.goal}
+          title={title}
         />
         <CardContent>
           <Typography className={classes.subtitle}>
