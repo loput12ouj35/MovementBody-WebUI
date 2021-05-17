@@ -11,10 +11,17 @@ import React from 'react';
 
 const useStyles = makeStyles(() => ({
   root: { backgroundColor: 'ivory' },
+  content: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '& svg': { verticalAlign: 'top' },
+  },
+  barContainer: { flex: 'auto', marginRight: '1rem' },
+  chartContainer: { width: '40%' },
 }));
 const TYPES = ['carbohydrate', 'protein', 'fat'];
 
-export default React.memo(function NutritionGoalCard() {
+export default React.memo(function NutritionCard() {
   const classes = useStyles();
 
   return (
@@ -25,13 +32,15 @@ export default React.memo(function NutritionGoalCard() {
         markShadow="rgba(138, 43, 226, 0.4)"
         title={MESSAGES.homePage.title.nutrition}
       />
-      <CardContent>
-        <div>
+      <CardContent className={classes.content}>
+        <div className={classes.barContainer}>
           {TYPES.map((type) => (
             <NutritionBar key={type} type={type} />
           ))}
         </div>
-        <NutritionChart types={TYPES} />
+        <div className={classes.chartContainer}>
+          <NutritionChart types={TYPES} />
+        </div>
       </CardContent>
     </StyledCard>
   );

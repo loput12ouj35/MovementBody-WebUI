@@ -4,7 +4,7 @@ import {
   ActiveTimeCard,
   FoodCard,
   FoodRecommandationCard,
-  NutritionGoalCard,
+  NutritionCard,
   SleepCard,
   StepCountCard,
   WaterCard,
@@ -37,7 +37,7 @@ export default React.memo(function HomePage() {
       </Typography>
       <ol className={classes.cardContainer}>
         <FoodRecommandationCard />
-        <NutritionGoalCard />
+        <NutritionCard />
       </ol>
       <Typography className={classes.title}>
         <LowPriority fontSize="small" />
