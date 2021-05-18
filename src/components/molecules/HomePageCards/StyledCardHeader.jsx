@@ -27,6 +27,8 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const isImmutable = () => true;
+
 export default React.memo(function StyledCardHeader(props) {
   const { icon, markColor, title, subheader, action } = props;
   const { markShadow = 'rgba(0, 0, 0, 0.12)' } = props;
@@ -54,4 +56,4 @@ export default React.memo(function StyledCardHeader(props) {
       </div>
     </div>
   );
-});
+}, isImmutable);
