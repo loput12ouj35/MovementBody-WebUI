@@ -15,8 +15,8 @@ export default createMuiTheme({
   },
 
   palette: {
-    primary: { main: '#1976d2' },
-    secondary: { main: 'rgb(220, 0, 78)' },
+    primary: { main: '#1a90ff' },
+    secondary: { main: '#ff1a90' },
     error: { main: '#EC4C47' },
   },
 
