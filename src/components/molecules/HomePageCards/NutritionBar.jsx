@@ -3,14 +3,17 @@ import { CardMainText } from 'components';
 import React from 'react';
 
 const useStyles = makeStyles(() => ({
-  root: {
+  progress: {
     flex: 'auto',
     margin: '0.5rem 0',
     height: '0.5rem',
     borderRadius: '0.25rem',
     backgroundColor: '#eee',
+    '& .MuiLinearProgress-bar': {
+      borderRadius: '0.25rem',
+      backgroundColor: 'currentColor',
+    },
   },
-  bar: { borderRadius: '0.25rem', backgroundColor: 'currentColor' },
   textContainer: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -31,7 +34,7 @@ export default React.memo(function NutritionBar(props) {
       </div>
       <LinearProgress
         variant="determinate"
-        classes={classes}
+        className={classes.progress}
         style={{ color }}
         value={ratio}
       />
