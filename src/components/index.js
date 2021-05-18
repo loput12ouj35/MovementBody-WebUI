@@ -28,6 +28,7 @@ export { default as WaterCard } from './organisms/HomePageCards/WaterCard';
 export { default as WeightCard } from './organisms/HomePageCards/WeightCard';
 export { default as SleepCard } from './organisms/HomePageCards/SleepCard';
 export { default as NutritionCard } from './organisms/HomePageCards/NutritionCard';
+export { default as DailyNutritionChart } from './organisms/HistoryPageContents/DailyNutritionChart';
 export { default as ExerciseCodeCard } from './organisms/MemberCards/ExerciseCodeCard';
 export { default as BasicInfoCreationCard } from './organisms/MemberCards/BasicInfoCreationCard';
 export { default as BasicInfoUpdateCard } from './organisms/MemberCards/BasicInfoUpdateCard';

@@ -11,8 +11,8 @@ export default React.memo(function NutritionChart(props) {
       innerRadius={0.9}
       data={data}
       colors={colors}
-      enableRadialLabels={false}
-      enableSlicesLabels={false}
+      enableArcLabels={false}
+      enableArcLinkLabels={false}
       theme={CHART_THEME}
     />
   );

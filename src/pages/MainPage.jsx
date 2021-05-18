@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { Bnb, HomePageHeader } from 'components';
-import { HomePage, ProfilePage } from 'pages';
+import { HomePage, ProfilePage, HistoryPage } from 'pages';
 import { useStore } from 'custom_util';
 import { useLocation } from 'react-router';
 
@@ -24,7 +24,7 @@ export default React.memo(function MainPage() {
       <HomePageHeader scrollTarget={ref ?? undefined} />
       <main ref={setRef}>
         {renderPage('/home', <HomePage />)}
-        {renderPage('/history', <p>todo</p>)}
+        {renderPage('/history', <HistoryPage />)}
         {renderPage('/menu', <p>todo</p>)}
       </main>
       <Bnb />
