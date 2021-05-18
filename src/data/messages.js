@@ -4,7 +4,7 @@ const common = {
   submit: '제출',
   highPriority: '중요',
   other: '기타',
-  carbohydrate: '탄수화물',
+  carbon: '탄수화물',
   protein: '단백질',
   fat: '지방',
 };

@@ -23,9 +23,9 @@ export default new (class userDailyRecordStore {
     goal: 7.5,
   };
 
-  @observable.ref currentNutrition = { carbohydrate: 30, protein: 10, fat: 10 };
+  @observable.ref currentNutrition = { carbon: 30, protein: 10, fat: 10 };
 
-  @observable.ref goalNutrition = { carbohydrate: 20, protein: 30, fat: 20 };
+  @observable.ref goalNutrition = { carbon: 20, protein: 30, fat: 20 };
 
   constructor() {
     makeObservable(this);

@@ -30,7 +30,7 @@ const styles = () => ({
     justifyContent: 'center',
   },
 });
-const TYPES = ['carbohydrate', 'protein', 'fat'];
+const TYPES = ['carbon', 'protein', 'fat'];
 const COLORS = ['#1a90ff', '#ff901a', '#ff1a90'];
 
 @withStyles(styles)
@@ -55,8 +55,8 @@ class NutritionCard extends React.PureComponent {
       />
     ));
 
-  calcCalorie = ({ carbohydrate, protein, fat }) =>
-    4 * carbohydrate + 4 * protein + 9 * fat;
+  calcCalorie = ({ carbon, protein, fat }) =>
+    4 * carbon + 4 * protein + 9 * fat;
 
   render() {
     const { classes, userDailyRecordStore } = this.props;
