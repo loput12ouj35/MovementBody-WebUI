@@ -31,7 +31,7 @@ const styles = () => ({
   },
 });
 const TYPES = ['carbon', 'protein', 'fat'];
-const COLORS = ['#1a90ff', '#ff901a', '#ff1a90'];
+const COLORS = ['#1a90ff', '#ff1a90', '#ff901a'];
 
 @withStyles(styles)
 @inject('userDailyRecordStore')
