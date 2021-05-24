@@ -3,7 +3,8 @@ import _ from 'lodash';
 import { requester } from 'custom_util';
 
 export default new (class ProfilePageStore {
-  @observable _profile = {
+  @observable
+  _profile = {
     gender: 2,
     height: 165,
     weight: 60,
@@ -21,7 +22,8 @@ export default new (class ProfilePageStore {
     makeObservable(this);
   }
 
-  @flow *requestGet(id) {
+  @flow
+  *requestGet(id) {
     const profile = yield requester.member.get(id);
     if (!profile) return;
     this._profile = profile;
@@ -31,15 +33,19 @@ export default new (class ProfilePageStore {
 
   requestUpdate = async () => requester.member.update(this.profile);
 
-  @action updateProfile = (key, value) => _.set(this._profile, key, value);
+  @action
+  updateProfile = (key, value) => _.set(this._profile, key, value);
 
-  @computed get profile() {
+  @computed
+  get profile() {
     return toJS(this._profile);
   }
 
-  @action increaseCode = () => this._profile.exerciseCode++;
+  @action
+  increaseCode = () => this._profile.exerciseCode++;
 
-  @action decreaseCode = () => this._profile.exerciseCode--;
+  @action
+  decreaseCode = () => this._profile.exerciseCode--;
 
   setLastPath = (path) => {
     if (path) this.lastPath = path;
