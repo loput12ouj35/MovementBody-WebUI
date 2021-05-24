@@ -22,6 +22,14 @@ async function _doRequest(method = 'get', apiUrl = '', data = null) {
   }
 }
 
+// ----------calorie CRUD------------
+const calorie = {
+  create: (data) => _doRequest('post', '/calorie/addInfo', data),
+  get: (id) => _doRequest('get', `/calorie/readInfo/${id}`),
+  update: (data) => _doRequest('put', '/calorie/updateInfo', data),
+  delete: (data) => _doRequest('delete', '/calorie/deleteInfo', data),
+};
+
 // ----------member CRUD------------
 const member = {
   create: (data) => _doRequest('post', '/member/createMember', data),
@@ -33,7 +41,7 @@ const member = {
 // ---------eating-history CRUD------------
 const eatinghistory = {
   create: (data) => _doRequest('post', '/eatinghistory/add', data),
-  get: (userId) => _doRequest('get', `/eatinghistory/read/${userId}`),
+  get: (id) => _doRequest('get', `/eatinghistory/read/${id}`),
   update: (data) => _doRequest('put', '/eatinghistory/update', data),
   delete: (data) => _doRequest('delete', '/eatinghistory/delete', data),
 };
@@ -41,9 +49,12 @@ const eatinghistory = {
 // ---------food CRUD------------
 const food = {
   create: (data) => _doRequest('post', '/foodInfo', data),
-  get: () => _doRequest('get', '/foodInfo'),
+  getList: () => _doRequest('get', '/foodInfo'),
+  getListByCategory: (id) => _doRequest('get', `/foodInfo/category/${id}`),
+  getByCode: (id) => _doRequest('get', `/foodInfo/code/${id}`),
+  getByName: (id) => _doRequest('get', `/foodInfo/name/${id}`),
   update: (data) => _doRequest('put', '/foodInfo', data),
   delete: (data) => _doRequest('delete', '/foodInfo', data),
 };
 
-export default { member, eatinghistory, food };
+export default { calorie, member, eatinghistory, food };
