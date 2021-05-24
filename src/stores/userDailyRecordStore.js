@@ -1,4 +1,5 @@
-import { observable, action, makeObservable } from 'mobx';
+import { requester } from 'custom_util';
+import { observable, action, makeObservable, flow } from 'mobx';
 
 export default new (class userDailyRecordStore {
   @observable.ref
@@ -35,9 +36,31 @@ export default new (class userDailyRecordStore {
   @observable.ref
   goalNutrition = { carbon: 20, protein: 30, fat: 20 };
 
+  @observable.ref
+  currentCalorie = {
+    carbonCalorie: 0,
+    fatCalorie: 0,
+    proteinCalorie: 0,
+    totalCalorie: 0,
+  };
+
   constructor() {
     makeObservable(this);
   }
+
+  // -------------------requests----------------------------
+  requestInfos = (id) => {
+    this.requestGetCurrentCalorie(id);
+    // todo: add new request methods and call them below here.
+  };
+
+  @flow
+  *requestGetCurrentCalorie(id) {
+    const calorie = yield requester.calorie.get(id);
+    if (!calorie) return;
+    this.currentCalorie = calorie;
+  }
+  // -------------------actions-----------------------------
 
   createSetter = (key) => (input) => {
     const value = typeof input === 'function' ? input(this[key]) : input;

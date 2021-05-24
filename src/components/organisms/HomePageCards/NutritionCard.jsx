@@ -28,6 +28,7 @@ const styles = () => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    '& p': { textAlign: 'center' },
   },
 });
 const TYPES = ['carbon', 'protein', 'fat'];
@@ -55,12 +56,10 @@ class NutritionCard extends React.PureComponent {
       />
     ));
 
-  calcCalorie = ({ carbon, protein, fat }) =>
-    4 * carbon + 4 * protein + 9 * fat;
-
   render() {
     const { classes, userDailyRecordStore } = this.props;
     const { currentNutrition, goalNutrition } = userDailyRecordStore;
+    const { currentCalorie } = userDailyRecordStore;
 
     return (
       <StyledCard className={classes.root} responsiveOptions={{ widthRem: 22 }}>
@@ -81,10 +80,8 @@ class NutritionCard extends React.PureComponent {
             />
             <div className={classes.calorie}>
               <CardMainText
-                mainText={this.calcCalorie(currentNutrition)}
-                subText={`\n/${
-                  this.calcCalorie(goalNutrition) + MESSAGES.unit.kcal
-                }`}
+                mainText={currentCalorie.totalCalorie}
+                subText={`\n/dummy ${MESSAGES.unit.kcal}`}
               />
             </div>
           </div>

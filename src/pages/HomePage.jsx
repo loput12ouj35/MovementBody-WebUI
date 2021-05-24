@@ -10,6 +10,7 @@ import {
   WaterCard,
   WeightCard,
 } from 'components';
+import { useStore } from 'custom_util';
 import { MESSAGES } from 'data';
 import React from 'react';
 
@@ -27,6 +28,8 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default React.memo(function HomePage() {
+  const { userDailyRecordStore } = useStore();
+  userDailyRecordStore.requestInfos('Test'); // todo: apply real id
   const classes = useStyles();
 
   return (
