@@ -5,12 +5,12 @@ import { MESSAGES } from 'data';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
 
-@inject('userDailyRecordStore')
+@inject('todayStatStore')
 @observer
 class StepCountCard extends React.PureComponent {
   render() {
-    const { userDailyRecordStore } = this.props;
-    const { current, goal, km } = userDailyRecordStore.stepCount;
+    const { todayStatStore } = this.props;
+    const { current, goal, km } = todayStatStore.stepCount;
 
     return (
       <StyledCard>

@@ -35,7 +35,7 @@ const TYPES = ['carbon', 'protein', 'fat'];
 const COLORS = ['#1a90ff', '#ff1a90', '#ff901a'];
 
 @withStyles(styles)
-@inject('userDailyRecordStore')
+@inject('todayStatStore')
 @observer
 class NutritionCard extends React.PureComponent {
   createChartData = (values) =>
@@ -57,9 +57,9 @@ class NutritionCard extends React.PureComponent {
     ));
 
   render() {
-    const { classes, userDailyRecordStore } = this.props;
-    const { currentNutrition, goalNutrition } = userDailyRecordStore;
-    const { currentCalorie } = userDailyRecordStore;
+    const { classes, todayStatStore } = this.props;
+    const { currentNutrition, goalNutrition } = todayStatStore;
+    const { currentCalorie } = todayStatStore;
 
     return (
       <StyledCard className={classes.root} responsiveOptions={{ widthRem: 22 }}>

@@ -7,12 +7,12 @@ import React from 'react';
 
 const FORMAT = { hour: '2-digit', minute: '2-digit' };
 
-@inject('userDailyRecordStore')
+@inject('todayStatStore')
 @observer
 class SleepCard extends React.PureComponent {
   render() {
-    const { userDailyRecordStore } = this.props;
-    const { lastSleepTime, wakeUpTime, goal } = userDailyRecordStore.sleep;
+    const { todayStatStore } = this.props;
+    const { lastSleepTime, wakeUpTime, goal } = todayStatStore.sleep;
     const diff =
       wakeUpTime && lastSleepTime
         ? (wakeUpTime - lastSleepTime) / 1000 / 3600

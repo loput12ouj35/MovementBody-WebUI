@@ -1,7 +1,7 @@
 import { requester } from 'custom_util';
 import { observable, action, makeObservable, flow } from 'mobx';
 
-export default new (class userDailyRecordStore {
+export default new (class TodayStatStore {
   @observable.ref
   stepCount = { current: 1234, goal: 6000, km: '0.9' };
 
@@ -49,7 +49,7 @@ export default new (class userDailyRecordStore {
   }
 
   // -------------------requests----------------------------
-  requestInfos = (id) => {
+  requestGetAll = (id) => {
     this.requestGetCurrentCalorie(id);
     // todo: add new request methods and call them below here.
   };

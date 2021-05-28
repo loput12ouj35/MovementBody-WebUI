@@ -28,8 +28,8 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default React.memo(function HomePage() {
-  const { userDailyRecordStore } = useStore();
-  userDailyRecordStore.requestInfos('Test'); // todo: apply real id
+  const { todayStatStore } = useStore();
+  todayStatStore.requestGetAll('Test'); // todo: apply real id
   const classes = useStyles();
 
   return (
