@@ -23,15 +23,15 @@ export default new (class ProfilePageStore {
   }
 
   @flow
-  *requestGet(id) {
+  *fetch(id) {
     const profile = yield requester.member.get(id);
     if (!profile) return;
     this._profile = profile;
   }
 
-  requestCreation = async () => requester.member.create(this.profile);
+  submitToCreate = async () => requester.member.create(this.profile);
 
-  requestUpdate = async () => requester.member.update(this.profile);
+  submitToUpdate = async () => requester.member.update(this.profile);
 
   @action
   updateProfile = (key, value) => _.set(this._profile, key, value);

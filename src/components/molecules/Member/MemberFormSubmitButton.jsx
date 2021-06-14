@@ -26,7 +26,7 @@ class MemberFormSubmitButton extends React.Component {
     try {
       const { profilePageStore, history } = this.props;
       this.setState({ pending: true });
-      await profilePageStore.requestCreation();
+      await profilePageStore.submitToCreate();
       // TBD: call login API here (or not)
       history.push('/home');
     } catch (e) {
@@ -39,7 +39,7 @@ class MemberFormSubmitButton extends React.Component {
     try {
       const { profilePageStore } = this.props;
       this.setState({ pending: true });
-      await profilePageStore.requestUpdate();
+      await profilePageStore.submitToUpdate();
     } catch (e) {
       console.error(e);
     }

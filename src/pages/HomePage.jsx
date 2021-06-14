@@ -29,7 +29,7 @@ const useStyles = makeStyles(() => ({
 
 export default React.memo(function HomePage() {
   const { todayStatStore } = useStore();
-  todayStatStore.requestGetAll('Test'); // todo: apply real id
+  todayStatStore.fetchAll('Test'); // todo: apply real id
   const classes = useStyles();
 
   return (

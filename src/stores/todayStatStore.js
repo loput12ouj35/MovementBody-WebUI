@@ -49,13 +49,13 @@ export default new (class TodayStatStore {
   }
 
   // -------------------requests----------------------------
-  requestGetAll = (id) => {
-    this.requestGetCurrentCalorie(id);
+  fetchAll = (id) => {
+    this.fetchCurrentCalorie(id);
     // todo: add new request methods and call them below here.
   };
 
   @flow
-  *requestGetCurrentCalorie(id) {
+  *fetchCurrentCalorie(id) {
     const calorie = yield requester.calorie.get(id);
     if (!calorie) return;
     this.currentCalorie = calorie;
