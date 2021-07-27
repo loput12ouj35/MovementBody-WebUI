@@ -13,14 +13,13 @@ import { MESSAGES } from 'data';
 import React, { useCallback, useState } from 'react';
 
 const dummy = [
-  ['마제소바', 'images/foods/1.jpg'],
-  ['수주육편', 'images/foods/1.jpg'],
-  ['우육면', 'images/foods/1.jpg'],
-  ['양다리', 'images/foods/1.jpg'],
-  ['꿔바로우', 'images/foods/1.jpg'],
-  ['훠궈', 'images/foods/1.jpg'],
-  ['사천짜장', 'images/foods/1.jpg'],
-  ['언제 가나요', 'images/foods/1.jpg'],
+  ['[[마제소바]]', 'images/foods/1.jpg'],
+  ['[[수주육편]]', 'images/foods/1.jpg'],
+  ['[[우육면]]', 'images/foods/1.jpg'],
+  ['[[양다리]]', 'images/foods/1.jpg'],
+  ['[[평양냉면]]', 'images/foods/1.jpg'],
+  ['[[까르보나라]]', 'images/foods/1.jpg'],
+  ['[[사천짜장]]', 'images/foods/1.jpg'],
 ];
 
 const useStyles = makeStyles(() => ({
@@ -48,7 +47,7 @@ export default React.memo(function FoodRecommandation() {
           markColor="hotpink"
           markShadow="rgba(255, 105, 180, 0.4)"
           title={MESSAGES.homePage.title.foodRecommandation(
-            MESSAGES.homePage.mental
+            MESSAGES.common.protein
           )}
           subheader={MESSAGES.homePage.subheader.foodRecommandation}
           action={

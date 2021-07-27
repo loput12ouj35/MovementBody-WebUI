@@ -22,12 +22,12 @@ const unit = {
 
 const rest = {
   header: {
-    logo: '대충 로고',
+    logo: '[[로고 영역]]',
     signUp: '가입하기',
     profile: '프로필',
     home: '홈',
-    menu1: '마제소바1',
-    menu2: '마제소바2',
+    menu1: '[[메뉴1. 일일 통계]]',
+    menu2: '[[메뉴2]]',
   },
 
   signUp: {
