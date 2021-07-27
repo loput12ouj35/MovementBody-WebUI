@@ -70,8 +70,9 @@ const rest = {
   },
 
   getStartedPage: {
-    title1: '마제소바로\n매일매일 식단 관리',
-    subtitle1: '손 쉽게 작성하는 다이어트 일지!\n뭐쓰지\n한 3줄정도',
+    title1: '[[앱 이름]]로\n매일매일 식단 관리',
+    subtitle1: '손 쉽게 작성하는 식단 일지!\n뭐쓰지\n한 3줄정도',
+    goHome: '시작하기',
   },
 
   homePage: {

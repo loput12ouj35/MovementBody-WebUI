@@ -1,7 +1,9 @@
 import { Button, makeStyles, MobileStepper } from '@material-ui/core';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import { StartView1 } from 'components';
+import { MESSAGES } from 'data';
 import React, { useCallback, useReducer } from 'react';
+import { Link } from 'react-router-dom';
 import SwipeableViews from 'react-swipeable-views';
 
 const useStyles = makeStyles(() => ({
@@ -25,6 +27,7 @@ const useStyles = makeStyles(() => ({
     },
   },
   button: { color: 'rgba(255, 255, 255, 0.6)' },
+  goHomeButton: { color: '#1a90ff' },
 }));
 
 const reducer = (index, action) => {
@@ -40,7 +43,7 @@ const reducer = (index, action) => {
 
 export default React.memo(function GetStartedPage() {
   const [index, dispacth] = useReducer(reducer, 0);
-  const max = 3;
+  const MAX = 2;
   const handleNext = useCallback(() => dispacth({ type: 'next' }), []);
   const handleBack = useCallback(() => dispacth({ type: 'back' }), []);
   const handleChangeIndex = useCallback((_index) => dispacth({ _index }), []);
@@ -57,12 +60,21 @@ export default React.memo(function GetStartedPage() {
           onChangeIndex={handleChangeIndex}
         >
           <StartView1 />
-          <span>todo</span>
-          <span>todo</span>
+          <div>
+            <span>[[todo. 아이디어 좀.. 옆 버튼 눌러 시작]]</span>
+            <Button
+              className={classes.goHomeButton}
+              aria-label="menu-button"
+              component={Link}
+              to="/menu"
+            >
+              {MESSAGES.getStartedPage.goHome}
+            </Button>
+          </div>
         </SwipeableViews>
         <MobileStepper
           className={classes.stepper}
-          steps={max}
+          steps={MAX}
           position="static"
           activeStep={index}
           nextButton={
@@ -70,7 +82,7 @@ export default React.memo(function GetStartedPage() {
               className={classes.button}
               size="small"
               onClick={handleNext}
-              disabled={index >= max - 1}
+              disabled={index >= MAX - 1}
             >
               <KeyboardArrowRight />
             </Button>
