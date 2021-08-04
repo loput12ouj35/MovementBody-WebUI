@@ -62,7 +62,10 @@ class NutritionCard extends React.PureComponent {
     const { currentCalorie } = todayStatStore;
 
     return (
-      <StyledCard className={classes.root} responsiveOptions={{ widthRem: 22 }}>
+      <StyledCard
+        className={classes.root}
+        responsiveOptions={{ widthRem: 27.5 }}
+      >
         <StyledCardHeader
           icon={<PieChart />}
           markColor="blueviolet"

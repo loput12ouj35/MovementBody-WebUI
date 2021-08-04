@@ -41,7 +41,10 @@ export default React.memo(function FoodRecommandation() {
 
   return (
     <Slide direction="right" in={!hidden} mountOnEnter unmountOnExit>
-      <StyledCard className={classes.root} responsiveOptions={{ widthRem: 22 }}>
+      <StyledCard
+        className={classes.root}
+        responsiveOptions={{ widthRem: 27.5 }}
+      >
         <StyledCardHeader
           icon={<Announcement />}
           markColor="hotpink"
