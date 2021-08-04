@@ -34,19 +34,19 @@
 
 영양소와 칼로리에 대한 통계를 시각화해 보여주고, 부족한 영양소를 추천해줌.
 
-#### PC
+#### PC (width: 1920px)
 
 ![example1_pc](./docs/example1_pc.png)
 
-#### 태블릿
+#### 태블릿 (width: 768px)
 
 ![example1_tablet](./docs/example1_tablet.png)
 
-#### 모바일
+#### 모바일 (width: 411px)
 
 ![example1_mobileL](./docs/example1_mobileL.png)
 
-### 프로필 관련 화면 (모바일)
+### 프로필 관련 화면 (width: 411px)
 
 처음 시작 시에, 유저의 성별, 키, 몸무게, 운동 빈도, 그리고 식단 관리 목표를 입력 받음.
 
