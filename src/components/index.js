@@ -12,6 +12,8 @@ export { default as StyledCardHeader } from './molecules/HomePageCards/StyledCar
 export { default as StyledCard } from './molecules/HomePageCards/StyledCard';
 export { default as NutritionBar } from './molecules/HomePageCards/NutritionBar';
 export { default as NutritionChart } from './molecules/HomePageCards/NutritionChart';
+export { default as MealList } from './molecules/HomePageCards/MealList';
+export { default as NutritionRatioBar } from './molecules/HomePageCards/NutritionRatioBar';
 export { default as GlobalNavigation } from './molecules/Header/GlobalNavigation';
 export { default as InfoRow } from './molecules/Member/InfoRow';
 export { default as GoalInput } from './molecules/Member/GoalInput';
