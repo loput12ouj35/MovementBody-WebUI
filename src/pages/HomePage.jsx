@@ -1,17 +1,7 @@
-import { Fab, makeStyles, Typography } from '@material-ui/core';
-import { Edit, LowPriority, PriorityHigh } from '@material-ui/icons';
-import {
-  ActiveTimeCard,
-  FoodCard,
-  FoodRecommandationCard,
-  NutritionCard,
-  SleepCard,
-  // StepCountCard,
-  WaterCard,
-  WeightCard,
-} from 'components';
+import { Fab, makeStyles } from '@material-ui/core';
+import { Edit } from '@material-ui/icons';
+import { ImportantCardContainer, SummaryCardContainer } from 'components';
 import { useStore } from 'custom_util';
-import { MESSAGES } from 'data';
 import React from 'react';
 
 const useStyles = makeStyles(() => ({
@@ -39,26 +29,8 @@ export default React.memo(function HomePage() {
 
   return (
     <div className={classes.root}>
-      <Typography className={classes.title}>
-        <PriorityHigh fontSize="small" />
-        {MESSAGES.common.highPriority}
-      </Typography>
-      <ol className={classes.cardContainer}>
-        <FoodRecommandationCard />
-        <NutritionCard />
-      </ol>
-      <Typography className={classes.title}>
-        <LowPriority fontSize="small" />
-        {MESSAGES.common.summary}
-      </Typography>
-      <ol className={classes.cardContainer}>
-        {/* <StepCountCard /> */}
-        <ActiveTimeCard />
-        <FoodCard />
-        <WaterCard />
-        <WeightCard />
-        <SleepCard />
-      </ol>
+      <ImportantCardContainer classes={classes} />
+      <SummaryCardContainer classes={classes} />
       <Fab
         color="secondary"
         className={classes.fab}

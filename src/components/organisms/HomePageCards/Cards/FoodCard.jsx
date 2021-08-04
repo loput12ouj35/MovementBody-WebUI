@@ -8,7 +8,7 @@ import { CardMainText, StyledCard, StyledCardHeader } from 'components';
 
 @inject('todayStatStore')
 @observer
-class FoodCrad extends React.PureComponent {
+class FoodCard extends React.PureComponent {
   toNumber = (data) => _.mapValues(data, (v) => v ?? 0);
 
   render() {
@@ -37,4 +37,4 @@ class FoodCrad extends React.PureComponent {
   }
 }
 
-export default FoodCrad;
+export default FoodCard;
