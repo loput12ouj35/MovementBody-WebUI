@@ -1,5 +1,5 @@
 import { Button, makeStyles } from '@material-ui/core';
-import { CalendarToday, Home, Menu } from '@material-ui/icons';
+import { CalendarToday, Home, Timer } from '@material-ui/icons';
 import { MESSAGES } from 'data';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
@@ -45,8 +45,8 @@ export default React.memo(function Gnb() {
         className={classes.button}
         aria-label="menu-button"
         component={NavLink}
-        startIcon={<Menu />}
-        to="/menu"
+        startIcon={<Timer />}
+        to="/time"
       >
         {MESSAGES.header.menu2}
       </Button>

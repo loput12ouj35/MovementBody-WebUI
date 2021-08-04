@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 import { ArrowBack } from '@material-ui/icons';
 import { MESSAGES } from 'data';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -21,12 +21,13 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default React.memo(function ProfilePageHeader(props) {
-  const { scrollTarget, lastPath } = props;
+  const { scrollTarget } = props;
   const scrolled = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
     target: scrollTarget,
   });
+  const history = useHistory();
   const classes = useStyles();
 
   return (
@@ -36,7 +37,7 @@ export default React.memo(function ProfilePageHeader(props) {
       position="relative"
     >
       <Toolbar>
-        <IconButton color="inherit" edge="start" component={Link} to={lastPath}>
+        <IconButton color="inherit" edge="start" onClick={history.goBack}>
           <ArrowBack />
         </IconButton>
         <Typography className={classes.h6} variant="h6">

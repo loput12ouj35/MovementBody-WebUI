@@ -1,5 +1,5 @@
 import React from 'react';
-import { CalendarToday, Home, Menu } from '@material-ui/icons';
+import { CalendarToday, Home, Timer } from '@material-ui/icons';
 import {
   BottomNavigation,
   BottomNavigationAction,
@@ -10,7 +10,7 @@ import { Link, useLocation } from 'react-router-dom';
 const MENUS = [
   ['home', <Home />],
   ['history', <CalendarToday />],
-  ['menu', <Menu />],
+  ['time', <Timer />],
 ];
 
 const MENU_COMPONENTS = MENUS.map(([type, icon]) => (

@@ -27,7 +27,7 @@ const rest = {
     profile: '프로필',
     home: '홈',
     menu1: '[[메뉴1. 일일 통계]]',
-    menu2: '[[메뉴2]]',
+    menu2: '[[메뉴2. 시간 관련]]',
   },
 
   signUp: {

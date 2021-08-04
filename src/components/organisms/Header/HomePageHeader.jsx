@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   AppBar,
+  IconButton,
   makeStyles,
   Toolbar,
   Typography,
@@ -12,6 +13,7 @@ import {
   ProfileIconButton,
 } from 'components';
 import { MESSAGES } from 'data';
+import { Menu } from '@material-ui/icons';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -37,6 +39,9 @@ export default React.memo(function HomePageHeader(props) {
       position="relative"
     >
       <Toolbar>
+        <IconButton color="inherit" edge="start" onClick={null}>
+          <Menu />
+        </IconButton>
         <Typography variant="h6">{MESSAGES.header.logo}</Typography>
         <div className={classes.grow} />
         <GlobalNavigation />

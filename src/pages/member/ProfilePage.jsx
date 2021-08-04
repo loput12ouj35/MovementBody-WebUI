@@ -38,7 +38,6 @@ export default React.memo(function ProfilePage() {
   const { profilePageStore } = useStore();
   const { pathname } = useLocation();
   const open = pathname.startsWith('/profile');
-  const { lastPath } = profilePageStore;
 
   if (open) profilePageStore.fetch('tempId'); // todo: change dummy id to logined id
 
@@ -49,7 +48,7 @@ export default React.memo(function ProfilePage() {
       variant="persistent"
       PaperProps={{ className: classes.root }}
     >
-      <ProfilePageHeader scrollTarget={ref} lastPath={lastPath} />
+      <ProfilePageHeader scrollTarget={ref} />
       <div ref={setRef} className={classes.main}>
         <div className={classes.container}>
           <form className={classes.form}>

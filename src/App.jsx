@@ -15,7 +15,7 @@ export default React.memo(function App() {
       {route('/signUp', <SignUpPage />)}
       {route(['/error', '/404', '/403'], <p>todo</p>)}
       <Redirect exact from="/" to="/start" />
-      {route(['/home', '/history', '/menu', '/profile'], <MainPage />)}
+      {route(['/home', '/history', '/time', '/profile'], <MainPage />)}
       <Redirect from="*" to="/404" />
     </Switch>
   );
