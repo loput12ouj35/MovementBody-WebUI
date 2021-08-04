@@ -3,7 +3,7 @@ const common = {
   confirm: '확인',
   submit: '제출',
   highPriority: '중요',
-  other: '기타',
+  summary: '요약',
   carbon: '탄수화물',
   protein: '단백질',
   fat: '지방',
@@ -78,7 +78,7 @@ const rest = {
   homePage: {
     title: {
       stepCount: '걸음 수',
-      activeTime: '활동 시간',
+      activeTime: '운동 시간',
       food: '음식',
       water: '물',
       weight: '무게',

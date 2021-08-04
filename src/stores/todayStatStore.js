@@ -13,10 +13,10 @@ export default new (class TodayStatStore {
 
   @observable.ref
   food = {
-    goal: 1621,
-    breakfirst: 400,
-    lunch: 500,
-    dinner: null,
+    goal: 'dummy ',
+    breakfirst: 600,
+    lunch: 700,
+    dinner: 200,
     snack: 100,
   };
 

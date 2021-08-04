@@ -1,5 +1,5 @@
 import { CardContent, Typography } from '@material-ui/core';
-import { AccessTime } from '@material-ui/icons';
+import { DirectionsWalk } from '@material-ui/icons';
 import { CardMainText, StyledCard, StyledCardHeader } from 'components';
 import { MESSAGES } from 'data';
 import { inject, observer } from 'mobx-react';
@@ -15,7 +15,7 @@ class ActiveTimeCard extends React.PureComponent {
     return (
       <StyledCard>
         <StyledCardHeader
-          icon={<AccessTime />}
+          icon={<DirectionsWalk />}
           markColor="lightseagreen"
           markShadow="rgba(32, 178, 170, 0.4)"
           title={MESSAGES.homePage.title.activeTime}

@@ -66,7 +66,7 @@ export default React.memo(function GetStartedPage() {
               className={classes.goHomeButton}
               aria-label="menu-button"
               component={Link}
-              to="/menu"
+              to="/home"
             >
               {MESSAGES.getStartedPage.goHome}
             </Button>

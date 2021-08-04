@@ -44,10 +44,10 @@ export default React.memo(function HomePage() {
       </ol>
       <Typography className={classes.title}>
         <LowPriority fontSize="small" />
-        {MESSAGES.common.other}
+        {MESSAGES.common.summary}
       </Typography>
       <ol className={classes.cardContainer}>
-        <StepCountCard />
+        {/* <StepCountCard /> */}
         <ActiveTimeCard />
         <FoodCard />
         <WaterCard />
