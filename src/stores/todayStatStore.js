@@ -14,9 +14,9 @@ export default new (class TodayStatStore {
   @observable.ref
   food = {
     goal: 'dummy ',
-    breakfirst: 600,
+    breakfirst: 100,
     lunch: 700,
-    dinner: 200,
+    dinner: 700,
     snack: 100,
   };
 

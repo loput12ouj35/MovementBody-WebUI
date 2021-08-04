@@ -22,6 +22,7 @@ export { default as ProfilePageHeader } from './organisms/Header/ProfilePageHead
 export { default as Bnb } from './organisms/BottomNavigationBar';
 export { default as ImportantCardContainer } from './organisms/HomePageCards/ImportantCardContainer';
 export { default as SummaryCardContainer } from './organisms/HomePageCards/SummaryCardContainer';
+export { default as MealCardContainer } from './organisms/HomePageCards/MealCardContainer';
 export { default as DailyNutritionChart } from './organisms/HistoryPageContents/DailyNutritionChart';
 export { default as ExerciseCodeCard } from './organisms/MemberCards/ExerciseCodeCard';
 export { default as BasicInfoCreationCard } from './organisms/MemberCards/BasicInfoCreationCard';

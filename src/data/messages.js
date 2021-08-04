@@ -85,6 +85,11 @@ const rest = {
       sleep: '수면',
       nutrition: '오늘의 영양을 확인하세요!',
       foodRecommandation: (n) => `${n}이 부족해요!`,
+      meal: {
+        breakfirst: '아침',
+        lunch: '점심',
+        dinner: '저녁',
+      },
     },
     subheader: {
       foodRecommandation: '이런 음식은 어떠세요?',

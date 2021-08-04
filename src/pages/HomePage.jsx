@@ -1,6 +1,7 @@
 import { Fab, makeStyles } from '@material-ui/core';
 import { Edit } from '@material-ui/icons';
 import { ImportantCardContainer, SummaryCardContainer } from 'components';
+import MealCardContainer from 'components/organisms/HomePageCards/MealCardContainer';
 import { useStore } from 'custom_util';
 import React from 'react';
 
@@ -31,6 +32,7 @@ export default React.memo(function HomePage() {
     <div className={classes.root}>
       <ImportantCardContainer classes={classes} />
       <SummaryCardContainer classes={classes} />
+      <MealCardContainer classes={classes} />
       <Fab
         color="secondary"
         className={classes.fab}
