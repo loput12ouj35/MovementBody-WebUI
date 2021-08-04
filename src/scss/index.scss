@@ -4,6 +4,12 @@
 // 간단한 css 전역 설정
 // normalize는 넣었고, reset은 필요 없어보임. 일부 항목만 아래에서 reset
 // font-size는 기기 별 브라우저에게 맡긴다. PC기준으로 16px임.
+@media (min-width: 2560px) {
+  html {
+    font-size: 24px;
+  }
+}
+
 html,
 body {
   height: 100%;

@@ -57,5 +57,13 @@ export default createMuiTheme({
     },
     MuiCard: { root: { overflow: null } },
     MuiDivider: { root: { margin: '1rem 0' } },
+    MuiFab: { root: { width: '3.5rem', height: '3.5rem' } },
+    MuiToolbar: {
+      regular: { '@media (min-width: 600px)': { minHeight: '4rem' } },
+    },
+    MuiChip: {
+      root: { '& $avatarSmall': { width: '1.125rem', height: '1.125rem' } },
+      sizeSmall: { height: '1.5rem' },
+    },
   },
 });

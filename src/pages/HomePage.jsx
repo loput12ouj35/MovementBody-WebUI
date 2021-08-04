@@ -6,7 +6,7 @@ import {
   FoodRecommandationCard,
   NutritionCard,
   SleepCard,
-  StepCountCard,
+  // StepCountCard,
   WaterCard,
   WeightCard,
 } from 'components';
@@ -15,7 +15,12 @@ import { MESSAGES } from 'data';
 import React from 'react';
 
 const useStyles = makeStyles(() => ({
-  root: { display: 'flex', flexDirection: 'column', width: '100%' },
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    maxWidth: '100rem',
+  },
   title: {
     display: 'flex',
     alignItems: 'center',
