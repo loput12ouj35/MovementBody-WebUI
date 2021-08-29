@@ -24,8 +24,8 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default React.memo(function HomePage() {
-  const { todayStatStore } = useStore();
-  todayStatStore.fetchAll('Test'); // todo: apply real id
+  const { nutritionViewModel } = useStore();
+  nutritionViewModel.fetchAll('Test'); // todo: apply real id
   const classes = useStyles();
 
   return (

@@ -10,12 +10,12 @@ import {
   NutritionRatioBar,
 } from 'components';
 
-@inject('todayStatStore')
+@inject('nutritionViewModel')
 @observer
 class MealCard extends React.PureComponent {
   render() {
-    const { todayStatStore, type } = this.props;
-    const cal = todayStatStore.food[type] ?? 0;
+    const { nutritionViewModel, type } = this.props;
+    const cal = nutritionViewModel.mealCalorie[type] ?? 0;
 
     return (
       <StyledCard responsiveOptions={{ range: [3, 4], widthRem: 11 }}>

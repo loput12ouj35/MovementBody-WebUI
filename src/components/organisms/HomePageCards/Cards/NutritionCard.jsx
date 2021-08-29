@@ -35,7 +35,7 @@ const TYPES = ['carbon', 'protein', 'fat'];
 const COLORS = ['#1a90ff', '#ff1a90', '#ff901a'];
 
 @withStyles(styles)
-@inject('todayStatStore')
+@inject('nutritionViewModel')
 @observer
 class NutritionCard extends React.PureComponent {
   createChartData = (values) =>
@@ -57,9 +57,8 @@ class NutritionCard extends React.PureComponent {
     ));
 
   render() {
-    const { classes, todayStatStore } = this.props;
-    const { currentNutrition, goalNutrition } = todayStatStore;
-    const { currentCalorie } = todayStatStore;
+    const { classes, nutritionViewModel } = this.props;
+    const { current, goal } = nutritionViewModel;
 
     return (
       <StyledCard
@@ -74,16 +73,16 @@ class NutritionCard extends React.PureComponent {
         />
         <CardContent className={classes.content}>
           <div className={classes.barContainer}>
-            {this.renderBars(currentNutrition, goalNutrition)}
+            {this.renderBars(current, goal)}
           </div>
           <div className={classes.chartContainer}>
             <NutritionChart
-              data={this.createChartData(currentNutrition)}
+              data={this.createChartData(current)}
               colors={COLORS}
             />
             <div className={classes.calorie}>
               <CardMainText
-                mainText={currentCalorie.totalCalorie}
+                mainText={current.totalCalorie}
                 subText={`\n/dummy ${MESSAGES.unit.kcal}`}
               />
             </div>

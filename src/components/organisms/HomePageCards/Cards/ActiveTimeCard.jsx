@@ -5,12 +5,12 @@ import { MESSAGES } from 'data';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
 
-@inject('todayStatStore')
+@inject('summaryViewModel')
 @observer
 class ActiveTimeCard extends React.PureComponent {
   render() {
-    const { todayStatStore } = this.props;
-    const { current, goal, kcal } = todayStatStore.activeTime;
+    const { summaryViewModel } = this.props;
+    const { current, goal, kcal } = summaryViewModel.activeTime;
 
     return (
       <StyledCard>

@@ -16,12 +16,12 @@ const styles = () => ({
 });
 
 @withStyles(styles)
-@inject('todayStatStore')
+@inject('summaryViewModel')
 @observer
 class WaterCard extends React.PureComponent {
   render() {
-    const { classes, todayStatStore } = this.props;
-    const { cup, ml } = todayStatStore.water;
+    const { classes, summaryViewModel } = this.props;
+    const { cup, ml } = summaryViewModel.water;
 
     return (
       <StyledCard>

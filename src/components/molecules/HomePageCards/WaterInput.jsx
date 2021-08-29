@@ -32,14 +32,14 @@ const styles = () => ({
 });
 
 @withStyles(styles)
-@inject('todayStatStore')
+@inject('summaryViewModel')
 @observer
 class WaterInput extends React.PureComponent {
   state = { cupSize: 200 };
 
   update = (cupDiff = 0, mlDiff = 0) => {
-    const { todayStatStore } = this.props;
-    todayStatStore.setWater(({ cup, ml }) => {
+    const { summaryViewModel } = this.props;
+    summaryViewModel.setWater(({ cup, ml }) => {
       const _cup = Math.max(0, cup + cupDiff);
       const _ml = _cup === 0 ? 0 : Math.max(0, ml + mlDiff);
 
@@ -60,8 +60,8 @@ class WaterInput extends React.PureComponent {
   handleChange = (e, cupSize) => this.setState({ cupSize });
 
   render() {
-    const { todayStatStore, classes } = this.props;
-    const disabled = todayStatStore.water.cup <= 0;
+    const { summaryViewModel, classes } = this.props;
+    const disabled = summaryViewModel.water.cup <= 0;
     const { cupSize } = this.state;
 
     return (
