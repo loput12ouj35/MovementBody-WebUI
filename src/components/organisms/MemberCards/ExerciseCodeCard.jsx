@@ -13,18 +13,18 @@ import { MESSAGES } from 'data';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
 
-@inject('profilePageStore')
+@inject('profileViewModel')
 @observer
 class ExerciseCodeCard extends React.PureComponent {
   handleChangeIndex = (step) => {
-    const { profilePageStore } = this.props;
-    profilePageStore.updateProfile('exerciseCode', step);
+    const { profileViewModel } = this.props;
+    profileViewModel.updateProfile('exerciseCode', step);
   };
 
   render() {
     const max = 5;
-    const { profilePageStore, update = false } = this.props;
-    const { increaseCode, decreaseCode, profile } = profilePageStore;
+    const { profileViewModel, update = false } = this.props;
+    const { increaseCode, decreaseCode, profile } = profileViewModel;
     const value = profile.exerciseCode;
     const title = update
       ? MESSAGES.member.title.updateExercise

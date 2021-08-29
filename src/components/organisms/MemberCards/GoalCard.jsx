@@ -10,17 +10,17 @@ const styles = () => ({
 });
 
 @withStyles(styles)
-@inject('profilePageStore')
+@inject('profileViewModel')
 @observer
 class BasicInfoCreationCard extends React.PureComponent {
   handleGoalChange = (e, v) => {
-    const { profilePageStore } = this.props;
-    profilePageStore.updateProfile('targetDietType', v);
+    const { profileViewModel } = this.props;
+    profileViewModel.updateProfile('targetDietType', v);
   };
 
   render() {
-    const { profilePageStore, classes, update } = this.props;
-    const { targetDietType } = profilePageStore.profile;
+    const { profileViewModel, classes, update } = this.props;
+    const { targetDietType } = profileViewModel.profile;
     const title = update
       ? MESSAGES.member.title.updateGoal
       : MESSAGES.member.title.createGoal;

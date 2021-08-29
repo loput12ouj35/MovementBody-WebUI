@@ -13,7 +13,7 @@ const buttonStyle = () => ({
 
 // using class component for readability
 @withStyles(buttonStyle)
-@inject('profilePageStore')
+@inject('profileViewModel')
 @withRouter
 class MemberFormSubmitButton extends React.Component {
   state = { pending: false };
@@ -24,9 +24,9 @@ class MemberFormSubmitButton extends React.Component {
 
   createMember = async () => {
     try {
-      const { profilePageStore, history } = this.props;
+      const { profileViewModel, history } = this.props;
       this.setState({ pending: true });
-      await profilePageStore.submitToCreate();
+      await profileViewModel.submitToCreate();
       // TBD: call login API here (or not)
       history.push('/home');
     } catch (e) {
@@ -37,9 +37,9 @@ class MemberFormSubmitButton extends React.Component {
 
   updateMember = async () => {
     try {
-      const { profilePageStore } = this.props;
+      const { profileViewModel } = this.props;
       this.setState({ pending: true });
-      await profilePageStore.submitToUpdate();
+      await profileViewModel.submitToUpdate();
     } catch (e) {
       console.error(e);
     }

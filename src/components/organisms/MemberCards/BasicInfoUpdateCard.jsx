@@ -40,7 +40,7 @@ const GENDER_TEXTS = [
 ];
 
 @withStyles(styles)
-@inject('profilePageStore')
+@inject('profileViewModel')
 @observer
 class BasicInfoUpdateCard extends React.PureComponent {
   renderInfoBox(data) {
@@ -58,7 +58,7 @@ class BasicInfoUpdateCard extends React.PureComponent {
   }
 
   render() {
-    const { classes, profilePageStore } = this.props;
+    const { classes, profileViewModel } = this.props;
     const {
       birth,
       gender,
@@ -66,7 +66,7 @@ class BasicInfoUpdateCard extends React.PureComponent {
       email,
       weight,
       height,
-    } = profilePageStore.profile;
+    } = profileViewModel.profile;
 
     return (
       <StyledCard Component="div" responsiveOptions={false}>

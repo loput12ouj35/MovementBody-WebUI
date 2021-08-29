@@ -20,11 +20,11 @@ const styles = () => ({
 });
 
 @withStyles(styles)
-@inject('profilePageStore')
+@inject('profileViewModel')
 @observer
 class BasicInfoCreationCard extends React.PureComponent {
   // eslint-disable-next-line react/destructuring-assignment
-  update = this.props.profilePageStore.updateProfile;
+  update = this.props.profileViewModel.updateProfile;
 
   handleGenderChange = (e, v) => (v === null ? null : this.update('gender', v));
 
@@ -33,8 +33,8 @@ class BasicInfoCreationCard extends React.PureComponent {
   handleWeightChange = (v) => this.update('weight', v);
 
   render() {
-    const { profilePageStore, classes } = this.props;
-    const { gender, height, weight } = profilePageStore.profile;
+    const { profileViewModel, classes } = this.props;
+    const { gender, height, weight } = profileViewModel.profile;
 
     return (
       <StyledCard Component="div" responsiveOptions={false}>

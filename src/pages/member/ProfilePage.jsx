@@ -35,11 +35,11 @@ const useStyles = makeStyles(() => ({
 export default React.memo(function ProfilePage() {
   const [ref, setRef] = useState(undefined);
   const classes = useStyles();
-  const { profilePageStore } = useStore();
+  const { profileViewModel } = useStore();
   const { pathname } = useLocation();
   const open = pathname.startsWith('/profile');
 
-  if (open) profilePageStore.fetch('tempId'); // todo: change dummy id to logined id
+  if (open) profileViewModel.fetch('tempId'); // todo: change dummy id to logined id
 
   return (
     <Drawer
